@@ -1,0 +1,118 @@
+
+.header {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+
+  // .header__logo
+  &__logo {
+  }
+  &__bottom{
+    transition: all 0.2s ease-in-out;
+   @include media (max, lg) {
+    display: none;
+   }
+}
+  
+  
+  
+  // .header__span--black
+  &__span--black {
+  }
+  // .header__span--color
+  &__span--color {
+  }
+  // .header__span--office
+  &__span--office {
+  }
+  // .header__social-list
+  &__social-list {
+  }
+  // .header__btn
+  &__btn {
+  }
+  // .header__menu
+  &__menu {
+  }
+  // .header__burger
+  &__burger {
+  }
+}
+.container {
+}
+.row {
+}
+.py-1 {
+}
+.mb-3 {
+}
+.col-2 {
+}
+.logo {
+  // .logo__img
+  &__img {
+  }
+}
+.mw-100 {
+}
+.d-block {
+}
+.fs-14 {
+}
+.text-secondary {
+}
+.text-nowrap {
+}
+.py-3 {
+}
+.position-relative {
+}
+.ps-4 {
+}
+.fs-16 {
+}
+.fw-700 {
+}
+
+.py-2 {
+}
+.px-0 {
+}
+.fw-500 {
+}
+.btn {
+}
+.btn-transparent {
+}
+.btn-outline-danger {
+}
+.w-100 {
+}
+.px-4 {
+}
+
+.col-12 {
+}
+.d-flex {
+}
+.h-100 {
+}
+.flex-column {
+}
+.flex-lg-row {
+}
+.justify-content-center {
+}
+.justify-content-lg-between {
+}
+.ps-0 {
+}
+.d-inline-block {
+}
+.burger {
+  // .burger__inner
+  &__inner {
+  }
+}
+.button {
+}
