@@ -4,6 +4,7 @@
    &__menu{
     left: 0;
    background-color: var(--bg-second-color);
+   display: flex;
    }
 &__list{
   gap: 20px;
