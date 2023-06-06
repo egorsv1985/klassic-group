@@ -1,6 +1,17 @@
 // Заголовки, общие БЄМ блоки и проче...
 
 .title {
+  &::before{
+    @include pseudo;
+    width: 100vw;
+    height: 1px;
+    background-color: #D6D6D6;
+    right: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-right: 30px;
+  }
  
 }
 
