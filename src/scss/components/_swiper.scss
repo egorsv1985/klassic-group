@@ -3,56 +3,42 @@
 .swiper-wrapper {
 }
 .swiper-slide {
-  
 }
-.swiper-control {
-  bottom: 125px;
-  gap: 90px;
-  right: 55px;
-  @include media (max, md) {
-    bottom: 40px;
-   
-  }
-}
+
 .swiper-button-next,
 .swiper-button-prev {
-  
   z-index: 100;
- 
-  @include wh(60px);
-  border: 1px solid var(--text-second-color);
-  border-radius: 50%;
+
+  @include wh(43px);
+
   &:hover {
-    border-color: var(--main-color);
     &::after {
-      @include background(url("@img/icons/arrow-swiper-active.svg"));
+      @include background(url("@img/icons/arrow-slider.svg"));
     }
   }
   &::after {
     @include pseudo;
 
-    @include wh(11px, 8px);
-    @include background(url("@img/icons/arrow-swiper.svg"));
-    @include pos(absolute, $top: 50%, $left: 56%);
-    transform: translate(-50%, -50%);
+    @include wh(9px, 16px);
+    @include background(url("@img/icons/arrow-slider.svg"));
   }
 }
 
 .swiper-button-next {
+  right: 50px;
   &::after {
-    transform: translate(-50%, -50%) rotate(180deg);
+    transform: rotate(180deg);
   }
   &:hover {
     &::after {
-      transform: translate(-50%, -50%) rotate(360deg);
     }
   }
 }
 
 .swiper-button-prev {
+  left: 50px;
   &:hover {
     &::after {
-      transform: translate(-50%, -50%) rotate(180deg);
     }
   }
 }
@@ -73,46 +59,21 @@
 }
 .swiper-pagination-bullet,
 .swiper-pagination-bullet-active {
-  position: absolute;
-  left: 0;
-  right: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #fff;
 }
-.slash {
-  background: url(@img/icons/slash.svg) no-repeat center center/ 37px 37px;
-  position: absolute;
-  display: block;
-  width: 37px;
-  height: 37px;
-  left: -14px;
-  top: -29px;
-}
-.swiper-pagination {
-}
-.prev-slide {
-  position: absolute;
 
-  top: -33px;
-  left: -19px;
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+  top: -64px;
+  left: 145px;
 }
-.next-slide {
-  position: absolute;
-  top: -10px;
-  left: 16px;
-  color: var(--text-second-color);
-}
+
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  position: relative;
 }
 .swiper-pagination-bullet {
-  opacity: 0;
+  opacity: 0.5;
   &-active {
     opacity: 1;
-    width: 0;
-
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 20px;
-
-    color: var(--main-color);
   }
 }
