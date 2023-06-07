@@ -314,13 +314,13 @@ document.addEventListener("DOMContentLoaded", function () {
   handleBurgerClick();
   // Проверяем наличие элемента с id "promo-section"
   var promo = document.getElementById("promo");
+  var works = document.getElementById("works");
   // Проверяем, что элемент "promo-section" существует
   if (promo) {
     // Создаем новый Swiper объект для элемента ".promoSwiper"
     var promoSwiper = new Swiper(".promoSwiper", {
       // Задаем количество слайдов, которые будут показываться одновременно
       slidesPerView: 1,
-
       loop: true,
       // Включаем курсор в виде "руки" при наведении на слайды
       grabCursor: true,
@@ -338,50 +338,45 @@ document.addEventListener("DOMContentLoaded", function () {
       pagination: {
         el: ".promo .swiper-pagination",
         clickable: true,
-       
       },
     });
   }
-  // выбираем элемент с id "promo-section" и создаем новый Swiper объект
-  var contentSwiper = new Swiper(".contentSwiper", {
-    // задаем количество слайдов, которые будут показываться одновременно
-    slidesPerView: 1,
-
-    loop: true,
-    // включаем курсор в виде "руки" при наведении на слайды
-    grabCursor: true,
-    // включаем использование клавиатуры для навигации по слайдам
-    keyboard: {
-      enabled: true,
+  // Проверяем, что элемент "works" существует
+  if (works) {
+    // Создаем новый Swiper объект для элемента ".worksSwiper"
+    var worksSwiper = new Swiper(".worksSwiper", {
+      // Задаем количество слайдов, которые будут показываться одновременно
+      slidesPerView: 1,
+       // Responsive breakpoints
+  breakpoints: {
+    
+    // when window width is >= 576px
+    576: {
+      slidesPerView: 2,
+      spaceBetween: 20
     },
+    // when window width is >= 992px
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    }
+  },
 
-    // включаем кнопки "вперед" и "назад" для навигации по слайдам
-    navigation: {
-      nextEl: ".content .swiper-button-next",
-      prevEl: ".content .swiper-button-prev",
-    },
-    // включаем пагинацию и настраиваем внешний вид номеров слайдов
-    pagination: {
-      el: ".content .swiper-pagination",
-      clickable: true,
-      // здесь мы используем функцию renderBullet для создания номеров слайдов вида "01/10"
-      renderBullet: function (index, className) {
-        return (
-          '<span class="' +
-          className +
-          '">' +
-          '<span class="prev-slide">' +
-          ("" + (index + 1)).slice(-2) +
-          "</span>" +
-          '<span class="slash"></span>' +
-          '<span class="next-slide">' +
-          ("" + this.slides.length).slice(-2) +
-          "</span>" +
-          "</span>"
-        );
+      loop: true,
+      // Включаем курсор в виде "руки" при наведении на слайды
+      grabCursor: true,
+      // Включаем использование клавиатуры для навигации по слайдам
+      keyboard: {
+        enabled: true,
       },
-    },
-  });
+
+      // Включаем кнопки "вперед" и "назад" для навигации по слайдам
+      navigation: {
+        nextEl: ".works .swiper-button-next",
+        prevEl: ".works .swiper-button-prev",
+      },
+    });
+  }
 
   // Определяем функцию callback
   ((callback) => {

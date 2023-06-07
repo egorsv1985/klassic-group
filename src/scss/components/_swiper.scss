@@ -23,9 +23,27 @@
     @include background(url("@img/icons/arrow-slider.svg"));
   }
 }
+.works{
+  .swiper-button-next,
+.swiper-button-prev {
+  top: 57%;
 
-.swiper-button-next {
-  right: 50px;
+  &:hover {
+    &::after {
+      @include background(url("@img/icons/arrow-catalog.svg"));
+    }
+  }
+  &::after {
+   
+
+    
+    @include background(url("@img/icons/arrow-catalog.svg"));
+  }
+}
+}
+
+.swiper-button-prev {
+  left: 50px;
   &::after {
     transform: rotate(180deg);
   }
@@ -35,8 +53,8 @@
   }
 }
 
-.swiper-button-prev {
-  left: 50px;
+.swiper-button-next {
+  right: 50px;
   &:hover {
     &::after {
     }
