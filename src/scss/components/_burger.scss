@@ -1,17 +1,13 @@
 .burger {
-  
   height: 30px;
- width: 30px;
-  
+  width: 30px;
+
   border: none;
   cursor: pointer;
   position: relative;
   z-index: 15;
-  
 
   &__inner {
-    
-
     span,
     &::before,
     &::after {
