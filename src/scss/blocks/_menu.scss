@@ -1,10 +1,21 @@
 .menu {
-  @include media(max, lg) {
-    left: -100%;
-    transition: all .5s ease-in-out;
-  }
-
   
+
+  &__list{
+    &.open{
+      ul{
+        padding: 0.5rem 0 1rem;
+      
+       
+        
+      }
+    
+      ul a{
+        background: none;
+      }
+      
+    }
+  }
   &__item + &__item {
     position: relative;
     &::after {
@@ -20,9 +31,27 @@
       }
     }
   }
+  &__link{
+    &--bg{
+      background: url("@img/icons/burger.svg") center left / auto no-repeat;
+    }
+  }
   &__parent{
-    background: url("@img/icons/burger.svg") center left / auto no-repeat;
+   
     
+    ul{
+      display: none;
+      top: 50px;
+      left: 0;
+      padding: 0;
+      @include media(max, lg) {
+        left: 100px;
+        top: -10px;
+      }
+      
+
+    }
+   
     
   }
   

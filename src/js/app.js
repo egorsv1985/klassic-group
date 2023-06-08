@@ -347,20 +347,19 @@ document.addEventListener("DOMContentLoaded", function () {
     var worksSwiper = new Swiper(".worksSwiper", {
       // Задаем количество слайдов, которые будут показываться одновременно
       slidesPerView: 1,
-       // Responsive breakpoints
-  breakpoints: {
-    
-    // when window width is >= 576px
-    576: {
-      slidesPerView: 2,
-      spaceBetween: 20
-    },
-    // when window width is >= 992px
-    992: {
-      slidesPerView: 3,
-      spaceBetween: 30
-    }
-  },
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 576px
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
 
       loop: true,
       // Включаем курсор в виде "руки" при наведении на слайды
@@ -519,5 +518,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   closeButtons.forEach(function (button) {
     button.addEventListener("click", closePopup);
+  });
+  
+});
+
+$(document).ready(function() {
+  $('.menu__parent').click(function() {
+    var li = $(this).parent();
+    if (li.hasClass('open')) {
+      li.removeClass('open').find('ul').slideUp();
+    } else {
+      li.addClass('open').find('ul').slideDown();
+    }
+    return false;
   });
 });
