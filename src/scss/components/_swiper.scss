@@ -34,6 +34,9 @@
 
 .swiper-button-prev {
   left: -9%;
+  @include media(max, 1380px) {
+    left: 2%;
+  }
   &::after {
     transform: rotate(180deg);
   }
@@ -41,6 +44,9 @@
 
 .swiper-button-next {
   right: -9%;
+  @include media(max, 1380px) {
+    right: 2%;
+  }
 }
 
 .swiper-pagination-bullet,
