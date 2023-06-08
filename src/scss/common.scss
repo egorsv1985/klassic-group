@@ -98,6 +98,9 @@
 .fs-64 {
   font-size: 4rem;
   line-height: 110%;
+  @include media (max, lg) {
+    font-size: 2.5rem;
+  }
 }
 
 .ff-roboto {
