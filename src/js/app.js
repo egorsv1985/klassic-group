@@ -211,6 +211,7 @@
 // });
 
 // // Подключение основного файла стилей
+import Swiper from "swiper";
 import "../scss/style.scss";
 
 ("use strict");
@@ -315,6 +316,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Проверяем наличие элемента с id "promo-section"
   var promo = document.getElementById("promo");
   var works = document.getElementById("works");
+  var promoPage = document.getElementById("promo-page");
   // Проверяем, что элемент "promo-section" существует
   if (promo) {
     // Создаем новый Swiper объект для элемента ".promoSwiper"
@@ -376,6 +378,70 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
+  // Проверяем, что элемент "works" существует
+  if (promoPage) {
+   
+    
+ 
+  }
+  var promoPageSwiper = new Swiper(".promoPageSwiper", {
+    loop: true,
+    spaceBetween: 30,
+    slidesPerView: 12,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+
+  var promoPageSwiper2 = new Swiper(".promoPageSwiper2", {
+    loop: true,
+    spaceBetween: 10,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    thumbs: {
+      swiper: promoPageSwiper,
+    },
+  });
+  // var swiper = new Swiper(".mySwiper", {
+  //   loop: true,
+  //   spaceBetween: 10,
+	// slidesPerView: 4,
+	//  // Responsive breakpoints
+	//  breakpoints: {
+  //       // when window width is >= 500px
+  //     500: {
+  //         slidesPerView: 6,
+          
+  //       },
+  //       // when window width is >= 757px
+  //       767: {
+  //         slidesPerView: 8,
+  //         spaceBetween: 20,
+  //       },
+  //       // when window width is >= 992px
+  //       992: {
+  //         slidesPerView: 12,
+  //         spaceBetween: 30,
+  //       },
+  //     },
+    
+  //   freeMode: true,
+  //   watchSlidesProgress: true,
+  // });
+  // console.log(swiper);
+  // console.log(jQuery(".mySwiper2"));
+  // var swiper2 = new Swiper(".mySwiper2", {
+  //   loop: true,
+  //   spaceBetween: 30,
+  //   navigation: {
+  //     nextEl: ".swiper-button-next",
+  //     prevEl: ".swiper-button-prev",
+  //   },
+  //   thumbs: {
+  //     swiper: swiper,
+  //   },
+  // });
 
   // Определяем функцию callback
   ((callback) => {
@@ -519,16 +585,15 @@ document.addEventListener("DOMContentLoaded", function () {
   closeButtons.forEach(function (button) {
     button.addEventListener("click", closePopup);
   });
-  
 });
 
-$(document).ready(function() {
-  $('.menu__parent').click(function() {
+$(document).ready(function () {
+  $(".menu__parent").click(function () {
     var li = $(this).parent();
-    if (li.hasClass('open')) {
-      li.removeClass('open').find('ul').slideUp();
+    if (li.hasClass("open")) {
+      li.removeClass("open").find("ul").slideUp();
     } else {
-      li.addClass('open').find('ul').slideDown();
+      li.addClass("open").find("ul").slideDown();
     }
     return false;
   });

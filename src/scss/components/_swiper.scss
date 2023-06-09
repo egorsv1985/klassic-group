@@ -16,18 +16,17 @@
     @include background(url("@img/icons/arrow-slider.svg"));
   }
 }
-.works {
+.works
+ {
   .swiper-button-next,
   .swiper-button-prev {
-   
-    @include media (max,1380px) {
+    @include media(max, 1380px) {
       position: relative;
-    left: inherit;
-    right: inherit;
-    top: inherit;
-    margin: 0;
+      left: inherit;
+      right: inherit;
+      top: inherit;
+      margin: 0;
     }
-   
 
     &:hover {
       &::after {
@@ -38,12 +37,42 @@
       @include background(url("@img/icons/arrow-catalog.svg"));
     }
   }
-  .swiper-control{
+  .swiper-control {
     position: absolute;
     top: 50%;
 
- 
-    @include media (max,1380px) {
+    @include media(max, 1380px) {
+      bottom: inherit;
+      position: relative;
+      top: inherit;
+    }
+  }
+}
+.promo-constructor {
+  .swiper-button-next,
+  .swiper-button-prev {
+    @include media(max, 1380px) {
+      position: relative;
+      left: inherit;
+      right: inherit;
+      top: inherit;
+      margin: 0;
+    }
+
+    &:hover {
+      &::after {
+        @include background(url("@img/icons/arrow-catalog.svg"));
+      }
+    }
+    &::after {
+      @include background(url("@img/icons/arrow-catalog.svg"));
+    }
+  }
+  .swiper-control {
+    position: absolute;
+    bottom: 6%;
+
+    @include media(max, 1380px) {
       bottom: inherit;
       position: relative;
       top: inherit;
@@ -56,7 +85,7 @@
   @include media(max, 1380px) {
     left: 80%;
   }
-  @include media (max, sm) {
+  @include media(max, sm) {
     left: 60%;
   }
   &::after {
@@ -83,7 +112,6 @@
 .swiper-pagination-custom,
 .swiper-pagination-fraction {
   top: -64px;
-  left: 145px;
 }
 
 .swiper-pagination-bullet {
@@ -93,9 +121,20 @@
   }
 }
 
-.swiper-control{
- 
-  @include media (max,1380px) {
+.swiper-control {
+  @include media(max, 1380px) {
     bottom: 0;
+  }
+}
+.promo-constructor {
+  .mySwiper {
+    .swiper-slide{
+      padding: 5px;
+    }
+    .swiper-slide-thumb-active {
+     
+      border: 1px solid #5e2627;
+      border-radius: 5px;
+    }
   }
 }
