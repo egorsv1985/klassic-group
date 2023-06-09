@@ -1,7 +1,11 @@
 .constructor {
   // .constructor__content
   &__content {
-    z-index: -1;
+    
 	padding-block: 75px;
+  }
+  &__box-img{
+    right: -80px;
+    top: -15px;
   }
 }
