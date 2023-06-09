@@ -313,10 +313,12 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   handleBurgerClick();
+
+
   // Проверяем наличие элемента с id "promo-section"
   var promo = document.getElementById("promo");
   var works = document.getElementById("works");
-  var promoPage = document.getElementById("promo-page");
+  var documents = document.getElementById("documents");
   // Проверяем, что элемент "promo-section" существует
   if (promo) {
     // Создаем новый Swiper объект для элемента ".promoSwiper"
@@ -333,8 +335,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Включаем кнопки "вперед" и "назад" для навигации по слайдам
       navigation: {
-        nextEl: ".promo .swiper-button-next",
-        prevEl: ".promo .swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
       },
       // Включаем пагинацию и настраиваем внешний вид номеров слайдов
       pagination: {
@@ -378,41 +380,52 @@ document.addEventListener("DOMContentLoaded", function () {
       },
     });
   }
-  // Проверяем, что элемент "works" существует
-  if (promoPage) {
-   
-    
- 
-  }
-  var promoPageSwiper = new Swiper(".promoPageSwiper", {
-    loop: true,
-    spaceBetween: 30,
-    slidesPerView: 12,
-    freeMode: true,
-    watchSlidesProgress: true,
-  });
+  // Проверяем, что элемент "documents" существует
+  if (documents) {
+    // Создаем новый Swiper объект для элемента ".documentsSwiper"
+    var documentsSwiper = new Swiper(".documentsSwiper", {
+      // Задаем количество слайдов, которые будут показываться одновременно
+      slidesPerView: 1,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 576px
+        576: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
 
-  var promoPageSwiper2 = new Swiper(".promoPageSwiper2", {
-    loop: true,
-    spaceBetween: 10,
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    thumbs: {
-      swiper: promoPageSwiper,
-    },
-  });
+      loop: true,
+      // Включаем курсор в виде "руки" при наведении на слайды
+      grabCursor: true,
+      // Включаем использование клавиатуры для навигации по слайдам
+      keyboard: {
+        enabled: true,
+      },
+
+      // Включаем кнопки "вперед" и "назад" для навигации по слайдам
+      navigation: {
+        nextEl: ".documents .swiper-button-next",
+        prevEl: ".documents .swiper-button-prev",
+      },
+    });
+  }
+
   // var swiper = new Swiper(".mySwiper", {
   //   loop: true,
   //   spaceBetween: 10,
-	// slidesPerView: 4,
-	//  // Responsive breakpoints
-	//  breakpoints: {
+  // slidesPerView: 4,
+  //  // Responsive breakpoints
+  //  breakpoints: {
   //       // when window width is >= 500px
   //     500: {
   //         slidesPerView: 6,
-          
+
   //       },
   //       // when window width is >= 757px
   //       767: {
@@ -425,7 +438,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //         spaceBetween: 30,
   //       },
   //     },
-    
+
   //   freeMode: true,
   //   watchSlidesProgress: true,
   // });

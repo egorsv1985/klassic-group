@@ -1,0 +1,91 @@
+.steps {
+	// .steps__item
+	&__item {
+		&::before{
+			@include pseudo;
+			@include background (url("@img/steps.png"));
+			@include wh(54px, 19px);
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+	}
+	// .steps__num
+	&__num {
+		@include wh(43px);
+	}
+}
+.py-5 {
+}
+.container {
+}
+.row {
+}
+.justify-content-end {
+}
+.mb-5 {
+}
+.overflow-hidden {
+}
+.title {
+}
+.position-relative {
+}
+.col-6 {
+}
+.col-md-3 {
+}
+.fs-16 {
+}
+.text-center {
+}
+.text-uppercase {
+}
+.border {
+}
+.border-secondary {
+}
+.py-2 {
+}
+.rounded-2 {
+}
+.mb-0 {
+}
+.mb-4 {
+}
+.col-3 {
+}
+.fs-40 {
+}
+.ff-roboto {
+}
+.fw-700 {
+}
+.offset-3 {
+}
+.lh-12 {
+}
+.g-3 {
+}
+.bg-dark {
+}
+.p-4 {
+}
+.bg-white {
+}
+.rounded-circle {
+}
+.p-3 {
+}
+.d-flex {
+}
+.justify-content-center {
+}
+.align-items-center {
+}
+.fw-600 {
+}
+.fs-20 {
+}
+.text-white {
+}

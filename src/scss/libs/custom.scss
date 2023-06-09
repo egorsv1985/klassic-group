@@ -100,7 +100,7 @@
   --bs-breadcrumb-border-radius: ;
   --bs-breadcrumb-divider-color: #90959e;
   --bs-breadcrumb-item-padding-x: 0.5rem;
-  --bs-breadcrumb-item-active-color: #5B2527;
+  --bs-breadcrumb-item-active-color: #5b2527;
   display: flex;
   flex-wrap: wrap;
   padding: var(--bs-breadcrumb-padding-y) var(--bs-breadcrumb-padding-x);
@@ -223,7 +223,7 @@
 }
 .form-check-input:checked {
   background-color: #fff;
-  border-color: #5E2627;
+  border-color: #5e2627;
 }
 .form-check-input{
   @include wh(20px);
