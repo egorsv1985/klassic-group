@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('html/_head.htm',{ "title":"Главная" })
+
+  <body>
+    <div class="wrapper">
+      @@include('html/_header.htm',{})
+      <main>
+        @@include('html/section/_about.html',{})
+        @@include('html/section/_advantages.html',{})
+        @@include('html/section/_form-order.html',{})
+        @@include('html/section/_contacts.html',{})
+      </main>
+
+      @@include('html/_footer.htm',{})
+    </div>
+    @@include('html/_popup.htm',{})
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/app.min.js"></script>
+  </body>
+</html>
