@@ -4,8 +4,10 @@
    &__bottom{
     
     left: 0;
-   background-color: var(--bg-second-color);
+   background-color: #250707;
    display: flex;
+   color: #fff;
+   justify-content: start;
    }
 &__list{
   gap: 20px;

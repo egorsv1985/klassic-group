@@ -1,0 +1,23 @@
+.advantages {
+  // .advantages__item
+  &__item {
+    &::before {
+      @include pseudo;
+	  position: absolute;
+      top: 15px;
+      bottom: 15px;
+      left: -10px;
+      width: 1px;
+      background-color: #d6d6d6;
+    }
+	&::after{
+		@include pseudo;
+		position: absolute;
+		left: 0;
+		right: 0;
+		height: 1px;
+		background-color: #d6d6d6;
+		bottom: -1px;
+	}
+  }
+}

@@ -1,19 +1,13 @@
 .menu {
-  
-
-  &__list{
-    &.open{
-      ul{
+  &__list {
+    &.open {
+      ul {
         padding: 0.5rem 0 1rem;
-      
-       
-        
       }
-    
-      ul a{
+
+      ul a {
         background: none;
       }
-      
     }
   }
   &__item + &__item {
@@ -31,29 +25,23 @@
       }
     }
   }
-  &__link{
-    &--bg{
+  &__link {
+    &--bg {
       background: url("@img/icons/burger.svg") center left / auto no-repeat;
     }
   }
-  &__parent{
-   
-    
-    ul{
+  &__parent {
+    ul {
       display: none;
-      top: 50px;
+      top: 35px;
       left: 0;
       padding: 0;
       color: #fff;
+      background-color: #250707;
       @include media(max, lg) {
         left: 100px;
         top: -10px;
       }
-      
-
     }
-   
-    
   }
-  
 }
