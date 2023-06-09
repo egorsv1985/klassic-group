@@ -20,6 +20,14 @@
   .swiper-button-next,
   .swiper-button-prev {
    
+    @include media (max,1380px) {
+      position: relative;
+    left: inherit;
+    right: inherit;
+    top: inherit;
+    margin: 0;
+    }
+   
 
     &:hover {
       &::after {
@@ -32,11 +40,13 @@
   }
   .swiper-control{
     position: absolute;
+    top: 50%;
 
  
     @include media (max,1380px) {
-      bottom: -25px;
+      bottom: inherit;
       position: relative;
+      top: inherit;
     }
   }
 }
