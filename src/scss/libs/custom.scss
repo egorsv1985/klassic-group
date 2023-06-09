@@ -202,8 +202,18 @@
 }
 
 .form-file{
-  left: 10px;
-  padding-right: 70px;
+  
+  transform: none;
+  
+  &::before{
+    @include pseudo;
+    @include background (url("@img/icons/add-file.svg"));
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    position: absolute;
+    @include wh(20px);
+  }
 }
 
 .form-check-input:checked[type=checkbox] {
