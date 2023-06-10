@@ -1,91 +1,27 @@
 .steps {
-	// .steps__item
-	&__item {
+  // .steps__item
+  &__item {
+    &::before {
+      @include pseudo;
+      width: 0;
+      height: 0;
+	  border-left: 27px solid transparent;
+	  border-right: 27px solid transparent;
+	  border-bottom: 19px solid #5E2627;
+	  transform: rotate(90deg);
+	  position: absolute;
+	  right: -20px;
+	  bottom: 24px;
+  
+    }
+	&:last-child{
 		&::before{
-			@include pseudo;
-			@include background (url("@img/steps.png"));
-			@include wh(54px, 19px);
-			position: absolute;
-			bottom: 0;
-			right: 0;
+			display: none;
 		}
 	}
-	// .steps__num
-	&__num {
-		@include wh(43px);
-	}
-}
-.py-5 {
-}
-.container {
-}
-.row {
-}
-.justify-content-end {
-}
-.mb-5 {
-}
-.overflow-hidden {
-}
-.title {
-}
-.position-relative {
-}
-.col-6 {
-}
-.col-md-3 {
-}
-.fs-16 {
-}
-.text-center {
-}
-.text-uppercase {
-}
-.border {
-}
-.border-secondary {
-}
-.py-2 {
-}
-.rounded-2 {
-}
-.mb-0 {
-}
-.mb-4 {
-}
-.col-3 {
-}
-.fs-40 {
-}
-.ff-roboto {
-}
-.fw-700 {
-}
-.offset-3 {
-}
-.lh-12 {
-}
-.g-3 {
-}
-.bg-dark {
-}
-.p-4 {
-}
-.bg-white {
-}
-.rounded-circle {
-}
-.p-3 {
-}
-.d-flex {
-}
-.justify-content-center {
-}
-.align-items-center {
-}
-.fw-600 {
-}
-.fs-20 {
-}
-.text-white {
+  }
+  // .steps__num
+  &__num {
+    @include wh(43px);
+  }
 }
