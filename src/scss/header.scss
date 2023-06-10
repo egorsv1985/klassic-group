@@ -3,16 +3,7 @@
   z-index: 999;
   width: 100%;
 
-  // .header__logo
-  &__logo {
-  }
-  &__bottom {
-  }
-  // .header__menu
-  &__menu {
-    
-   
-  }
+  
   &__bottom{
     border-bottom: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
     @include media(max, lg) {
