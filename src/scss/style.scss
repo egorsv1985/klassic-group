@@ -19,20 +19,20 @@ $fontSize: rem(16); // где 20(px) - размер шрифта по умолч
 // Основные цвета
 $mainColor: #250707;
 
-$secondColor: #D6D6D6;
+$secondColor: #d6d6d6;
 
 $textMainColor: #250707;
 
 $textSecondColor: #fff;
-$bgMainColor: linear-gradient(180deg, #5E2627 0%, #3F1C20 100%);
+$bgMainColor: linear-gradient(180deg, #5e2627 0%, #3f1c20 100%);
 
 $bgSecondColor: #fff;
 :root {
   --main-color: #250707;
-  --second-color: #D6D6D6;
+  --second-color: #d6d6d6;
   --text-main-color: #250707;
   --text-second-color: #fff;
-  --bg-main-color: linear-gradient(180deg, #5E2627 0%, #3F1C20 100%);;
+  --bg-main-color: linear-gradient(180deg, #5e2627 0%, #3f1c20 100%);
   --bg-second-color: #fff;
 }
 
@@ -176,8 +176,6 @@ picture {
 
 // sections
 
-
-
 // main-pages
 
 @import "./sections/promo";
@@ -189,20 +187,16 @@ picture {
 // constructor-page
 @import "./sections/promo-constructor";
 
-
 // about-page
 @import "./sections/about";
 @import "./sections/steps";
 @import "./sections/review";
 
-
 // products-page
 @import "./sections/products";
 
-
-
-
-
+//products-items
+@import "./sections/products-items";
 
 @import "./components/popup";
 

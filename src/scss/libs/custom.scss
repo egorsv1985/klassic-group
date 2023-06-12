@@ -87,7 +87,7 @@
   --bs-border-radius-xl: 1rem;
   --bs-border-radius-2xl: 2rem;
   --bs-border-radius-pill: 50rem;
-  --bs-link-color: #90959e;
+  --bs-link-color: #250707;
   --bs-link-hover-color: #de0814;
   --bs-code-color: #d63384;
   --bs-highlight-bg: #fff3cd;
@@ -162,14 +162,13 @@
 
 .nav-tabs {
   --bs-nav-tabs-border-width: 1px;
-  --bs-nav-tabs-border-color: #f3f5f7;
-  --bs-nav-tabs-border-radius: 50%;
-  --bs-nav-tabs-link-hover-border-color: #f3f5f7 #f3f5f7 #f3f5f7;
-  --bs-nav-tabs-link-active-color: #de0814;
+  --bs-nav-tabs-border-color: #D6D6D6;
+  --bs-nav-tabs-border-radius: 0.3125rem;
+  --bs-nav-tabs-link-hover-border-color: #D6D6D6 #D6D6D6 #D6D6D6;
+  --bs-nav-tabs-link-active-color: #5E2627;
   --bs-nav-tabs-link-active-bg: transparent;
-  --bs-nav-tabs-link-active-border-color: #de0814 #de0814 #de0814;
-  border-bottom: var(--bs-nav-tabs-border-width) solid
-    var(--bs-nav-tabs-border-color);
+  --bs-nav-tabs-link-active-border-color: #5E2627 #5E2627 #5E2627;
+  border-bottom: none;
 }
 
 .nav-tabs .nav-link {
@@ -181,7 +180,7 @@
 
 .nav-tabs .nav-link:hover,
 .nav-tabs .nav-link:focus {
-  border-color: #de0814;
+  border-color: #5E2627;
 }
 .form-select {
   background-image: url("@img/icons/arrow-select.svg");
