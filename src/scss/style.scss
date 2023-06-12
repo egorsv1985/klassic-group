@@ -195,8 +195,14 @@ picture {
 // products-page
 @import "./sections/products";
 
-//products-items
+//products-items-page
 @import "./sections/products-items";
+
+//delivery-page
+@import "./sections/delivery";
+
+//partners-page
+@import "./sections/partners";
 
 @import "./components/popup";
 
