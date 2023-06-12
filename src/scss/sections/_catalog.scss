@@ -1,12 +1,31 @@
 .catalog {
+  padding-top: 150px;
   // .catalog__link
   &__link {
     transition: all 0.5s ease-in-out;
-
-    
+    &::before {
+      @include pseudo;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+    &:hover {
+      &::before {
+        opacity: 0;
+      }
+    }
   }
   // .catalog__arrow
-	&__arrow {
-		@include wh(43px);
-	}
+  &__arrow {
+    @include wh(43px);
+  }
+}
+.home{
+  .catalog{
+    padding-top: 48px;
+  }
 }
