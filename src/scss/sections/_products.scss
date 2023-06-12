@@ -1,0 +1,166 @@
+.products {
+	padding-top: 150px;
+	// .products__link
+	&__link {}
+.page-prev,
+.page-next{
+	
+	@include wh(43px);
+	&::after {
+		@include background(url("@img/icons/arrow-catalog.svg"));
+		@include pseudo;
+
+		@include wh(9px, 16px);
+	  }
+}
+	.page-next {
+	}
+	.page-prev {
+		&::after {
+			transform: rotate(180deg);
+		  }
+	}
+	.page-link {
+		&:hover{
+			position: relative;
+			&::before{
+				@include pseudo;
+				position: absolute;
+				left: 0;
+				right: 0;
+				bottom: 10px;
+				border: 1px solid #5E2627;
+			}
+		}
+	}
+	.swiper-button-next,
+	.swiper-button-prev {
+	  @include media(max, 1380px) {
+		position: relative;
+		left: inherit;
+		right: inherit;
+		top: inherit;
+		margin: 0;
+	  }
+  
+	  &:hover {
+		&::after {
+		  @include background(url("@img/icons/arrow-catalog.svg"));
+		}
+	  }
+	  &::after {
+		@include background(url("@img/icons/arrow-catalog.svg"));
+	  }
+	}
+	.swiper-button-next,
+.swiper-button-prev {
+  z-index: 100;
+
+  @include wh(43px);
+
+  &:hover {
+    &::after {
+      @include background(url("@img/icons/arrow-slider.svg"));
+    }
+  }
+  &::after {
+    @include pseudo;
+
+    @include wh(9px, 16px);
+    @include background(url("@img/icons/arrow-slider.svg"));
+  }
+}
+}
+.products {
+	// .products__link
+	&__link {}
+}
+.pb-5 {
+}
+.container {
+}
+.breadcrumb {
+}
+.mb-5 {
+}
+.breadcrumb-item {
+}
+.active {
+}
+.row {
+}
+.mb-4 {
+}
+.col-12 {
+}
+.col-md-8 {
+}
+.fs-48 {
+}
+.fw-700 {
+}
+.ff-roboto {
+}
+.col-md-4 {
+}
+.fs-18 {
+}
+.lh-11 {
+}
+.gx-4 {
+}
+.gy-5 {
+}
+.col-sm-6 {
+}
+.col-md-3 {
+}
+.pb-4 {
+}
+.d-block {
+}
+.position-relative {
+}
+.rounded-2 {
+}
+.w-100 {
+}
+.h-100 {
+}
+.rounded {
+}
+.fs-20 {
+}
+.mb-3 {
+}
+.btn {
+}
+.fw-500 {
+}
+.px-3 {
+}
+.py-3 {
+}
+.btn-primary {
+}
+.bg-gradient {
+}
+.pagination {
+}
+.justify-content-end {
+}
+.page-item {
+}
+.disabled {
+}
+.page-link {
+}
+
+.rounded-circle {
+}
+.border {
+}
+.border-primary {
+}
+
+

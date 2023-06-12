@@ -598,6 +598,12 @@ document.addEventListener("DOMContentLoaded", function () {
   closeButtons.forEach(function (button) {
     button.addEventListener("click", closePopup);
   });
+
+  // Инициализация скроллбара
+const container = document.querySelector('.review__scroll');
+const ps = new PerfectScrollbar(container, {
+  suppressScrollX: true, // отключение горизонтального скролла
+});
 });
 
 $(document).ready(function () {

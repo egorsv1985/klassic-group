@@ -281,3 +281,29 @@
   border-radius: 50%;
   transition: var(--bs-accordion-btn-icon-transition);
 }
+
+.pagination {
+  --bs-pagination-padding-x: 0.5rem;
+  --bs-pagination-padding-y: 0.375rem;
+  --bs-pagination-font-size: 1rem;
+  --bs-pagination-color: #5E2627;
+  --bs-pagination-bg: transparent;
+  --bs-pagination-border-width: 0;
+  --bs-pagination-border-color: transparent;
+  --bs-pagination-border-radius: 0;
+  --bs-pagination-hover-color: #250707;
+  --bs-pagination-hover-bg: transparent;
+  --bs-pagination-hover-border-color:transparent;
+  --bs-pagination-focus-color: var(--bs-link-hover-color);
+  --bs-pagination-focus-bg: transparent;
+  --bs-pagination-focus-box-shadow: none;
+  --bs-pagination-active-color: #250707;
+  --bs-pagination-active-bg: transparent;
+  --bs-pagination-active-border-color: transparent;
+  --bs-pagination-disabled-color: #6c757d;
+  --bs-pagination-disabled-bg: transparent;
+  --bs-pagination-disabled-border-color: transparent;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+}

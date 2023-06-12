@@ -1,7 +1,25 @@
 .review {
   // .review__scroll
   &__scroll {
+    max-height: 515px;
+   
   }
+  .simplebar-track {
+  left: 0;
+  right: inherit;
+  }
+  .simplebar-scrollbar:before{
+    background: #5E2627;
+    height: 85px !important;
+    width: 5px;
+    border-radius: 32px;
+   
+  }
+
+
+
+
+
   // .review__box
   &__box {
     &::before {
