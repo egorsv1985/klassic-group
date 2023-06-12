@@ -13,10 +13,19 @@
       right: 0;
       background-color: #d6d6d6;
     }
+    &:last-child,
+    &:nth-last-child(2){
+      &::before {
+        display: none;
+      }
+    }
   }
   // .review__rating
   &__rating {
     max-width: 120px;
+  }
+  p{
+    margin-bottom: 0;
   }
 }
 .review {

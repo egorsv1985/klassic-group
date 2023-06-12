@@ -5,20 +5,19 @@
       @include pseudo;
       width: 0;
       height: 0;
-	  border-left: 27px solid transparent;
-	  border-right: 27px solid transparent;
-	  border-bottom: 19px solid #5E2627;
-	  transform: rotate(90deg);
-	  position: absolute;
-	  right: -20px;
-	  bottom: 24px;
-  
+      border-left: 24px solid transparent;
+      border-right: 24px solid transparent;
+      border-bottom: 14px solid #5e2627;
+      transform: rotate(90deg);
+      position: absolute;
+      right: -22px;
+      bottom: 27px;
     }
-	&:last-child{
-		&::before{
-			display: none;
-		}
-	}
+    &:last-child {
+      &::before {
+        display: none;
+      }
+    }
   }
   // .steps__num
   &__num {
