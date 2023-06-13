@@ -488,37 +488,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
  
-  const popupLinks = document.querySelectorAll('[data-popup]');
-  const closeButtons = document.querySelectorAll('[data-close]');
-
-  function togglePopup(event) {
-    event.preventDefault();
-
-    const popupId = this.getAttribute('data-popup');
-    const popup = document.querySelector(popupId);
-
-    if (popup) {
-      document.body.classList.toggle('popup-show');
-      popup.classList.toggle('popup_show');
-    }
-  }
-
-  function closePopup() {
-    const popup = document.querySelector('.popup_show');
-
-    if (popup) {
-      document.body.classList.remove('popup-show');
-      popup.classList.remove('popup_show');
-    }
-  }
-
-  popupLinks.forEach(function(link) {
-    link.addEventListener('click', togglePopup);
-  });
-
-  closeButtons.forEach(function(button) {
-    button.addEventListener('click', closePopup);
-  });
   
 
 });
