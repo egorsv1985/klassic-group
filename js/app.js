@@ -2059,8 +2059,8 @@
         : e[c]("observerUpdate", _, !0),
       n[d]("load", e.onLoad, { capture: !0 });
   };
-  const j = (e, t) => e.grid && t.grid && t.grid.rows > 1;
-  const W = {
+  const W = (e, t) => e.grid && t.grid && t.grid.rows > 1;
+  const j = {
     init: !0,
     direction: "horizontal",
     oneWayMovement: !1,
@@ -2253,8 +2253,8 @@
           const a = e.getBreakpoint(n, e.params.breakpointsBase, e.el);
           if (!a || e.currentBreakpoint === a) return;
           const o = (a in n ? n[a] : void 0) || e.originalParams,
-            l = j(e, i),
-            d = j(e, o),
+            l = W(e, i),
+            d = W(e, o),
             p = i.enabled;
           l && !d
             ? (r.classList.remove(
@@ -2371,8 +2371,8 @@
         },
       },
     },
-    X = {};
-  class Y {
+    Y = {};
+  class X {
     constructor(...e) {
       let t, s;
       1 === e.length &&
@@ -2393,7 +2393,7 @@
         return (
           r.querySelectorAll(s.el).forEach((t) => {
             const i = c({}, s, { el: t });
-            e.push(new Y(i));
+            e.push(new X(i));
           }),
           e
         );
@@ -2419,9 +2419,9 @@
           emit: n.emit.bind(n),
         });
       });
-      const o = c({}, W, a);
+      const o = c({}, j, a);
       return (
-        (n.params = c({}, o, X, s)),
+        (n.params = c({}, o, Y, s)),
         (n.originalParams = c({}, n.params)),
         (n.passedParams = c({}, s)),
         n.params &&
@@ -2788,31 +2788,31 @@
       );
     }
     static extendDefaults(e) {
-      c(X, e);
+      c(Y, e);
     }
     static get extendedDefaults() {
-      return X;
+      return Y;
     }
     static get defaults() {
-      return W;
+      return j;
     }
     static installModule(e) {
-      Y.prototype.__modules__ || (Y.prototype.__modules__ = []);
-      const t = Y.prototype.__modules__;
+      X.prototype.__modules__ || (X.prototype.__modules__ = []);
+      const t = X.prototype.__modules__;
       "function" == typeof e && t.indexOf(e) < 0 && t.push(e);
     }
     static use(e) {
       return Array.isArray(e)
-        ? (e.forEach((e) => Y.installModule(e)), Y)
-        : (Y.installModule(e), Y);
+        ? (e.forEach((e) => X.installModule(e)), X)
+        : (X.installModule(e), X);
     }
   }
   Object.keys(q).forEach((e) => {
     Object.keys(q[e]).forEach((t) => {
-      Y.prototype[t] = q[e][t];
+      X.prototype[t] = q[e][t];
     });
   }),
-    Y.use([
+    X.use([
       function ({ swiper: e, on: t, emit: s }) {
         const i = n();
         let r = null,
@@ -2906,7 +2906,7 @@
           });
       },
     ]);
-  const U = Y;
+  const U = X;
   document.addEventListener("DOMContentLoaded", function () {
     let e = !1;
     !(function () {
@@ -3077,8 +3077,19 @@
       n.forEach(function (e) {
         e.addEventListener("click", o);
       });
-    const l = document.querySelector(".review__scroll");
-    new PerfectScrollbar(l, { suppressScrollX: !0 });
+    const l = document.getElementById("video-container"),
+      d = document.getElementById("play-button"),
+      c = l.querySelector(".video__frame"),
+      p = document.getElementById("video-cover");
+    (d.style.display = "block"),
+      d.addEventListener("click", function () {
+        c.contentWindow.postMessage(
+          '{"event":"command","func":"playVideo","args":""}',
+          "*"
+        ),
+          (d.style.display = "none"),
+          (p.style.display = "none");
+      });
   }),
     $(document).ready(function () {
       $(".menu__parent").click(function () {
