@@ -96,3 +96,37 @@
     </div>
   </div>
 </section>
+
+<script>
+  var documentsSwiper = new Swiper(".documentsSwiper", {
+      // Задаем количество слайдов, которые будут показываться одновременно
+      slidesPerView: 1,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 576px
+        576: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 4,
+          spaceBetween: 30,
+        },
+      },
+
+      loop: true,
+      // Включаем курсор в виде "руки" при наведении на слайды
+      grabCursor: true,
+      // Включаем использование клавиатуры для навигации по слайдам
+      keyboard: {
+        enabled: true,
+      },
+
+      // Включаем кнопки "вперед" и "назад" для навигации по слайдам
+      navigation: {
+        nextEl: ".documents .swiper-button-next",
+        prevEl: ".documents .swiper-button-prev",
+      },
+    });
+</script>

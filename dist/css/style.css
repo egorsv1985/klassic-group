@@ -1456,47 +1456,6 @@ body {
   height: 30px;
 }
 
-.span::before {
-  content: "";
-  display: block;
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 50%;
-}
-
-.span--black::before {
-  background-color: #3d3d3d;
-}
-
-.span--color::before {
-  background: conic-gradient(from 180deg at 50% 50%, #FF0000 0deg, #FFE600 58.12deg, #00FF19 118.12deg, #00D1FF 174.38deg, #001AFF 230.62deg, #AD00FF 290.63deg, #FF00C7 360deg);
-}
-
-.span--office::before {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url("../img/icons/office.svg");
-}
-
-.span--mail::before {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url("../img/icons/mail.svg");
-}
-
-.span--map::before {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-image: url("../img/icons/map.svg");
-}
-
 @media only screen and (max-width: 1380px) {
   .works .swiper-button-next,
   .works .swiper-button-prev,

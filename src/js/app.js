@@ -315,105 +315,105 @@ document.addEventListener("DOMContentLoaded", function () {
   handleBurgerClick();
 
   // Проверяем наличие элемента с id "promo-section"
-  var promo = document.getElementById("promo");
-  var works = document.getElementById("works");
-  var documents = document.getElementById("documents");
-  // Проверяем, что элемент "promo-section" существует
-  if (promo) {
-    // Создаем новый Swiper объект для элемента ".promoSwiper"
-    var promoSwiper = new Swiper(".promoSwiper", {
-      // Задаем количество слайдов, которые будут показываться одновременно
-      slidesPerView: 1,
-      loop: true,
-      // Включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // Включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
+  // var promo = document.getElementById("promo");
+  // var works = document.getElementById("works");
+  // var documents = document.getElementById("documents");
+  // // Проверяем, что элемент "promo-section" существует
+  // if (promo) {
+  //   // Создаем новый Swiper объект для элемента ".promoSwiper"
+  //   var promoSwiper = new Swiper(".promoSwiper", {
+  //     // Задаем количество слайдов, которые будут показываться одновременно
+  //     slidesPerView: 1,
+  //     loop: true,
+  //     // Включаем курсор в виде "руки" при наведении на слайды
+  //     grabCursor: true,
+  //     // Включаем использование клавиатуры для навигации по слайдам
+  //     keyboard: {
+  //       enabled: true,
+  //     },
 
-      // Включаем кнопки "вперед" и "назад" для навигации по слайдам
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      // Включаем пагинацию и настраиваем внешний вид номеров слайдов
-      pagination: {
-        el: ".promo .swiper-pagination",
-        clickable: true,
-      },
-    });
-  }
+  //     // Включаем кнопки "вперед" и "назад" для навигации по слайдам
+  //     navigation: {
+  //       nextEl: ".promo .swiper-button-next",
+  //       prevEl: ".promo .swiper-button-prev",
+  //     },
+  //     // Включаем пагинацию и настраиваем внешний вид номеров слайдов
+  //     pagination: {
+  //       el: ".promo .swiper-pagination",
+  //       clickable: true,
+  //     },
+  //   });
+  // }
   // Проверяем, что элемент "works" существует
-  if (works) {
-    // Создаем новый Swiper объект для элемента ".worksSwiper"
-    var worksSwiper = new Swiper(".worksSwiper", {
-      // Задаем количество слайдов, которые будут показываться одновременно
-      slidesPerView: 1,
-      // Responsive breakpoints
-      breakpoints: {
-        // when window width is >= 576px
-        576: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        // when window width is >= 992px
-        992: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      },
+  // if (works) {
+  //   // Создаем новый Swiper объект для элемента ".worksSwiper"
+  //   var worksSwiper = new Swiper(".worksSwiper", {
+  //     // Задаем количество слайдов, которые будут показываться одновременно
+  //     slidesPerView: 1,
+  //     // Responsive breakpoints
+  //     breakpoints: {
+  //       // when window width is >= 576px
+  //       576: {
+  //         slidesPerView: 2,
+  //         spaceBetween: 20,
+  //       },
+  //       // when window width is >= 992px
+  //       992: {
+  //         slidesPerView: 3,
+  //         spaceBetween: 30,
+  //       },
+  //     },
 
-      loop: true,
-      // Включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // Включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
+  //     loop: true,
+  //     // Включаем курсор в виде "руки" при наведении на слайды
+  //     grabCursor: true,
+  //     // Включаем использование клавиатуры для навигации по слайдам
+  //     keyboard: {
+  //       enabled: true,
+  //     },
 
-      // Включаем кнопки "вперед" и "назад" для навигации по слайдам
-      navigation: {
-        nextEl: ".works .swiper-button-next",
-        prevEl: ".works .swiper-button-prev",
-      },
-    });
-  }
+  //     // Включаем кнопки "вперед" и "назад" для навигации по слайдам
+  //     navigation: {
+  //       nextEl: ".works .swiper-button-next",
+  //       prevEl: ".works .swiper-button-prev",
+  //     },
+  //   });
+  // }
   // Проверяем, что элемент "documents" существует
-  if (documents) {
-    // Создаем новый Swiper объект для элемента ".documentsSwiper"
-    var documentsSwiper = new Swiper(".documentsSwiper", {
-      // Задаем количество слайдов, которые будут показываться одновременно
-      slidesPerView: 1,
-      // Responsive breakpoints
-      breakpoints: {
-        // when window width is >= 576px
-        576: {
-          slidesPerView: 3,
-          spaceBetween: 20,
-        },
-        // when window width is >= 992px
-        992: {
-          slidesPerView: 4,
-          spaceBetween: 30,
-        },
-      },
+  // if (documents) {
+  //   // Создаем новый Swiper объект для элемента ".documentsSwiper"
+  //   var documentsSwiper = new Swiper(".documentsSwiper", {
+  //     // Задаем количество слайдов, которые будут показываться одновременно
+  //     slidesPerView: 1,
+  //     // Responsive breakpoints
+  //     breakpoints: {
+  //       // when window width is >= 576px
+  //       576: {
+  //         slidesPerView: 3,
+  //         spaceBetween: 20,
+  //       },
+  //       // when window width is >= 992px
+  //       992: {
+  //         slidesPerView: 4,
+  //         spaceBetween: 30,
+  //       },
+  //     },
 
-      loop: true,
-      // Включаем курсор в виде "руки" при наведении на слайды
-      grabCursor: true,
-      // Включаем использование клавиатуры для навигации по слайдам
-      keyboard: {
-        enabled: true,
-      },
+  //     loop: true,
+  //     // Включаем курсор в виде "руки" при наведении на слайды
+  //     grabCursor: true,
+  //     // Включаем использование клавиатуры для навигации по слайдам
+  //     keyboard: {
+  //       enabled: true,
+  //     },
 
-      // Включаем кнопки "вперед" и "назад" для навигации по слайдам
-      navigation: {
-        nextEl: ".documents .swiper-button-next",
-        prevEl: ".documents .swiper-button-prev",
-      },
-    });
-  }
+  //     // Включаем кнопки "вперед" и "назад" для навигации по слайдам
+  //     navigation: {
+  //       nextEl: ".documents .swiper-button-next",
+  //       prevEl: ".documents .swiper-button-prev",
+  //     },
+  //   });
+  // }
 
   // var swiper = new Swiper(".mySwiper", {
   //   loop: true,
