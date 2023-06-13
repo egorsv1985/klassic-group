@@ -314,7 +314,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   handleBurgerClick();
 
-
   // Проверяем наличие элемента с id "promo-section"
   var promo = document.getElementById("promo");
   var works = document.getElementById("works");
@@ -599,7 +598,26 @@ document.addEventListener("DOMContentLoaded", function () {
     button.addEventListener("click", closePopup);
   });
 
+  // Получаем элементы страницы
+  const videoContainer = document.getElementById("video-container");
+  const playButton = document.getElementById("play-button");
+  const videoFrame = videoContainer.querySelector(".video__frame");
+  const videoCover = document.getElementById("video-cover");
 
+  // Показываем кнопку "Play"
+  playButton.style.display = "block";
+
+  // Добавляем обработчик клика на кнопку "Play"
+  playButton.addEventListener("click", function () {
+    // Запускаем видео с помощью YouTube API
+    videoFrame.contentWindow.postMessage(
+      '{"event":"command","func":"playVideo","args":""}',
+      "*"
+    );
+    playButton.style.display = "none";
+    // Скрываем заставку видео
+    videoCover.style.display = "none";
+  });
 });
 
 $(document).ready(function () {
