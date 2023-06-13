@@ -3,6 +3,7 @@
 .title {
   h3 {
     letter-spacing: 0.1em;
+    margin: 0;
   }
   &::before {
     @include pseudo;

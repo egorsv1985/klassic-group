@@ -1,0 +1,11 @@
+.characteristics {
+  // .characteristics__item
+  &__item {
+    &:last-child {
+      border: none !important;
+    }
+    p {
+      margin: 0;
+    }
+  }
+}
