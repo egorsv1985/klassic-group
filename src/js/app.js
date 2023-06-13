@@ -470,154 +470,57 @@ document.addEventListener("DOMContentLoaded", function () {
     // Коллбэк функция для добавления класса 'webp' или 'no-webp' в зависимости от поддержки формата WebP
   })((supported) => document.documentElement.classList.add(supported ? "webp" : "no-webp"));
 
-  // Функция для обработки Sticky элементов
-  function handleStickyElements() {
-    // Ищем все элементы с атрибутом data-sticky
-    const elements = document.querySelectorAll("[data-sticky]");
-    const container = document.querySelector(".container");
+  const videoContainer = document.getElementById("video-container");
+  const playButton = document.getElementById("play-button");
+  const videoFrame = document.querySelector(".video__frame");
+  const videoCover = document.getElementById("video-cover");
 
-    elements.forEach((element) => {
-      // Получаем значение атрибутов data-sticky-top и data-sticky-bottom, заданных в виде строки
-      const stickyTop = parseInt(element.dataset.stickyTop) || 0;
-      const stickyBottom = parseInt(element.dataset.stickyBottom) || 0;
-      // Проверяем, является ли текущий элемент шапкой сайта с помощью атрибута data-sticky-header
-      const isHeaderSticky = element.hasAttribute("data-sticky-header");
-      // Получаем высоту шапки
-      const headerHeight = isHeaderSticky
-        ? document.querySelector("header.header").offsetHeight
-        : 0;
-      // Находим элемент, который нужно закрепить
-      const stickyItem = element.querySelector("[data-sticky-item]");
+  if (videoContainer && playButton && videoFrame && videoCover) {
+    playButton.style.display = "block";
 
-      if (!stickyItem) {
-        // Если элемент data-sticky-item не найден, пропускаем обработку
-        return;
-      }
-
-      // Получаем верхнюю и нижнюю границы секции
-      const sectionTop = element.offsetTop;
-      const sectionBottom = sectionTop + element.offsetHeight;
-
-      // Функция для обработки события скролла
-      function handleScroll() {
-        // Получаем позицию скролла и координаты закрепляемого элемента
-        const scrollY = window.scrollY;
-        const stickyItemRect = stickyItem.getBoundingClientRect();
-
-        // Проверяем, находится ли скролл внутри границ секции
-        if (scrollY >= sectionTop && scrollY <= sectionBottom) {
-          // Вычисляем диапазон, в котором надо закрепить элемент
-          const stickyItemTop =
-            stickyItemRect.top + scrollY - (headerHeight + stickyTop);
-          const stickyItemBottom =
-            sectionBottom -
-            (headerHeight + stickyItem.offsetHeight + stickyBottom);
-
-          if (scrollY >= stickyItemTop && scrollY <= stickyItemBottom) {
-            // Когда скролл находится внутри диапазона stickyItemTop и stickyItemBottom
-            // Закрепляем элемент с определенными стилями
-            stickyItem.style.position = "fixed";
-            stickyItem.style.bottom = "auto";
-            stickyItem.style.top = `${headerHeight + stickyTop}px`;
-            stickyItem.style.right = "auto";
-            stickyItem.style.width = "auto";
-            stickyItem.style.maxWidth = "356px";
-          } else if (scrollY > stickyItemBottom) {
-            // Когда скролл находится ниже stickyItemBottom
-            // Разрешаем элементу двигаться вниз со скроллом
-            stickyItem.style.position = "relative";
-            stickyItem.style.bottom = `${stickyBottom}px`;
-            stickyItem.style.top = "auto";
-            stickyItem.style.right = "auto";
-            stickyItem.style.width = "auto";
-
-            // Проверяем, если правая граница элемента близка к правой границе контейнера, изменяем ширину на фиксированное значение
-            const containerRight = container.offsetLeft + container.offsetWidth;
-            const stickyItemRight =
-              stickyItem.offsetLeft + stickyItem.offsetWidth;
-            if (stickyItemRight >= containerRight) {
-              stickyItem.style.width = `${
-                containerRight - stickyItem.offsetLeft
-              }px`;
-            }
-          } else {
-            // Когда скролл находится выше stickyItemTop
-            // Разрешаем элементу двигаться вверх со скроллом
-            stickyItem.style.position = "relative";
-            stickyItem.style.bottom = "auto";
-            stickyItem.style.top = `${stickyTop}px`;
-            stickyItem.style.right = "auto";
-            stickyItem.style.width = "auto";
-          }
-        } else {
-          // Когда скролл находится вне границ секции
-          // Отключаем закрепление элемента
-          stickyItem.style.position = "relative";
-          stickyItem.style.bottom = "auto";
-          stickyItem.style.top = "auto";
-          stickyItem.style.right = "auto";
-          stickyItem.style.width = "auto";
-        }
-      }
-
-      // Добавляем обработчик события скролла
-      window.addEventListener("scroll", handleScroll);
+    playButton.addEventListener("click", function () {
+      videoFrame.contentWindow.postMessage(
+        '{"event":"command","func":"playVideo","args":""}',
+        "*"
+      );
+      playButton.style.display = "none";
+      videoCover.style.display = "none";
     });
   }
-
-  // Проверяем, поддерживается ли браузер события скролла
-  if ("scroll" in window) {
-    handleStickyElements();
-  }
-
-  const popupLinks = document.querySelectorAll("[data-popup]");
-  const closeButtons = document.querySelectorAll("[data-close]");
+ 
+  const popupLinks = document.querySelectorAll('[data-popup]');
+  const closeButtons = document.querySelectorAll('[data-close]');
 
   function togglePopup(event) {
     event.preventDefault();
 
-    const popupId = this.getAttribute("data-popup");
+    const popupId = this.getAttribute('data-popup');
     const popup = document.querySelector(popupId);
 
-    document.body.classList.toggle("popup-show");
-    popup.classList.toggle("popup_show");
+    if (popup) {
+      document.body.classList.toggle('popup-show');
+      popup.classList.toggle('popup_show');
+    }
   }
 
   function closePopup() {
-    const popup = document.querySelector(".popup_show");
+    const popup = document.querySelector('.popup_show');
 
-    document.body.classList.remove("popup-show");
-    popup.classList.remove("popup_show");
+    if (popup) {
+      document.body.classList.remove('popup-show');
+      popup.classList.remove('popup_show');
+    }
   }
 
-  popupLinks.forEach(function (link) {
-    link.addEventListener("click", togglePopup);
+  popupLinks.forEach(function(link) {
+    link.addEventListener('click', togglePopup);
   });
 
-  closeButtons.forEach(function (button) {
-    button.addEventListener("click", closePopup);
+  closeButtons.forEach(function(button) {
+    button.addEventListener('click', closePopup);
   });
+  
 
-  // Получаем элементы страницы
-  const videoContainer = document.getElementById("video-container");
-  const playButton = document.getElementById("play-button");
-  const videoFrame = videoContainer.querySelector(".video__frame");
-  const videoCover = document.getElementById("video-cover");
-
-  // Показываем кнопку "Play"
-  playButton.style.display = "block";
-
-  // Добавляем обработчик клика на кнопку "Play"
-  playButton.addEventListener("click", function () {
-    // Запускаем видео с помощью YouTube API
-    videoFrame.contentWindow.postMessage(
-      '{"event":"command","func":"playVideo","args":""}',
-      "*"
-    );
-    playButton.style.display = "none";
-    // Скрываем заставку видео
-    videoCover.style.display = "none";
-  });
 });
 
 $(document).ready(function () {
