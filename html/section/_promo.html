@@ -56,3 +56,29 @@
 		</div>
 	</div>
 </section>
+
+<script>
+	// Создаем новый Swiper объект для элемента ".promoSwiper"
+	var promoSwiper = new Swiper(".promoSwiper", {
+		// Задаем количество слайдов, которые будут показываться одновременно
+		slidesPerView: 1,
+		loop: true,
+		// Включаем курсор в виде "руки" при наведении на слайды
+		grabCursor: true,
+		// Включаем использование клавиатуры для навигации по слайдам
+		keyboard: {
+			enabled: true,
+		},
+
+		// Включаем кнопки "вперед" и "назад" для навигации по слайдам
+		navigation: {
+			nextEl: ".promo .swiper-button-next",
+			prevEl: ".promo .swiper-button-prev",
+		},
+		// Включаем пагинацию и настраиваем внешний вид номеров слайдов
+		pagination: {
+			el: ".promo .swiper-pagination",
+			clickable: true,
+		},
+	});
+</script>
