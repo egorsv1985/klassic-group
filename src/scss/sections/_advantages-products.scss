@@ -1,0 +1,20 @@
+.advantages-products {
+	// .advantages-products__item
+	&__item {
+		&:last-child{
+			border: none !important;
+		}
+		p{
+			margin: 0;
+		}
+	}
+	// .advantages-products__circle
+	&__circle {
+		@include wh(46px);
+	}
+	&__text{
+		p{
+			margin: 0;
+		}
+	}
+}
