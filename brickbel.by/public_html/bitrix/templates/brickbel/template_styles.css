@@ -26,7 +26,7 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-Bold.woff2") format("woff2"), url("../fonts/Manrope-Bold.woff") format("woff");
+  src: url("fonts/Manrope-Bold.woff2") format("woff2"), url("fonts/Manrope-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -34,7 +34,7 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-ExtraBold.woff2") format("woff2"), url("../fonts/Manrope-ExtraBold.woff") format("woff");
+  src: url("fonts/Manrope-ExtraBold.woff2") format("woff2"), url("fonts/Manrope-ExtraBold.woff") format("woff");
   font-weight: 800;
   font-style: normal;
 }
@@ -42,7 +42,7 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-ExtraLight.woff2") format("woff2"), url("../fonts/Manrope-ExtraLight.woff") format("woff");
+  src: url("fonts/Manrope-ExtraLight.woff2") format("woff2"), url("fonts/Manrope-ExtraLight.woff") format("woff");
   font-weight: 200;
   font-style: normal;
 }
@@ -50,7 +50,7 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-Light.woff2") format("woff2"), url("../fonts/Manrope-Light.woff") format("woff");
+  src: url("fonts/Manrope-Light.woff2") format("woff2"), url("fonts/Manrope-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
 }
@@ -58,7 +58,7 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-Regular.woff2") format("woff2"), url("../fonts/Manrope-Regular.woff") format("woff");
+  src: url("fonts/Manrope-Regular.woff2") format("woff2"), url("fonts/Manrope-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -66,7 +66,7 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-SemiBold.woff2") format("woff2"), url("../fonts/Manrope-SemiBold.woff") format("woff");
+  src: url("fonts/Manrope-SemiBold.woff2") format("woff2"), url("fonts/Manrope-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
 }
@@ -74,7 +74,7 @@
 @font-face {
   font-family: "Manrope";
   font-display: swap;
-  src: url("../fonts/Manrope-Medium.woff2") format("woff2"), url("../fonts/Manrope-Medium.woff") format("woff");
+  src: url("fonts/Manrope-Medium.woff2") format("woff2"), url("fonts/Manrope-Medium.woff") format("woff");
   font-weight: 500;
   font-style: normal;
 }
@@ -82,7 +82,7 @@
 @font-face {
   font-family: "Roboto";
   font-display: swap;
-  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+  src: url("fonts/Roboto-Bold.woff2") format("woff2"), url("fonts/Roboto-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
 }
@@ -289,7 +289,7 @@
 }
 
 .form-select {
-  background-image: url("../img/icons/arrow-select.svg");
+  background-image: url("img/icons/arrow-select.svg");
   background-repeat: no-repeat;
   background-position: right 0.75rem center;
   background-size: 8px 5px;
@@ -321,7 +321,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/add-file.svg");
+  background-image: url("img/icons/add-file.svg");
   top: 50%;
   left: 20px;
   -webkit-transform: translateY(-50%);
@@ -333,7 +333,7 @@
 }
 
 .form-check-input:checked[type=checkbox] {
-  background-image: url("../img/icons/check.svg");
+  background-image: url("img/icons/check.svg");
   background-size: 6px 6px;
 }
 
@@ -387,11 +387,11 @@
   --bs-accordion-btn-padding-y: 1rem;
   --bs-accordion-btn-color: #250707;
   --bs-accordion-btn-bg: var(--bs-accordion-bg);
-  --bs-accordion-btn-icon: url("../img/icons/plus.svg");
+  --bs-accordion-btn-icon: url("img/icons/plus.svg");
   --bs-accordion-btn-icon-width: 2.875rem;
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
-  --bs-accordion-btn-active-icon: url("../img/icons/minus.svg");
+  --bs-accordion-btn-active-icon: url("img/icons/minus.svg");
   --bs-accordion-btn-focus-border-color: transparent;
   --bs-accordion-btn-focus-box-shadow: none;
   --bs-accordion-body-padding-x: 1.25rem;
@@ -891,7 +891,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/arrow-back.svg");
+  background-image: url("img/icons/arrow-back.svg");
   left: 15px;
 }
 
@@ -899,7 +899,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/arrow-next.svg");
+  background-image: url("img/icons/arrow-next.svg");
   -webkit-transform: translateY(-50%) rotate(180deg);
       -ms-transform: translateY(-50%) rotate(180deg);
           transform: translateY(-50%) rotate(180deg);
@@ -910,7 +910,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/arrow-next.svg");
+  background-image: url("img/icons/arrow-next.svg");
 }
 
 .btn__arrow--next-back::after {
@@ -918,7 +918,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/arrow-next.svg");
+  background-image: url("img/icons/arrow-next.svg");
   -webkit-transform: translateY(-50%) rotate(180deg);
       -ms-transform: translateY(-50%) rotate(180deg);
           transform: translateY(-50%) rotate(180deg);
@@ -951,7 +951,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/arrow-slider.svg");
+  background-image: url("img/icons/arrow-slider.svg");
 }
 
 .works .swiper-button-next::after,
@@ -961,7 +961,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/arrow-catalog.svg");
+  background-image: url("img/icons/arrow-catalog.svg");
 }
 
 .works .swiper-control,
@@ -975,7 +975,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/arrow-catalog.svg");
+  background-image: url("img/icons/arrow-catalog.svg");
 }
 
 .promo-constructor .swiper-control {
@@ -1094,7 +1094,7 @@ body {
 }
 
 .menu__link--bg {
-  background: url("../img/icons/burger.svg") center left/auto no-repeat;
+  background: url("img/icons/burger.svg") center left/auto no-repeat;
 }
 
 .menu__parent ul {
@@ -1307,7 +1307,7 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-image: url("../img/icons/arrow-catalog.svg");
+  background-image: url("img/icons/arrow-catalog.svg");
   content: "";
   display: block;
   width: 9px;
@@ -1390,7 +1390,7 @@ body {
 }
 
 .no-webp .video__box-img{
-  background-image: url("../img/video.png"); }
+  background-image: url("img/video.png"); }
 
 .video__box-img {
   position: absolute;
@@ -1424,7 +1424,7 @@ body {
   z-index: 1;
   width: 76px;
   height: 76px;
-  background: url("../img/icons/play.svg") center/23px 26px no-repeat #fff;
+  background: url("img/icons/play.svg") center/23px 26px no-repeat #fff;
   border-radius: 50%;
   opacity: 0.8;
   -webkit-transition: all 0.5s ease-in-out;
@@ -1643,4 +1643,4 @@ body {
   }
 }
 
-.webp .video__box-img{ background-image: url(../img/video.webp); }
+.webp .video__box-img{ background-image: url(img/video.webp); }
