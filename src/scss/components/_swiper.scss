@@ -3,11 +3,10 @@
   z-index: 100;
 
   @include wh(43px);
-
+  transition: all 0.5s ease-in-out;
   &:hover {
-    &::after {
-      @include background(url("@img/icons/arrow-slider.svg"));
-    }
+    transform: scale(0.9);
+    opacity: 0.8;
   }
   &::after {
     @include pseudo;
@@ -17,8 +16,7 @@
   }
 }
 .works,
-.documents
- {
+.documents {
   .swiper-button-next,
   .swiper-button-prev {
     @include media(max, 1380px) {
@@ -29,11 +27,6 @@
       margin: 0;
     }
 
-    &:hover {
-      &::after {
-        @include background(url("@img/icons/arrow-catalog.svg"));
-      }
-    }
     &::after {
       @include background(url("@img/icons/arrow-catalog.svg"));
     }
@@ -49,8 +42,7 @@
     }
   }
 }
-.promo-constructor
- {
+.promo-constructor {
   .swiper-button-next,
   .swiper-button-prev {
     @include media(max, 1380px) {
@@ -61,11 +53,6 @@
       margin: 0;
     }
 
-    &:hover {
-      &::after {
-        @include background(url("@img/icons/arrow-catalog.svg"));
-      }
-    }
     &::after {
       @include background(url("@img/icons/arrow-catalog.svg"));
     }
@@ -130,11 +117,15 @@
 }
 .promo-constructor {
   .mySwiper {
-    .swiper-slide{
+    .swiper-slide {
       padding: 5px;
+      transition: all .3s ease-in-out;
+      &:hover{
+        border: 1px solid #5e2627;
+      border-radius: 5px;
+      }
     }
     .swiper-slide-thumb-active {
-     
       border: 1px solid #5e2627;
       border-radius: 5px;
     }

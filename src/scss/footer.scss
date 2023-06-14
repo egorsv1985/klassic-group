@@ -1,9 +1,4 @@
-
 .footer {
-  // .footer__logo
-  &__logo {
-
-  }
   .logo {
     // .logo__img
     &__img {
@@ -11,75 +6,19 @@
       height: 45px;
     }
   }
-  // .footer__span
-  &__span {}
-  // .footer__social-list
-  &__social-list {}
+
   .social {
-    // .social__item
-    &__item {}
     // .social__link
     &__link {
       @include wh(30px);
     }
-    // .social__link--telegram
-    &__link--telegram {}
-    // .social__link--whatsapp
-    &__link--whatsapp {}
-    // .social__link--viber
-    &__link--viber {}
   }
-}
-.container {
-}
-.row {
-}
-.col-3 {
-}
-.logo {
-  // .logo__img
-  &__img {}
-}
-.mw-100 {
-}
-.d-block {
-}
-.fs-14 {
-}
-.text-info {
-}
-.text-nowrap {
-}
-.span--black {
-}
-.position-relative {
-}
-.ps-4 {
-}
-.fs-16 {
-}
-.fw-700 {
-}
-.span--color {
-}
-.span {
-}
-.span--office {
-}
-.fs-18 {
-}
-.fw-600 {
-}
-
-.d-flex {
-}
-.gap-2 {
-}
-.ps-0 {
-}
-.m-0 {
-}
-.flex-column {
-}
-.fw-500 {
+  svg {
+    transition: all 0.5s ease-in-out;
+    &:hover {
+      path:first-child {
+        fill: #5e2627;
+      }
+    }
+  }
 }

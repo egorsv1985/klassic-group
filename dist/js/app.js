@@ -2984,7 +2984,7 @@
       }));
   }),
     $(document).ready(function () {
-      $(".menu__parent").click(function () {
+      $(".menu__parent>a").click(function () {
         var e = $(this).parent();
         return (
           e.hasClass("open")

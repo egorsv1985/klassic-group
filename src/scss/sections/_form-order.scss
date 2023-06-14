@@ -1,7 +1,12 @@
 .form {
-	
-	// .form__tel-box
-	&__tel-box {
-		@include wh(43px);
-	}
+  // .form__tel-box
+  &__tel-box {
+    @include wh(43px);
+
+    &:hover {
+      svg {
+        path: #5e2627;
+      }
+    }
+  }
 }

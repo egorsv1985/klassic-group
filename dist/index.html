@@ -8,17 +8,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230614093302">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css?_v=20230614093302">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css?_v=20230614093302" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css?_v=20230614093302">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230614105206">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.css?_v=20230614105206">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css?_v=20230614105206" rel="stylesheet">
+	<link rel="stylesheet" href="css/style.css?_v=20230614105206">
 
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20230614093302"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?_v=20230614093302"></script>
-	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js?_v=20230614093302"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?_v=20230614093302"></script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230614093302"></script>
-	<script src="js/app.min.js?_v=20230614093302"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20230614105206"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?_v=20230614105206"></script>
+	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js?_v=20230614105206"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?_v=20230614105206"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230614105206"></script>
+	<script src="js/app.min.js?_v=20230614105206"></script>
 
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
@@ -27,6 +27,34 @@
 
 
 <body>
+	<div id="calback" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-dismiss="modal" type="button" class="popup__close">
+					<svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M22.4999 24.6545L32.7543 34.9117L34.7455 32.9232L24.4883 22.666L34.7455 12.4117L32.7571 10.4204L22.4999 20.6776L12.2455 10.4204L10.2571 12.4117L20.5115 22.666L10.2571 32.9204L12.2455 34.9117L22.4999 24.6545Z" fill="white" />
+					</svg>
+				</button>
+				<form action="#" class="popup__form form">
+					<div class="form__body d-flex flex-column">
+						<div class="form__box position-relative mb-3">
+							<input type="text" id="name-popup" name="form[]" data-error="Ошибка" placeholder="" class="form__input w-100 p-3" required />
+							<label for="name-popup" class="form__label position-absolute fs-14">Ваше имя</label>
+						</div>
+						<div class="form__box position-relative mb-3">
+							<input type="tel" id="tel-popup" name="form[]" data-error="Ошибка" placeholder="" class="form__input w-100 p-3" required />
+							<label for="tel" class="form__label position-absolute fs-14">Телефон</label>
+						</div>
+
+						<button type="submit" class="form__btn btn btn fs-16 fw-600 px-2 py-3 btn-primary btn-sm text-uppercase">
+							Отправить
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
 	<div class="wrapper">
 		<header class="header bg-white">
 			<div class="border-bottom py-2">
@@ -511,7 +539,17 @@
 						</div>
 						<div class="col-12 col-md-6 col-lg-3 d-flex gap-4 align-items-center">
 							<div class="form__tel-box rounded-circle border border-dashed border-white d-flex justify-content-center align-items-center">
-								<img src="img/icons/phone.svg" alt="телефоны">
+								<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<g clip-path="url(#clip0_120_95)">
+										<path d="M14 10.9467V13.304C14.0001 13.4728 13.9361 13.6353 13.8211 13.7588C13.706 13.8823 13.5484 13.9575 13.38 13.9693C13.0887 13.9893 12.8507 14 12.6667 14C6.77533 14 2 9.22467 2 3.33333C2 3.14933 2.01 2.91133 2.03067 2.62C2.04248 2.45163 2.11772 2.29401 2.2412 2.17894C2.36468 2.06387 2.52722 1.99992 2.696 2H5.05333C5.13603 1.99992 5.2158 2.03057 5.27715 2.08601C5.33851 2.14145 5.37706 2.21772 5.38533 2.3C5.40067 2.45333 5.41467 2.57533 5.428 2.668C5.56049 3.59262 5.832 4.49189 6.23333 5.33533C6.29667 5.46867 6.25533 5.628 6.13533 5.71333L4.69667 6.74133C5.5763 8.79097 7.2097 10.4244 9.25933 11.304L10.286 9.868C10.328 9.80933 10.3892 9.76725 10.459 9.7491C10.5288 9.73095 10.6028 9.73787 10.668 9.76867C11.5113 10.1692 12.4104 10.4401 13.3347 10.572C13.4273 10.5853 13.5493 10.6 13.7013 10.6147C13.7835 10.6231 13.8596 10.6617 13.9149 10.7231C13.9702 10.7844 14.0008 10.8641 14.0007 10.9467H14Z" fill="white" />
+									</g>
+									<defs>
+										<clipPath id="clip0_120_95">
+											<rect width="16" height="16" fill="white" />
+										</clipPath>
+									</defs>
+								</svg>
+
 							</div>
 							<div class="d-flex flex-column justify-content-center">
 								<a href="tel:+375445455897" class="fs-16 fw-500 text-white">
@@ -955,40 +993,13 @@
 		</footer>
 
 	</div>
-	<div id="calback" class="popup">
-		<div class="popup__wrapper">
-			<div class="popup__content">
-				<button data-dismiss="modal" type="button" class="popup__close">
-					<svg width="45" height="46" viewBox="0 0 45 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path fill-rule="evenodd" clip-rule="evenodd" d="M22.4999 24.6545L32.7543 34.9117L34.7455 32.9232L24.4883 22.666L34.7455 12.4117L32.7571 10.4204L22.4999 20.6776L12.2455 10.4204L10.2571 12.4117L20.5115 22.666L10.2571 32.9204L12.2455 34.9117L22.4999 24.6545Z" fill="white" />
-					</svg>
-				</button>
-				<form action="#" class="popup__form form">
-					<div class="form__body d-flex flex-column">
-						<div class="form__box position-relative mb-3">
-							<input type="text" id="name-popup" name="form[]" data-error="Ошибка" placeholder="" class="form__input w-100 p-3" required />
-							<label for="name-popup" class="form__label position-absolute fs-14">Ваше имя</label>
-						</div>
-						<div class="form__box position-relative mb-3">
-							<input type="tel" id="tel-popup" name="form[]" data-error="Ошибка" placeholder="" class="form__input w-100 p-3" required />
-							<label for="tel" class="form__label position-absolute fs-14">Телефон</label>
-						</div>
 
-						<button type="submit" class="form__btn btn btn fs-16 fw-600 px-2 py-3 btn-primary btn-sm text-uppercase">
-							Отправить
-						</button>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-
-	<script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20230614093302"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?_v=20230614093302"></script>
-	<script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js?_v=20230614093302"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?_v=20230614093302"></script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230614093302"></script>
-	<script src="js/app.min.js?_v=20230614093302"></script>
+	<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js?_v=20230614105206"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js?_v=20230614105206"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.js?_v=20230614105206"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js?_v=20230614105206"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js?_v=20230614105206"></script>
+    <script src="js/app.min.js?_v=20230614105206"></script> -->
 </body>
 
 </html>

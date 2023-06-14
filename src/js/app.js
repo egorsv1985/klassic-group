@@ -493,7 +493,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 $(document).ready(function () {
-  $(".menu__parent").click(function () {
+  $(".menu__parent>a").click(function () {
     var li = $(this).parent();
     if (li.hasClass("open")) {
       li.removeClass("open").find("ul").slideUp();
