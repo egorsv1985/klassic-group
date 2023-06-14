@@ -42,7 +42,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 	<link rel="icon" type="image/png" href="<?= SITE_TEMPLATE_PATH; ?>/favicon/favicon.png">
 </head>
 
-<body>
+<body<?=($USER->IsAdmin() ? ' class="admin"' : '')?>>
 	<div id="panel">
 		<? $APPLICATION->ShowPanel(); ?>
 	</div>
