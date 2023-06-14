@@ -15,6 +15,9 @@
     @include background(url("@img/icons/arrow-slider.svg"));
   }
 }
+.swiper-slide, swiper-slide{
+  height: inherit;
+}
 .works,
 .documents {
   .swiper-button-next,
