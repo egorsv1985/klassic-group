@@ -1018,6 +1018,9 @@ body {
 .swiper-pagination-bullet-active {
   opacity: 1;
 }
+.swiper-slide, swiper-slide{
+  height: auto;
+}
 
 .promo-constructor .mySwiper .swiper-slide {
   padding: 5px;
