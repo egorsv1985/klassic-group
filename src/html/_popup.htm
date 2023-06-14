@@ -1,7 +1,7 @@
-<div id="calback" aria-hidden="true" class="popup">
+<div id="calback" class="popup">
   <div class="popup__wrapper">
     <div class="popup__content">
-      <button data-close type="button" class="popup__close">
+      <button data-dismiss="modal" type="button" class="popup__close">
         <svg
           width="45"
           height="46"
@@ -17,9 +17,6 @@
           />
         </svg>
       </button>
-
-    
-
       <form action="#" class="popup__form form">
         <div class="form__body d-flex flex-column">
           <div class="form__box position-relative mb-3">
@@ -31,7 +28,7 @@
               placeholder=""
               class="form__input w-100 p-3"
               required
-            >
+            />
             <label for="name-popup" class="form__label position-absolute fs-14"
               >Ваше имя</label
             >
@@ -45,20 +42,19 @@
               placeholder=""
               class="form__input w-100 p-3"
               required
-            >
+            />
             <label for="tel" class="form__label position-absolute fs-14"
               >Телефон</label
             >
           </div>
-         
+
           <button
             type="submit"
             class="form__btn btn btn fs-16 fw-600 px-2 py-3 btn-primary btn-sm text-uppercase"
           >
-          Отправить
+            Отправить
           </button>
         </div>
-       
       </form>
     </div>
   </div>
