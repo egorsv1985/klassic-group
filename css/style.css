@@ -1365,6 +1365,17 @@ body {
   padding-top: 150px;
 }
 
+.contacts__border:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: -1px;
+  bottom: 100%;
+  top: -1.05rem;
+  width: 1px;
+  background: var(--bs-border-color);
+}
+
 .connections {
   padding-top: 150px;
 }

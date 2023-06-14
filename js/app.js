@@ -1374,7 +1374,7 @@
       } else e.slideTo(n);
     },
   };
-  const A = {
+  const O = {
     loopCreate: function (e) {
       const t = this,
         { params: s, slidesEl: i } = t;
@@ -1538,7 +1538,7 @@
         e.slideTo(e.realIndex, 0);
     },
   };
-  function O(e) {
+  function A(e) {
     const t = this,
       s = i(),
       r = n(),
@@ -2165,7 +2165,7 @@
         : c(t, s);
     };
   }
-  const q = {
+  const X = {
       eventsEmitter: x,
       update: P,
       translate: L,
@@ -2192,7 +2192,7 @@
         },
       },
       slide: I,
-      loop: A,
+      loop: O,
       grabCursor: {
         setGrabCursor: function (e) {
           const t = this;
@@ -2231,7 +2231,7 @@
           const e = this,
             t = i(),
             { params: s } = e;
-          (e.onTouchStart = O.bind(e)),
+          (e.onTouchStart = A.bind(e)),
             (e.onTouchMove = z.bind(e)),
             (e.onTouchEnd = G.bind(e)),
             s.cssMode && (e.onScroll = V.bind(e)),
@@ -2371,8 +2371,8 @@
         },
       },
     },
-    X = {};
-  class Y {
+    Y = {};
+  class q {
     constructor(...e) {
       let t, s;
       1 === e.length &&
@@ -2393,7 +2393,7 @@
         return (
           r.querySelectorAll(s.el).forEach((t) => {
             const i = c({}, s, { el: t });
-            e.push(new Y(i));
+            e.push(new q(i));
           }),
           e
         );
@@ -2421,7 +2421,7 @@
       });
       const o = c({}, W, a);
       return (
-        (n.params = c({}, o, X, s)),
+        (n.params = c({}, o, Y, s)),
         (n.originalParams = c({}, n.params)),
         (n.passedParams = c({}, s)),
         n.params &&
@@ -2788,31 +2788,31 @@
       );
     }
     static extendDefaults(e) {
-      c(X, e);
+      c(Y, e);
     }
     static get extendedDefaults() {
-      return X;
+      return Y;
     }
     static get defaults() {
       return W;
     }
     static installModule(e) {
-      Y.prototype.__modules__ || (Y.prototype.__modules__ = []);
-      const t = Y.prototype.__modules__;
+      q.prototype.__modules__ || (q.prototype.__modules__ = []);
+      const t = q.prototype.__modules__;
       "function" == typeof e && t.indexOf(e) < 0 && t.push(e);
     }
     static use(e) {
       return Array.isArray(e)
-        ? (e.forEach((e) => Y.installModule(e)), Y)
-        : (Y.installModule(e), Y);
+        ? (e.forEach((e) => q.installModule(e)), q)
+        : (q.installModule(e), q);
     }
   }
-  Object.keys(q).forEach((e) => {
-    Object.keys(q[e]).forEach((t) => {
-      Y.prototype[t] = q[e][t];
+  Object.keys(X).forEach((e) => {
+    Object.keys(X[e]).forEach((t) => {
+      q.prototype[t] = X[e][t];
     });
   }),
-    Y.use([
+    q.use([
       function ({ swiper: e, on: t, emit: s }) {
         const i = n();
         let r = null,
@@ -2982,28 +2982,6 @@
           (s.style.display = "none"),
           (r.style.display = "none");
       }));
-    const n = document.querySelectorAll("[data-popup]"),
-      a = document.querySelectorAll("[data-close]");
-    function o(e) {
-      e.preventDefault();
-      const t = this.getAttribute("data-popup"),
-        s = document.querySelector(t);
-      s &&
-        (document.body.classList.toggle("popup-show"),
-        s.classList.toggle("popup_show"));
-    }
-    function l() {
-      const e = document.querySelector(".popup_show");
-      e &&
-        (document.body.classList.remove("popup-show"),
-        e.classList.remove("popup_show"));
-    }
-    n.forEach(function (e) {
-      e.addEventListener("click", o);
-    }),
-      a.forEach(function (e) {
-        e.addEventListener("click", l);
-      });
   }),
     $(document).ready(function () {
       $(".menu__parent").click(function () {
