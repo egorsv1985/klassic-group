@@ -2993,7 +2993,6 @@
       // Use above variables to manipulate the DOM
     });
 
-
     // Создаем новый Swiper объект для элемента ".promoSwiper"
     var promoSwiper = new Swiper(".promoSwiper", {
       // Задаем количество слайдов, которые будут показываться одновременно
@@ -3036,7 +3035,6 @@
         },
       },
 
-      
       // Включаем курсор в виде "руки" при наведении на слайды
       grabCursor: true,
       // Включаем использование клавиатуры для навигации по слайдам
@@ -3048,6 +3046,43 @@
       navigation: {
         nextEl: ".works .swiper-button-next",
         prevEl: ".works .swiper-button-prev",
+      },
+    });
+    var swiper = new Swiper(".mySwiper", {
+      loop: true,
+      spaceBetween: 10,
+      slidesPerView: 8,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 500px
+        500: {
+          slidesPerView: 10,
+        },
+        // when window width is >= 757px
+        767: {
+          slidesPerView: 12,
+          spaceBetween: 20,
+        },
+        // when window width is >= 992px
+        992: {
+          slidesPerView: 12,
+          spaceBetween: 20,
+        },
+      },
+
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+
+    var swiper2 = new Swiper(".mySwiper2", {
+      loop: true,
+      spaceBetween: 30,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: swiper,
       },
     });
   }),

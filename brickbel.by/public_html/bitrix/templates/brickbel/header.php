@@ -195,25 +195,26 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 		<main>
 			<div class="container">
 				<? if (PAGE == 'TEXT') : ?>
-					<?$APPLICATION->IncludeComponent(
-	"bitrix:breadcrumb",
-	"",
-Array()
-);?>
+					<? $APPLICATION->IncludeComponent(
+						"bitrix:breadcrumb",
+						"",
+						array()
+					); ?>
 					<div class="row pt-4 mb-3 mb-5">
-								<div class="col">
-									<h1 class="fs-48 fw-700 ff-roboto"><? $APPLICATION->ShowTitle(true); ?></h1>
-								</div>
-								<div class="col-4 offset-3">
-									<div class="fs-18 lh-11">
-										<p>
-											Более 20 разных цветов. Возможно изготовление индивидуальных цветов
-											по спецзаказу!
-										</p>
-									</div>
-
-								</div>
+						<div class="col">
+							<h1 class="fs-48 fw-700 ff-roboto"><? $APPLICATION->ShowTitle(true); ?></h1>
+						</div>
+						<div class="col-4 offset-3">
+							<div class="fs-18 lh-11">
+								<p>
+									Более 20 разных цветов. Возможно изготовление индивидуальных цветов
+									по спецзаказу!
+								</p>
 							</div>
 
-					
+						</div>
+					</div>
+
+
 				<? endif; ?>
+			</div>

@@ -11,10 +11,14 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-print_r($arResult);?>
-
-
+// print_r($arResult);?>
+<section class="promo-constructor position-relative pb-5" id="promo-constructor">
+				<div class="container position-relative">
+					
+				<div class="swiper mySwiper2 mb-5">
+						<div class="swiper-wrapper">
 <?
+
 $arViewModeList = $arResult['VIEW_MODE_LIST'];
 
 $arViewStyles = array(
