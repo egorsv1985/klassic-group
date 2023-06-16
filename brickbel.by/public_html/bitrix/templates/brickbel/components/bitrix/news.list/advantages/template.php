@@ -11,7 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-
+// print_r($arResult);
 ?>
 <section class="advantages py-5">
 	<div class="container">

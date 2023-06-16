@@ -31,7 +31,7 @@ if (isset($_SERVER['HTTP_REFERER'])) {
     ';
 }
 
-for ($index = 1; $index < $itemSize; $index++) {
+for ($index = 0; $index < $itemSize; $index++) {
 	$title = htmlspecialcharsex($arResult[$index]["TITLE"]);
 
 	if ($arResult[$index]["LINK"] <> "" && $index != $itemSize - 1) {
@@ -48,10 +48,13 @@ for ($index = 1; $index < $itemSize; $index++) {
 		<li class="fs-14 breadcrumb-item active" id="bx_breadcrumb_' . $index . '" itemprop="itemListElement" aria-current="page" itemscope itemtype="http://schema.org/ListItem">
             <span >' . $title . '</span>
 			<meta itemprop="position" content="' . ($index + 1) . '">
+			</li>
         ';
 	}
 }
 
-$strReturn .= '</nav>';
+$strReturn .= '
+</ol>
+</nav>';
 
 return $strReturn;
