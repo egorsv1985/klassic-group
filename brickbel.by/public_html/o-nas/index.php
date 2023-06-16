@@ -93,7 +93,7 @@ $APPLICATION->IncludeComponent(
 		"DISPLAY_TOP_PAGER" => "N",
 		"FIELD_CODE" => array(
 			0 => "NAME",
-			1 => "PREVIEW_TEXT",
+			1 => "PREVIEW_PICTURE",
 			2 => "",
 		),
 		"FILTER_NAME" => "",
@@ -132,4 +132,8 @@ $APPLICATION->IncludeComponent(
 		"STRICT_SECTION_CHECK" => "N"
 	),
 	false
+);?><?$APPLICATION->IncludeComponent(
+	"bitrix:news.list",
+	"",
+Array()
 );?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
