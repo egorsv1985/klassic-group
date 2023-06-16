@@ -42,10 +42,10 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 	<link rel="icon" type="image/png" href="<?= SITE_TEMPLATE_PATH; ?>/favicon/favicon.png">
 </head>
 
-<body<?=($USER->IsAdmin() ? ' class="admin"' : '')?>>
-		<div id="panel">
-			<?$APPLICATION->ShowPanel();?>
-		</div>
+<body<?= ($USER->IsAdmin() ? ' class="admin"' : '') ?>>
+	<div id="panel">
+		<? $APPLICATION->ShowPanel(); ?>
+	</div>
 
 	<div class="wrapper">
 		<header class="header bg-white">
@@ -192,4 +192,28 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 				</div>
 			</div>
 		</header>
-		<main class="home">
+		<main>
+			<div class="container">
+				<? if (PAGE == 'TEXT') : ?>
+					<?$APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb",
+	"",
+Array()
+);?>
+					<div class="row pt-4 mb-3 mb-5">
+								<div class="col">
+									<h1 class="fs-48 fw-700 ff-roboto"><? $APPLICATION->ShowTitle(true); ?></h1>
+								</div>
+								<div class="col-4 offset-3">
+									<div class="fs-18 lh-11">
+										<p>
+											Более 20 разных цветов. Возможно изготовление индивидуальных цветов
+											по спецзаказу!
+										</p>
+									</div>
+
+								</div>
+							</div>
+
+					
+				<? endif; ?>

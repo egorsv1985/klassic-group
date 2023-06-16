@@ -11,7 +11,10 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+print_r($arResult);?>
 
+
+<?
 $arViewModeList = $arResult['VIEW_MODE_LIST'];
 
 $arViewStyles = array(
