@@ -26,18 +26,16 @@ $this->setFrameMode(false);
 		</div>
 		<?
 
-if (!empty($arResult["ERRORS"])) : ?>
-	<? ShowError(implode("<br />", $arResult["ERRORS"])) ?>
-<? endif;
-if ($arResult["MESSAGE"] <> '') : ?>
-	<? ShowNote($arResult["MESSAGE"]) ?>
-<? endif ?>
-		<form name="iblock_add" action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
+		if (!empty($arResult["ERRORS"])) : ?>
+			<? ShowError(implode("<br />", $arResult["ERRORS"])) ?>
+		<? endif;
+		if ($arResult["MESSAGE"] <> '') : ?>
+			<? ShowNote($arResult["MESSAGE"]) ?>
+		<? endif ?>
+		<form class="form" name="iblock_add" action="<?= POST_FORM_ACTION_URI ?>" method="post" enctype="multipart/form-data">
 			<div class="row gy-3">
 				<?= bitrix_sessid_post() ?>
 				<? if ($arParams["MAX_FILE_SIZE"] > 0) : ?><input type="hidden" name="MAX_FILE_SIZE" value="<?= $arParams["MAX_FILE_SIZE"] ?>" /><? endif ?>
-
-
 
 				<? if (is_array($arResult["PROPERTY_LIST"]) && !empty($arResult["PROPERTY_LIST"])) : ?>
 
@@ -200,27 +198,27 @@ if ($arResult["MESSAGE"] <> '') : ?>
 										<label for="PROPERTY[<?= $propertyID ?>][<?= $i ?>]" class="form-label form__label fs-16 text-secondary position-absolute top-50"><? if (intval($propertyID) > 0) : ?><?= $arResult["PROPERTY_LIST_FULL"][$propertyID]["NAME"] ?><? else : ?><?= !empty($arParams["CUSTOM_TITLE_" . $propertyID]) ? $arParams["CUSTOM_TITLE_" . $propertyID] : GetMessage("IBLOCK_FIELD_" . $propertyID) ?><? endif ?></label>
 										<?
 										if ($arResult["PROPERTY_LIST_FULL"][$propertyID]["USER_TYPE"] == "DateTime") : ?><?
-																														$APPLICATION->IncludeComponent(
-																															'bitrix:main.calendar',
-																															'',
-																															array(
-																																'FORM_NAME' => 'iblock_add',
-																																'INPUT_NAME' => "PROPERTY[" . $propertyID . "][" . $i . "]",
-																																'INPUT_VALUE' => $value,
-																															),
-																															null,
-																															array('HIDE_ICONS' => 'Y')
-																														);
-																														?><small><?= GetMessage("IBLOCK_FORM_DATE_FORMAT") ?><?= FORMAT_DATETIME ?></small><?
-																																																		endif
-																																																			?><?
-																																																																																																}
-																																																																																																break;
+																															$APPLICATION->IncludeComponent(
+																																'bitrix:main.calendar',
+																																'',
+																																array(
+																																	'FORM_NAME' => 'iblock_add',
+																																	'INPUT_NAME' => "PROPERTY[" . $propertyID . "][" . $i . "]",
+																																	'INPUT_VALUE' => $value,
+																																),
+																																null,
+																																array('HIDE_ICONS' => 'Y')
+																															);
+																															?><small><?= GetMessage("IBLOCK_FORM_DATE_FORMAT") ?><?= FORMAT_DATETIME ?></small><?
+																																																			endif
+																																																				?><?
+																																																			}
+																																																			break;
 
-																																																																																															case "F":
-																																																																																																for ($i = 0; $i < $inputNum; $i++) {
-																																																																																																	$value = intval($propertyID) > 0 ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
-																																																																																																	?>
+																																																		case "F":
+																																																			for ($i = 0; $i < $inputNum; $i++) {
+																																																				$value = intval($propertyID) > 0 ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE"] : $arResult["ELEMENT"][$propertyID];
+																																																				?>
 										<input type="hidden" name="PROPERTY[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" value="<?= $value ?>">
 										<label for="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>" class="form-label form-file fs-16  rounded-2 border border-dashed py-2 py-md-0 px-5 mb-0 d-flex align-items-center h-100 text-nowrap w-100">
 
@@ -228,91 +226,91 @@ if ($arResult["MESSAGE"] <> '') : ?>
 										<input class="form-control opacity-0" type="file" name="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>" id="PROPERTY_FILE_<?= $propertyID ?>_<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>">
 										<?
 
-																																																																																																	if (!empty($value) && is_array($arResult["ELEMENT_FILES"][$value])) {
+																																																				if (!empty($value) && is_array($arResult["ELEMENT_FILES"][$value])) {
 										?>
 											<input type="checkbox" name="DELETE_FILE[<?= $propertyID ?>][<?= $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] ? $arResult["ELEMENT_PROPERTIES"][$propertyID][$i]["VALUE_ID"] : $i ?>]" id="file_delete_<?= $propertyID ?>_<?= $i ?>" value="Y">
 											<label for="file_delete_<?= $propertyID ?>_<?= $i ?>"><?= GetMessage("IBLOCK_FORM_FILE_DELETE") ?></label>
 											<?
 
-																																																																																																		if ($arResult["ELEMENT_FILES"][$value]["IS_IMAGE"]) {
+																																																					if ($arResult["ELEMENT_FILES"][$value]["IS_IMAGE"]) {
 											?>
 												<img src="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>" height="<?= $arResult["ELEMENT_FILES"][$value]["HEIGHT"] ?>" width="<?= $arResult["ELEMENT_FILES"][$value]["WIDTH"] ?>" border="0">
 											<?
-																																																																																																		} else {
+																																																					} else {
 											?>
 												<?= GetMessage("IBLOCK_FORM_FILE_NAME") ?>: <?= $arResult["ELEMENT_FILES"][$value]["ORIGINAL_NAME"] ?>
 												<?= GetMessage("IBLOCK_FORM_FILE_SIZE") ?>: <?= $arResult["ELEMENT_FILES"][$value]["FILE_SIZE"] ?> b
 												[<a href="<?= $arResult["ELEMENT_FILES"][$value]["SRC"] ?>"><?= GetMessage("IBLOCK_FORM_FILE_DOWNLOAD") ?></a>]
 											<?
-																																																																																																		}
-																																																																																																	}
-																																																																																																}
+																																																					}
+																																																				}
+																																																			}
 
-																																																																																																break;
-																																																																																															case "L":
+																																																			break;
+																																																		case "L":
 
-																																																																																																if ($arResult["PROPERTY_LIST_FULL"][$propertyID]["LIST_TYPE"] == "C")
-																																																																																																	$type = $arResult["PROPERTY_LIST_FULL"][$propertyID]["MULTIPLE"] == "Y" ? "checkbox" : "radio";
-																																																																																																else
-																																																																																																	$type = $arResult["PROPERTY_LIST_FULL"][$propertyID]["MULTIPLE"] == "Y" ? "multiselect" : "dropdown";
+																																																			if ($arResult["PROPERTY_LIST_FULL"][$propertyID]["LIST_TYPE"] == "C")
+																																																				$type = $arResult["PROPERTY_LIST_FULL"][$propertyID]["MULTIPLE"] == "Y" ? "checkbox" : "radio";
+																																																			else
+																																																				$type = $arResult["PROPERTY_LIST_FULL"][$propertyID]["MULTIPLE"] == "Y" ? "multiselect" : "dropdown";
 
-																																																																																																switch ($type):
-																																																																																																	case "checkbox":
-																																																																																																	case "radio":
-																																																																																																		foreach ($arResult["PROPERTY_LIST_FULL"][$propertyID]["ENUM"] as $key => $arEnum) {
-																																																																																																			$checked = false;
-																																																																																																			if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
-																																																																																																				if (is_array($arResult["ELEMENT_PROPERTIES"][$propertyID])) {
-																																																																																																					foreach ($arResult["ELEMENT_PROPERTIES"][$propertyID] as $arElEnum) {
-																																																																																																						if ($arElEnum["VALUE"] == $key) {
-																																																																																																							$checked = true;
-																																																																																																							break;
-																																																																																																						}
-																																																																																																					}
-																																																																																																				}
-																																																																																																			} else {
-																																																																																																				if ($arEnum["DEF"] == "Y") $checked = true;
-																																																																																																			}
+																																																			switch ($type):
+																																																				case "checkbox":
+																																																				case "radio":
+																																																					foreach ($arResult["PROPERTY_LIST_FULL"][$propertyID]["ENUM"] as $key => $arEnum) {
+																																																						$checked = false;
+																																																						if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
+																																																							if (is_array($arResult["ELEMENT_PROPERTIES"][$propertyID])) {
+																																																								foreach ($arResult["ELEMENT_PROPERTIES"][$propertyID] as $arElEnum) {
+																																																									if ($arElEnum["VALUE"] == $key) {
+																																																										$checked = true;
+																																																										break;
+																																																									}
+																																																								}
+																																																							}
+																																																						} else {
+																																																							if ($arEnum["DEF"] == "Y") $checked = true;
+																																																						}
 
 											?>
 												<input type="<?= $type ?>" name="PROPERTY[<?= $propertyID ?>]<?= $type == "checkbox" ? "[" . $key . "]" : "" ?>" value="<?= $key ?>" id="property_<?= $key ?>" <?= $checked ? " checked=\"checked\"" : "" ?>><label for="property_<?= $key ?>"><?= $arEnum["VALUE"] ?></label>
 											<?
-																																																																																																		}
-																																																																																																		break;
+																																																					}
+																																																					break;
 
-																																																																																																	case "dropdown":
-																																																																																																	case "multiselect":
+																																																				case "dropdown":
+																																																				case "multiselect":
 											?>
 											<select name="PROPERTY[<?= $propertyID ?>]<?= $type == "multiselect" ? "[]\" size=\"" . $arResult["PROPERTY_LIST_FULL"][$propertyID]["ROW_COUNT"] . "\" multiple=\"multiple" : "" ?>">
 												<option value=""><? echo GetMessage("CT_BIEAF_PROPERTY_VALUE_NA") ?></option>
 												<?
-																																																																																																		if (intval($propertyID) > 0) $sKey = "ELEMENT_PROPERTIES";
-																																																																																																		else $sKey = "ELEMENT";
+																																																					if (intval($propertyID) > 0) $sKey = "ELEMENT_PROPERTIES";
+																																																					else $sKey = "ELEMENT";
 
-																																																																																																		foreach ($arResult["PROPERTY_LIST_FULL"][$propertyID]["ENUM"] as $key => $arEnum) {
-																																																																																																			$checked = false;
-																																																																																																			if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
-																																																																																																				foreach ($arResult[$sKey][$propertyID] as $elKey => $arElEnum) {
-																																																																																																					if ($key == $arElEnum["VALUE"]) {
-																																																																																																						$checked = true;
-																																																																																																						break;
-																																																																																																					}
-																																																																																																				}
-																																																																																																			} else {
-																																																																																																				if ($arEnum["DEF"] == "Y") $checked = true;
-																																																																																																			}
+																																																					foreach ($arResult["PROPERTY_LIST_FULL"][$propertyID]["ENUM"] as $key => $arEnum) {
+																																																						$checked = false;
+																																																						if ($arParams["ID"] > 0 || count($arResult["ERRORS"]) > 0) {
+																																																							foreach ($arResult[$sKey][$propertyID] as $elKey => $arElEnum) {
+																																																								if ($key == $arElEnum["VALUE"]) {
+																																																									$checked = true;
+																																																									break;
+																																																								}
+																																																							}
+																																																						} else {
+																																																							if ($arEnum["DEF"] == "Y") $checked = true;
+																																																						}
 												?>
 													<option value="<?= $key ?>" <?= $checked ? " selected=\"selected\"" : "" ?>><?= $arEnum["VALUE"] ?></option>
 												<?
-																																																																																																		}
+																																																					}
 												?>
 											</select>
 							<?
-																																																																																																		break;
+																																																					break;
 
-																																																																																																endswitch;
-																																																																																																break;
-																																																																																														endswitch; ?>
+																																																			endswitch;
+																																																			break;
+																																																	endswitch; ?>
 
 						</div>
 					<? endforeach; ?>

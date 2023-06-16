@@ -9,110 +9,33 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				<h3>КОНТАКТЫ</h3>
 			</div>
 		</div>
-		<?
-		if ($APPLICATION->GetCurPage(false) === '/') {
-			// Выводим код только на главной странице
-		?>
-		<script type="text/javascript">if(window.BX)BX.ready(function() {(new BX.CMenuOpener({'parent':'bx_incl_area_1_7','id':'comp_1_7','component_id':'ac930a12a8a872892d932a3278c9f883','HINT':{'TITLE':'Структура разделов','TEXT':'(компонент bitrix:catalog.section.list)<br />Выводит структуру разделов инфоблока с количеством элементов в каждом разделе'},'menu':[{'ICONCLASS':'bx-context-toolbar-settings-icon','TITLE':'','TEXT':'Редактировать параметры компонента','ONCLICK':'(new BX.CDialog({\'content_url\':\'/bitrix/admin/component_props.php?component_name=bitrix%3Acatalog.section.list&component_template=faq&template_id=brickbel&lang=ru&src_path=%2Findex.php&src_line=215&src_page=%2F&src_site=s1&siteTemplateId=brickbel\',\'width\':\'\',\'height\':\'\',\'min_width\':\'450\'})).Show()','DEFAULT':true,'TYPE':'components2_props'},{'ICONCLASS':'bx-context-toolbar-create-icon','TITLE':'','TEXT':'Добавить элемент','ONCLICK':'(new BX.CAdminDialog({\'content_url\':\'/bitrix/admin/iblock_element_edit.php?IBLOCK_ID=7&type=CONTENT&lang=ru&force_catalog=&filter_section=0&IBLOCK_SECTION_ID=0&bxpublic=Y&from_module=iblock&return_url=%23SITE_DIR%23%2Ffaq%2F%23SECTION_CODE%23%2F&siteTemplateId=brickbel\',\'width\':\'700\',\'height\':\'400\'})).Show()','IMAGE':'/bitrix/images/iblock/icons/new_element.gif'},{'ICONCLASS':'bx-context-toolbar-create-icon','TITLE':'','TEXT':'Добавить вопрос','ONCLICK':'(new BX.CAdminDialog({\'content_url\':\'/bitrix/admin/iblock_section_edit.php?IBLOCK_ID=7&type=CONTENT&lang=ru&force_catalog=&IBLOCK_SECTION_ID=0&filter_section=0&bxpublic=Y&from_module=iblock&return_url=%23SITE_DIR%23%2Ffaq%2F%23SECTION_CODE%23%2F&siteTemplateId=brickbel\',\'width\':\'700\',\'height\':\'400\'})).Show()','IMAGE':'/bitrix/images/iblock/icons/new_section.gif'},{'TYPE':'components2_submenu','TEXT':'components2_submenu','ICON':'parameters-2','MENU':[{'ICONCLASS':'bx-context-toolbar-settings-icon','TITLE':'','TEXT':'Редактировать параметры компонента','ONCLICK':'(new BX.CDialog({\'content_url\':\'/bitrix/admin/component_props.php?component_name=bitrix%3Acatalog.section.list&component_template=faq&template_id=brickbel&lang=ru&src_path=%2Findex.php&src_line=215&src_page=%2F&src_site=s1&siteTemplateId=brickbel\',\'width\':\'\',\'height\':\'\',\'min_width\':\'450\'})).Show()','DEFAULT':true,'TYPE':'components2_props'},{'TEXT':'Структура разделов (bitrix:catalog.section.list)','ICON':'parameters-2','MENU':[{'ICONCLASS':'copy-2','TITLE':'','TEXT':'Копировать шаблон компонента','ONCLICK':'(new BX.CDialog({\'content_url\':\'/bitrix/admin/template_copy.php?lang=ru&component_name=bitrix%3Acatalog.section.list&component_template=faq&template_id=brickbel&template_site_template=brickbel&src_path=%2Findex.php&src_line=215&src_site=s1&edit_file=template&back_path=%2F%3Fclear_cache%3DY&siteTemplateId=brickbel\',\'width\':\'\',\'height\':\'\',\'min_width\':\'450\'})).Show()'},{'ICONCLASS':'edit-2','TITLE':'','TEXT':'Редактировать шаблон компонента','ONCLICK':'(new BX.CEditorDialog({\'content_url\':\'/bitrix/admin/public_file_edit_src.php?site=s1&path=%2Fbitrix%2Ftemplates%2Fbrickbel%2Fcomponents%2Fbitrix%2Fcatalog.section.list%2Ffaq%2Ftemplate.php&back_url=%2F%3Fclear_cache%3DY&lang=ru&siteTemplateId=brickbel\',\'width\':\'770\',\'height\':\'470\',\'min_width\':\'700\',\'min_height\':\'400\'})).Show()'},{'ICONCLASS':'del-cache','TITLE':'','TEXT':'Обновить кеш компонента','ONCLICK':'jsComponentUtils.ClearCache(\'component_name=bitrix%3Acatalog.section.list&site_id=s1&sessid=0a06304dc42c35f936da099853921c4e\');'},{'SEPARATOR':'Y'},{'ICONCLASS':'','TITLE':'Временно отключить компонент с сохранением настроек','TEXT':'Отключить компонент','ONCLICK':'jsComponentUtils.EnableComponent(\'component_name=bitrix%3Acatalog.section.list&lang=ru&src_path=%2Findex.php&src_line=215&src_site=s1&active=N&sessid=0a06304dc42c35f936da099853921c4e\');'}]}]}]})).Show()});</script></div><script type="text/javascript">if(window.BX&&BX.admin)BX.admin.setComponentBorder('bx_incl_area_1_7')</script><div id="bx_incl_area_1_8"><script type="text/javascript">
-function BX_SetPlacemarks_MAP_mF8Ev4(map)
-{
-	if(typeof window["BX_YMapAddPlacemark"] != 'function')
-	{
-		/* If component's result was cached as html,
-		 * script.js will not been loaded next time.
-		 * let's do it manualy.
-		*/
-
-		(function(d, s, id)
-		{
-			var js, bx_ym = d.getElementsByTagName(s)[0];
-			if (d.getElementById(id)) return;
-			js = d.createElement(s); js.id = id;
-			js.src = "/bitrix/templates/brickbel/components/bitrix/map.yandex.view/map/script.js";
-			bx_ym.parentNode.insertBefore(js, bx_ym);
-		}(document, 'script', 'bx-ya-map-js'));
-
-		var ymWaitIntervalId = setInterval( function(){
-				if(typeof window["BX_YMapAddPlacemark"] == 'function')
-				{
-					BX_SetPlacemarks_MAP_mF8Ev4(map);
-					clearInterval(ymWaitIntervalId);
-				}
-			}, 300
-		);
-
-		return;
-	}
-
-	var arObjects = {PLACEMARKS:[],POLYLINES:[]};
-}
-</script>
+		<?if (PAGE == 'MAIN'):?>
 			<div class="map mb-4">
-				<div class="bx-yandex-view-layout">
-					<div class="bx-yandex-view-map">
-						<script>
-							var script = document.createElement('script');
-							script.src = 'https://api-maps.yandex.ru/2.0/?load=package.full&mode=release&lang=ru-RU&wizard=bitrix';
-							(document.head || document.documentElement).appendChild(script);
-							script.onload = function() {
-								this.parentNode.removeChild(script);
-							};
-						</script>
-						<script type="text/javascript">
-							if (!window.GLOBAL_arMapObjects)
-								window.GLOBAL_arMapObjects = {};
-
-							function init_MAP_mF8Ev4() {
-								if (!window.ymaps)
-									return;
-
-								var node = BX("BX_YMAP_MAP_mF8Ev4");
-								node.innerHTML = '';
-
-								var map = window.GLOBAL_arMapObjects['MAP_mF8Ev4'] = new ymaps.Map(node, {
-									center: [53.906443, 27.677480],
-									zoom: 10,
-									type: 'yandex#map'
-								});
-
-								map.behaviors.enable("scrollZoom");
-								map.behaviors.enable("dblClickZoom");
-								map.behaviors.enable("drag");
-								if (map.behaviors.isEnabled("rightMouseButtonMagnifier"))
-									map.behaviors.disable("rightMouseButtonMagnifier");
-								map.controls.add('zoomControl');
-								map.controls.add('miniMap');
-								map.controls.add('typeSelector');
-								map.controls.add('scaleLine');
-								if (window.BX_SetPlacemarks_MAP_mF8Ev4) {
-									window.BX_SetPlacemarks_MAP_mF8Ev4(map);
-								}
-							}
-
-							(function bx_ymaps_waiter() {
-								if (typeof ymaps !== 'undefined')
-									ymaps.ready(init_MAP_mF8Ev4);
-								else
-									setTimeout(bx_ymaps_waiter, 100);
-							})();
-
-
-							/* if map inits in hidden block (display:none)
-							 *  after the block showed
-							 *  for properly showing map this function must be called
-							 */
-							function BXMapYandexAfterShow(mapId) {
-								if (window.GLOBAL_arMapObjects[mapId] !== undefined)
-									window.GLOBAL_arMapObjects[mapId].container.fitToViewport();
-							}
-						</script>
-						<div id="BX_YMAP_MAP_mF8Ev4" class="bx-yandex-map" style="height: 485px; width: 100%;max-width: 100%;"><?
-																																$APPLICATION->IncludeComponent('bitrix:map.yandex.system', '.default', $arTransParams, false, array('HIDE_ICONS' => 'Y'));
-																																?></div>
-					</div>
-				</div>
+				<? $APPLICATION->IncludeComponent(
+					"bitrix:map.yandex.view",
+					"map",
+					array(
+						"API_KEY" => "",
+						"COMPONENT_TEMPLATE" => "map",
+						"CONTROLS" => array(
+							0 => "ZOOM",
+							1 => "SMALLZOOM",
+						),
+						"INIT_MAP_TYPE" => "MAP",
+						"MAP_DATA" => "a:3:{s:10:\"yandex_lat\";d:53.89499363736457;s:10:\"yandex_lon\";d:27.55196430433837;s:12:\"yandex_scale\";i:12;}",
+						"MAP_HEIGHT" => "485",
+						"MAP_ID" => "",
+						"MAP_WIDTH" => "100%",
+						"OPTIONS" => array(
+							0 => "ENABLE_SCROLL_ZOOM",
+							1 => "ENABLE_DBLCLICK_ZOOM",
+							2 => "ENABLE_DRAGGING",
+						)
+					),
+					false
+				); ?>
 			</div>
-		<? } ?>
+		<? endif; ?>
 		<div class="row">
 			<div class="col-12 col-md-7 col-lg-6 mt-md-5 mb-3">
 				<div class="fs-40 fw-700 ff-roboto mb-3">
@@ -124,32 +47,50 @@ function BX_SetPlacemarks_MAP_mF8Ev4(map)
 						вас более детально
 					</p>
 				</div>
-				<form action="#" class="form pb-5">
-					<div class="row g-4">
-						<div class="col-12 col-sm-6 form-group position-relative">
-							<input type="text" class="form-control bg-light rounded-2 border border-secondary text-secondary p-3 h-100" name="name-contact" id="name-contact" placeholder="" required />
-							<label for="name-contact" class="form-label fs-16 text-secondary position-absolute top-50">Имя</label>
-						</div>
-						<div class="col-12 col-sm-6 form-group position-relative">
-							<input type="text" class="form-control bg-light rounded-2 border border-secondary text-secondary p-3 h-100" name="tel-contact" id="tel-contact" placeholder="" required />
-							<label for="tel-contact" class="form-label fs-16 text-secondary position-absolute top-50">Телефон</label>
-						</div>
-
-						<div class="col-12 col-sm-6 form-check form-check-inline position-relative me-0 ps-3">
-							<input type="checkbox" class="form-check-input m-0" value="" name="check" id="check" checked />
-
-							<label class="form-check-label fs-14 d-block ms-5" for="check">
-								Нажимая на кнопку, Вы даете согласие на обработку персональных
-								данных
-							</label>
-						</div>
-						<div class="col-12 col-sm-6">
-							<button type="submit" class="btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient w-100 border-0">
-								Отправить
-							</button>
-						</div>
-					</div>
-				</form>
+				<? $APPLICATION->IncludeComponent(
+					"bitrix:iblock.element.add.form",
+					"form-contacts",
+					array(
+						"COMPONENT_TEMPLATE" => "form-contacts",
+						"STATUS_NEW" => "N",
+						"LIST_URL" => "",
+						"USE_CAPTCHA" => "N",
+						"USER_MESSAGE_EDIT" => "",
+						"USER_MESSAGE_ADD" => "Мы с вами скоро свяжемся",
+						"DEFAULT_INPUT_SIZE" => "30",
+						"RESIZE_IMAGES" => "N",
+						"IBLOCK_TYPE" => "SYSTEM",
+						"IBLOCK_ID" => "8",
+						"PROPERTY_CODES" => array(
+							0 => "5",
+							1 => "NAME",
+						),
+						"PROPERTY_CODES_REQUIRED" => array(
+							0 => "5",
+							1 => "NAME",
+						),
+						"GROUPS" => array(),
+						"STATUS" => "ANY",
+						"ELEMENT_ASSOC" => "CREATED_BY",
+						"MAX_USER_ENTRIES" => "100000",
+						"MAX_LEVELS" => "100000",
+						"LEVEL_LAST" => "Y",
+						"MAX_FILE_SIZE" => "0",
+						"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+						"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+						"SEF_MODE" => "N",
+						"CUSTOM_TITLE_NAME" => "",
+						"CUSTOM_TITLE_TAGS" => "",
+						"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+						"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+						"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+						"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+						"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+						"CUSTOM_TITLE_DETAIL_TEXT" => "",
+						"CUSTOM_TITLE_DETAIL_PICTURE" => ""
+					),
+					false
+				); ?>
 				<div class="fs-16 fw-500 mt-4">
 					<p>Или свяжитесь с нами:</p>
 				</div>

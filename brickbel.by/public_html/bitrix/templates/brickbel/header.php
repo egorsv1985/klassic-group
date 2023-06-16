@@ -43,9 +43,9 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 </head>
 
 <body<?=($USER->IsAdmin() ? ' class="admin"' : '')?>>
-	<div id="panel">
-		<? $APPLICATION->ShowPanel(); ?>
-	</div>
+		<div id="panel">
+			<?$APPLICATION->ShowPanel();?>
+		</div>
 
 	<div class="wrapper">
 		<header class="header bg-white">
