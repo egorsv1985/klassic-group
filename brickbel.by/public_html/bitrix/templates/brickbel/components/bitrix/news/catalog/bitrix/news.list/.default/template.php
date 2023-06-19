@@ -36,5 +36,9 @@ $this->setFrameMode(true);
 				</div>
 			<? endforeach; ?>
 		</div>
+		<? if ($arParams["DISPLAY_BOTTOM_PAGER"]) : ?>
+			<?= $arResult["NAV_STRING"] ?>
+		<? endif; ?>
+	</div>
 	</div>
 </section>

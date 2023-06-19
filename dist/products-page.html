@@ -484,7 +484,7 @@
 						</div>
 					</div>
 					<nav aria-label="Page navigation">
-						<ul class="pagination justify-content-end align-items-center">
+						<ul class="pagination justify-content-md-end justify-content-center align-items-center">
 							<li class="page-item disabled">
 								<a class="page-link" href="#" aria-label="Previous">
 									<span aria-hidden="true">
@@ -514,7 +514,35 @@
 					</nav>
 				</div>
 			</section>
-
+			<nav aria-label="Page navigation">
+				<ul class="pagination justify-content-md-end justify-content-center align-items-center">
+					<li class="page-item <?= ($arResult["NavPageNomer"] == 1) ? 'disabled' : '' ?>">
+						<a class="page-link" href="<?= ($arResult["NavPageNomer"] > 1) ? $arResult["sUrlPath"] . $strNavQueryStringFull : '#' ?>" aria-label="Previous">
+							<span aria-hidden="true">
+								<span class="page-prev d-flex justify-content-center align-items-center rounded-circle border border-primary me-3"></span>
+							</span>
+						</a>
+					</li>
+			
+					<?php while ($arResult["nStartPage"] <= $arResult["nEndPage"]) : ?>
+						<li class="page-item <?= ($arResult["nStartPage"] == $arResult["NavPageNomer"]) ? 'active' : '' ?>">
+							<a class="page-link" href="<?= ($arResult["nStartPage"] != $arResult["NavPageNomer"]) ? $arResult["sUrlPath"] . $strNavQueryString . 'PAGEN_' . $arResult["NavNum"] . '=' . $arResult["nStartPage"] : '#' ?>">
+								<?= $arResult["nStartPage"] ?>
+							</a>
+						</li>
+						<?php $arResult["nStartPage"]++ ?>
+					<?php endwhile ?>
+			
+					<li class="page-item <?= ($arResult["NavPageNomer"] == $arResult["NavPageCount"]) ? 'disabled' : '' ?>">
+						<a class="page-link" href="<?= ($arResult["NavPageNomer"] < $arResult["NavPageCount"]) ? $arResult["sUrlPath"] . $strNavQueryString . 'PAGEN_' . $arResult["NavNum"] . '=' . ($arResult["NavPageNomer"] + 1) : '#' ?>" aria-label="Next">
+							<span aria-hidden="true">
+								<span class="page-next d-flex justify-content-center align-items-center rounded-circle border border-primary ms-3"></span>
+							</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+			
 			<section class="contacts pt-5 border-bottom">
 				<div class="container">
 					<div class="row justify-content-end mb-5 overflow-hidden">
