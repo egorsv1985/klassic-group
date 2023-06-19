@@ -25,11 +25,15 @@ $this->setFrameMode(true);
 		<div class="swiper-wrapper">
 
 			<? foreach ($arResult["ITEMS"] as $arItem) :
+			 if (CModule::IncludeModule("millcom.phpthumb")) {
+				$arItem["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 13);
+				$arItem["PREVIEW_PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 14);
+			}
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 				//print_r($arItem);
 			?>
-				<div class="swiper-slide" style="background: url('<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>') center / cover no-repeat">
+				<div class="swiper-slide" style="background: url('<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>') center / cover no-repeat">
 					<div class="container">
 						<div class="d-flex flex-column">
 							<div class="col-12 col-lg-7 h1 fs-64 fw-700 text-white mb-3 ff-roboto">

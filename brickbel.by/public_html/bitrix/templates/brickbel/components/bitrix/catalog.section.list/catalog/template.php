@@ -23,14 +23,14 @@ $this->setFrameMode(true);
 
 		<div class="row d-block">
 			<?
-			foreach ($arResult['SECTIONS'] as $key => &$arSection) :
+			foreach ($arResult['SECTIONS'] as $key => $arSection) :
 				$this->AddEditAction($arSection['ID'], $arSection['EDIT_LINK'], $strSectionEdit);
 				$this->AddDeleteAction($arSection['ID'], $arSection['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 				// Проверяем доступность модуля "millcom.phpthumb"
 				if (CModule::IncludeModule("millcom.phpthumb")) {
 					// Генерируем обрезанные изображения в форматах WEBP и JPG
-					$arSection["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arSection["PREVIEW_PICTURE"]["SRC"], 6);
-					$arSection["PREVIEW_PICTURE"]["JPG"] = CMillcomPhpThumb::generateImg($arSection["PREVIEW_PICTURE"]["SRC"], 7);
+					$arSection["PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arSection["PICTURE"]["SRC"], 3);
+					$arSection["PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arSection["PICTURE"]["SRC"], 4);
 				}
 				// Задаем классы по умолчанию
 				$CLASS = array(
@@ -40,14 +40,14 @@ $this->setFrameMode(true);
 				if ($key == 1 || $key == 2) $CLASS[0] = 'col-md-3'; // Для 2го и 3го элементра меняем первый класс на 6
 				if ($key == 3) $CLASS[1] = 'col-md-6'; // для четвёртого меняем второй класс на 6
 			?>
-				<div class="col-12 <?= $CLASS[0] ?> mt-4 float-start" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
+				<div class="col-6 <?= $CLASS[0] ?> mt-4 float-start" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
 					<a href="<?= $arSection["SECTION_PAGE_URL"] ?>" class="catalog__link d-block position-relative rounded-2" style="
-			  background: url('<?= $arSection["PICTURE"]["SRC"] ?>') center / cover no-repeat;
+			  background: url('<?= $arSection["PICTURE"]["PNG"] ?>') center / cover no-repeat;
 			">
 						<div class="row">
-							<div class="col-12">
+							<div class="col-12 <?= $CLASS[1]; ?>">
 								<picture>
-									<source srcset="<?= $arSection["PICTURE"]["SRC"] ?>" type="image/webp"><img src="<?= $arSection["PICTURE"]["SRC"] ?>" alt="Гибкий кирпич" class="w-100 h-100 opacity-0">
+									<source srcset="<?= $arSection["PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arSection["PICTURE"]["PNG"] ?>" alt="<?= $arSection["PICTURE"]["ALT"] ?>" title="<?= $arSection["PICTURE"]["TITLE"] ?>" class="w-100 h-100 opacity-0">
 								</picture>
 								<span class="position-absolute fs-20 fw-600 ff-roboto text-white col-8 start-0 bottom-0 pb-4 ps-4"><?= $arSection["NAME"] ?></span>
 								<span class="catalog__arrow position-absolute end-0 bottom-0 mb-4 me-4 rounded-circle bg-white d-flex justify-content-center align-items-center">

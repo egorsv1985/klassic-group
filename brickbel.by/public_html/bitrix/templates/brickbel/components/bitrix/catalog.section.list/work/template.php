@@ -29,15 +29,15 @@ $this->setFrameMode(true);
 					// Проверяем доступность модуля "millcom.phpthumb"
 					if (CModule::IncludeModule("millcom.phpthumb")) {
 						// Генерируем обрезанные изображения в форматах WEBP и JPG
-						$arSection["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arSection["PREVIEW_PICTURE"]["SRC"], 6);
-						$arSection["PREVIEW_PICTURE"]["JPG"] = CMillcomPhpThumb::generateImg($arSection["PREVIEW_PICTURE"]["SRC"], 7);
+						$arSection["PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arSection["PICTURE"]["SRC"], 15);
+						$arSection["PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arSection["PICTURE"]["SRC"], 16);
 					}
 
 				?>
 					<div class="swiper-slide" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
 						<a class="rounded-2 overflow-hidden" href="#">
 							<picture>
-								<source srcset="<?= $arSection["PICTURE"]["SRC"] ?>" type="image/webp"><img src="<?= $arSection["PICTURE"]["SRC"] ?>" alt="работа1" class="w-100 rounded-2 overflow-hidden" width="360">
+								<source srcset="<?= $arSection["PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arSection["PICTURE"]["PNG"] ?>" alt="<?= $arSection["PICTURE"]["ALT"] ?>" title="<?= $arSection["PICTURE"]["TITLE"] ?>" class="w-100 rounded-2 overflow-hidden" width="360">
 							</picture>
 						</a>
 					</div>

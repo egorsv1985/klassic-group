@@ -12,6 +12,8 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 // print_r($arResult);
+$this->AddEditAction($arResult['SECTION']['ID'], $arResult['SECTION']['EDIT_LINK'], $strSectionEdit);
+$this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 ?>
 
 <section class="products-items pb-5">
@@ -104,108 +106,131 @@ $this->setFrameMode(true);
 					<div class="accordion-body d-flex pt-0">
 						<div class="col-10 offset-1 offset-sm-2 pe-5">
 							<div class="row g-3">
-								<?if($arResult["PROPERTIES"]["RAZMER_MODULYA"]["VALUE"]):?>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Размер модуля</p>
+								<? if (!empty($arResult["PROPERTIES"]["RAZMER_MODULYA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Размер модуля</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["RAZMER_MODULYA"]["VALUE"] ?></p>
+										</div>
 									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["RAZMER_MODULYA"]["VALUE"] ?></p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["RAZMER_KIRPICHA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Размер кирпича</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["RAZMER_KIRPICHA"]["VALUE"] ?></p>
+										</div>
 									</div>
-								</div>
-								<?endif;?>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Размер кирпича</p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["MOROZOSTOYKOST"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Морозостойкость</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["MOROZOSTOYKOST"]["VALUE"] ?></p>
+										</div>
 									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["RAZMER_KIRPICHA"]["VALUE"] ?></p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["KOLICHESTVO_PLITOK_NA_SETKE"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Кол-во плиток на сетке</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["KOLICHESTVO_PLITOK_NA_SETKE"]["VALUE"] ?></p>
+										</div>
 									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Морозостойкость</p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["POLEZNAYA_PLOSHCHAD_MODULYA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Полезная площадь модуля</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["POLEZNAYA_PLOSHCHAD_MODULYA"]["VALUE"] ?></p>
+										</div>
 									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["MOROZOSTOYKOST"]["VALUE"] ?></p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["VES_UPAKOVKI"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Вес упаковки</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["VES_UPAKOVKI"]["VALUE"] ?></p>
+										</div>
 									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Кол-во плиток на сетке</p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["RAZMER_RASSHVORKI"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Размер расшивки</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["RAZMER_RASSHVORKI"]["VALUE"] ?></p>
+										</div>
 									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["KOLICHESTVO_PLITOK_NA_SETKE"]["VALUE"] ?></p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["TOLSHCHINA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Толщина</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["TOLSHCHINA"]["VALUE"] ?></p>
+										</div>
 									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Полезная площадь модуля</p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["OBEM_UPAKOVKI"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Объем упаковки</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["OBEM_UPAKOVKI"]["VALUE"] ?></p>
+										</div>
 									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["POLEZNAYA_PLOSHCHAD_MODULYA"]["VALUE"] ?></p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["SOSTAV"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Состав</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0">
+												<? echo $arResult["PROPERTIES"]["SOSTAV"]["VALUE"] ?>
+											</p>
+										</div>
 									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Вес упаковки</p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["TEMPERATURA_EKSPLOATATSII"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Температура эксплуатации</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["TEMPERATURA_EKSPLOATATSII"]["VALUE"] ?></p>
+										</div>
 									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["VES_UPAKOVKI"]["VALUE"] ?></p>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["KOLICHESTVO_V_UPAKOVKE"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Кол-во в упаковке</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["KOLICHESTVO_V_UPAKOVKE"]["VALUE"] ?></p>
+										</div>
 									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Размер расшивки</p>
-									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["RAZMER_RASSHVORKI"]["VALUE"] ?></p>
-									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Толщина</p>
-									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["TOLSHCHINA"]["VALUE"] ?></p>
-									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Объем упаковки</p>
-									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["OBEM_UPAKOVKI"]["VALUE"] ?></p>
-									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Состав</p>
-									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0">
-											<? echo $arResult["PROPERTIES"]["SOSTAV"]["VALUE"] ?>
-										</p>
-									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Температура эксплуатации</p>
-									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["TEMPERATURA_EKSPLOATATSII"]["VALUE"] ?></p>
-									</div>
-								</div>
-								<div class="col-12 col-sm-6 col-lg-4">
-									<div class="fs-15 text-dark mb-1">
-										<p class="m-0">Кол-во в упаковке</p>
-									</div>
-									<div class="fs-16 lh-11">
-										<p class="m-0"><? echo $arResult["PROPERTIES"]["KOLICHESTVO_V_UPAKOVKE"]["VALUE"] ?></p>
-									</div>
-								</div>
+								<? endif; ?>
 							</div>
 						</div>
+
 					</div>
 				</div>
 			</div>
@@ -254,4 +279,3 @@ $this->setFrameMode(true);
 		</div>
 	</div>
 </section>
-

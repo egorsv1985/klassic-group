@@ -11,6 +11,7 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+CFile::GetPath($arResult['PICTURE']);
 // print_r($arResult);
 ?>
 <section class="advantages py-5">
@@ -28,8 +29,11 @@ $this->setFrameMode(true);
 
 			<div class="d-none d-md-block col-md-1 col-lg-2"></div>
 			<div class="d-none d-md-block col-md-3 col-lg-4">
+			<picture>
+					<source srcset="<? echo CFile::GetPath($arResult['PICTURE']) ?>" type="image/webp"><img src="<? echo CFile::GetPath($arResult['PICTURE']) ?>" alt="О компании" class="w-100 rounded-2">
+				</picture>
 				<picture>
-					<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/kirpichi.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/kirpichi.png" alt="кирпичи" class="w-100" />
+					<source srcset="<? echo CFile::GetPath($arResult['PICTURE']) ?>" type="image/webp"><img src="<? echo CFile::GetPath($arResult['PICTURE']) ?>" alt="кирпичи" class="w-100" />
 				</picture>
 			</div>
 			<div class="fs-18 col-12 col-lg-8">
