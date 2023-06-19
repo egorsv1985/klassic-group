@@ -29,7 +29,7 @@ $this->setFrameMode(true);
 
 								<span class="fs-20 fw-700 ff-roboto lh-11 d-block mb-3"><? echo $arItem["PROPERTIES"]["PRICE_2"]["VALUE"] ?>/м2</span>
 								<span class="fs-18 ff-roboto lh-11 d-block mb-4"><?= $arItem["NAME"] ?></span>
-								<a class="btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient w-100" href="#" role="button" title="Подробнее">Подробнее</a>
+								<a class="btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient w-100" href="<?= $arItem["DETAIL_PAGE_URL"] ?>" role="button" title="Подробнее">Подробнее</a>
 							</div>
 						</div>
 					</a>
