@@ -104,6 +104,7 @@ $this->setFrameMode(true);
 					<div class="accordion-body d-flex pt-0">
 						<div class="col-10 offset-1 offset-sm-2 pe-5">
 							<div class="row g-3">
+								<?if($arResult["PROPERTIES"]["RAZMER_MODULYA"]["VALUE"]):?>
 								<div class="col-12 col-sm-6 col-lg-4">
 									<div class="fs-15 text-dark mb-1">
 										<p class="m-0">Размер модуля</p>
@@ -112,6 +113,7 @@ $this->setFrameMode(true);
 										<p class="m-0"><? echo $arResult["PROPERTIES"]["RAZMER_MODULYA"]["VALUE"] ?></p>
 									</div>
 								</div>
+								<?endif;?>
 								<div class="col-12 col-sm-6 col-lg-4">
 									<div class="fs-15 text-dark mb-1">
 										<p class="m-0">Размер кирпича</p>
