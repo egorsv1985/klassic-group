@@ -1252,7 +1252,6 @@ body {
 
 .review .simplebar-scrollbar:before {
   background: #5e2627;
-  height: 85px !important;
   width: 5px;
   border-radius: 32px;
   opacity: 1;
