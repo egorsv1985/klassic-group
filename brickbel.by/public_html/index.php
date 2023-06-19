@@ -1,10 +1,10 @@
 <?
 define("PAGE", "MAIN");
-require($_SERVER['DOCUMENT_ROOT'].'/bitrix/header.php');
+require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/header.php');
 $APPLICATION->SetTitle("Главная");
 $APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"slider", 
+	"bitrix:news.list",
+	"slider",
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -74,7 +74,7 @@ $APPLICATION->IncludeComponent(
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"advantages",
-	Array(
+	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -94,7 +94,7 @@ $APPLICATION->IncludeComponent(
 		"DISPLAY_PICTURE" => "Y",
 		"DISPLAY_PREVIEW_TEXT" => "Y",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array("NAME","TAGS","SORT","PREVIEW_TEXT","PREVIEW_PICTURE",""),
+		"FIELD_CODE" => array("NAME", "TAGS", "SORT", "PREVIEW_TEXT", "PREVIEW_PICTURE", ""),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
 		"IBLOCK_ID" => "2",
@@ -113,7 +113,7 @@ $APPLICATION->IncludeComponent(
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "",
-		"PROPERTY_CODE" => array("",""),
+		"PROPERTY_CODE" => array("", ""),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "N",
@@ -127,10 +127,12 @@ $APPLICATION->IncludeComponent(
 		"SORT_ORDER2" => "ASC",
 		"STRICT_SECTION_CHECK" => "N"
 	)
-);?><?$APPLICATION->IncludeFile("constructor.php");?><?$APPLICATION->IncludeComponent(
+);
+$APPLICATION->IncludeFile("constructor.php");
+$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"catalog",
-	Array(
+	array(
 		"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"CACHE_FILTER" => "N",
@@ -144,18 +146,19 @@ $APPLICATION->IncludeComponent(
 		"IBLOCK_ID" => "3",
 		"IBLOCK_TYPE" => "CONTENT",
 		"SECTION_CODE" => "",
-		"SECTION_FIELDS" => array(0=>"NAME",1=>"PICTURE",2=>"",),
+		"SECTION_FIELDS" => array(0 => "NAME", 1 => "PICTURE", 2 => "",),
 		"SECTION_ID" => "0",
 		"SECTION_URL" => "",
-		"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
+		"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
 		"SHOW_PARENT_NAME" => "Y",
 		"TOP_DEPTH" => "2",
 		"VIEW_MODE" => "LINE"
 	)
-);?><?$APPLICATION->IncludeComponent(
+);
+$APPLICATION->IncludeComponent(
 	"bitrix:iblock.element.add.form",
 	"form-main",
-	Array(
+	array(
 		"AJAX_MODE" => "Y",
 		"COMPONENT_TEMPLATE" => "form-main",
 		"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
@@ -179,8 +182,8 @@ $APPLICATION->IncludeComponent(
 		"MAX_LEVELS" => "100000",
 		"MAX_USER_ENTRIES" => "100000",
 		"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
-		"PROPERTY_CODES" => array(0=>"3",1=>"4",2=>"NAME",),
-		"PROPERTY_CODES_REQUIRED" => array(0=>"3",1=>"NAME",),
+		"PROPERTY_CODES" => array(0 => "3", 1 => "4", 2 => "NAME",),
+		"PROPERTY_CODES_REQUIRED" => array(0 => "3", 1 => "NAME",),
 		"RESIZE_IMAGES" => "N",
 		"SEF_MODE" => "N",
 		"STATUS" => "ANY",
@@ -189,10 +192,11 @@ $APPLICATION->IncludeComponent(
 		"USER_MESSAGE_EDIT" => "",
 		"USE_CAPTCHA" => "N"
 	)
-);?><?$APPLICATION->IncludeComponent(
+);
+$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"work",
-	Array(
+	array(
 		"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"CACHE_FILTER" => "N",
@@ -207,16 +211,17 @@ $APPLICATION->IncludeComponent(
 		"IBLOCK_ID" => "6",
 		"IBLOCK_TYPE" => "CONTENT",
 		"SECTION_CODE" => "",
-		"SECTION_FIELDS" => array(0=>"",1=>"",),
+		"SECTION_FIELDS" => array(0 => "", 1 => "",),
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_URL" => "",
-		"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
+		"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
 		"TOP_DEPTH" => "2"
 	)
-);?><?$APPLICATION->IncludeComponent(
+);
+$APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"faq",
-	Array(
+	array(
 		"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"CACHE_FILTER" => "N",
@@ -231,14 +236,14 @@ $APPLICATION->IncludeComponent(
 		"IBLOCK_ID" => "7",
 		"IBLOCK_TYPE" => "CONTENT",
 		"SECTION_CODE" => "",
-		"SECTION_FIELDS" => array(0=>"NAME",1=>"DESCRIPTION",2=>"",),
+		"SECTION_FIELDS" => array(0 => "NAME", 1 => "DESCRIPTION", 2 => "",),
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_URL" => "",
-		"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
+		"SECTION_USER_FIELDS" => array(0 => "", 1 => "",),
 		"SHOW_PARENT_NAME" => "Y",
 		"TOP_DEPTH" => "2",
 		"VIEW_MODE" => "LINE"
 	)
-);?><?
-require($_SERVER['DOCUMENT_ROOT'].'/bitrix/footer.php');
-?>
+); ?><?
+			require($_SERVER['DOCUMENT_ROOT'] . '/bitrix/footer.php');
+			?>
