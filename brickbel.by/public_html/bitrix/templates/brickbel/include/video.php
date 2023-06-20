@@ -1,73 +1,35 @@
-<section class="montage pb-5">
-	<div class="container">
-		<div class="row gy-4">
-			<div class="col-12 col-md-6 col-lg-4">
-				<div class="h-50 mb-3">
-					<div class="border rounded-2 p-4">
-						<div class="fs-20 ff-roboto fw-600 lh-12">
-							<h3>Простой и легкий монтаж</h3>
+<section class="video py-5">
+				<div class="container">
+					<div class="row justify-content-end mb-5 overflow-hidden">
+						<div class="title position-relative col-6 col-md-3 fs-16 text-center text-uppercase border border-secondary py-2 rounded-2">
+							<h3>ВИДЕО</h3>
 						</div>
-						<div class="fs-16 lh-12">
-							<p>
-								Минимум затрат и отходов. Клейте на стену модуль на сетке,
-								которой содержит 72 плитки гибкого кирпича. В любом месте сетки
-								вы можете вырезать плитку и вставить плитку другого цвета.
-							</p>
+					</div>
+					<div class="row gy-4">
+						<div class="col-12 col-lg-6">
+							<div class="video__box" id="video-container">
+								<div class="video__box-img" id="video-cover"></div>
+								<iframe class="video__frame" src="https://www.youtube.com/embed/cDiWGuqzzio?autoplay=0&amp;controls=1&amp;modestbranding=1&amp;rel=0&amp;enablejsapi=1" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="1"></iframe>
+								<button class="video__btn" id="play-button"></button>
+							</div>
+						</div>
+						<div class="col-12 col-lg-6 d-flex flex-column justify-content-center">
+							<div class="fs-40 ff-roboto fw-700 lh-11 mb-3">
+								<h2>Процес монтажа</h2>
+							</div>
+							<div class="fs-16 lh-12">
+								<p>
+									С другой стороны укрепление и развитие структуры влечет за собой
+									процесс внедрения и модернизации систем массового участия.
+									Значимость этих проблем настолько очевидна, что постоянный
+									количественный рост и сфера нашей активности обеспечивает широкому
+									кругу (специалистов) участие в формировании дальнейших направлений
+									развития. Разнообразный и богатый опыт дальнейшее развитие различных
+									форм деятельности позволяет выполнять важные задания по разработке
+									систем массового участия.
+								</p>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="h-50">
-					<div class="border rounded-2 p-4">
-						<div class="fs-20 ff-roboto fw-600 lh-12">
-							<h3>Поверхности для монтажа</h3>
-						</div>
-						<div class="fs-16 lh-12">
-							<p>
-								Кирпич, бетон, газосиликатные блоки, керамзитобетонные блоки,
-								цементно-стружечная плита, теплоизоляция из менеральной ваты,
-								пено-газоблоки, гипсокартон и прочие поверхности.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="d-none d-lg-block col-lg-4">
-				<div class="d-block">
-					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/montage.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/montage.png" alt="Монтаж" class="w-100 d-block">
-					</picture>
-				</div>
-			</div>
-			<div class="col-12 col-md-6 col-lg-4">
-				<div class="h-50 mb-3">
-					<div class="border rounded-2 p-4">
-						<div class="fs-20 ff-roboto fw-600 lh-12">
-							<h3>Гибкий кирпич</h3>
-						</div>
-						<div class="fs-16 lh-12">
-							<p>
-								Модуль на сетке содержит 72 плитки гибкого кирпича. Полезная
-								площадь модуля 1,27 м2 . Экологичен и очень похож на натуральный
-								клинкер.
-							</p>
-						</div>
-					</div>
-				</div>
-				<div class="h-50">
-					<div class="border rounded-2 p-4">
-						<div class="fs-20 ff-roboto fw-600 lh-12">
-							<h3>Фасадный клей для плитки</h3>
-						</div>
-						<div class="fs-16 lh-12">
-							<p>
-								Выбирается в зависимости от типа основания и условий
-								эксплуатации. Исключает смещение отделочного материала с
-								течением времени.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+			</section>
