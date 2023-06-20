@@ -12,8 +12,6 @@
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
 // print_r($arResult);
-$this->AddEditAction($arResult['SECTION']['ID'], $arResult['SECTION']['EDIT_LINK'], $strSectionEdit);
-$this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_LINK'], $strSectionDelete, $arSectionDeleteParams);
 ?>
 
 <section class="products-items pb-5">
@@ -126,7 +124,7 @@ $this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_
 										</div>
 									</div>
 								<? endif; ?>
-								<? if (!empty($arResult["PROPERTIES"]["MOROZOSTOYKOST"]["VALUE"])) : ?>
+								<? if (!empty($arResult["PROPERTIES"]["MOROZOSTOYKOST"]["VALUE"])): ?>
 									<div class="col-12 col-sm-6 col-lg-4">
 										<div class="fs-15 text-dark mb-1">
 											<p class="m-0">Морозостойкость</p>
@@ -136,7 +134,7 @@ $this->AddDeleteAction($arResult['SECTION']['ID'], $arResult['SECTION']['DELETE_
 										</div>
 									</div>
 								<? endif; ?>
-								<? if (!empty($arResult["PROPERTIES"]["KOLICHESTVO_PLITOK_NA_SETKE"]["VALUE"])) : ?>
+								<? if (!empty($arResult["PROPERTIES"]["KOLICHESTVO_PLITOK_NA_SETKE"]["VALUE"])): ?>
 									<div class="col-12 col-sm-6 col-lg-4">
 										<div class="fs-15 text-dark mb-1">
 											<p class="m-0">Кол-во плиток на сетке</p>
