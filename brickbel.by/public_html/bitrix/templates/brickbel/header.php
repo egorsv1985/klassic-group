@@ -162,7 +162,6 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 						),
 						false
 					); ?>
-
 				</div>
 			</div>
 		</header>
