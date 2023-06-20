@@ -144,51 +144,25 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 			</div>
 			<div class="header__bottom">
 				<div class="container">
-					<nav class="header__menu menu py-3 col-12 position-relative">
-						<ul class="menu__list d-flex flex-column flex-lg-row h-100 justify-content-center align-items-center justify-content-lg-between text-nowrap ps-0 mb-0 gap-3">
-							<li class="menu__item d-flex justify-content-center menu__parent position-relative flex-column">
-								<a href="catalog-page.html" class="menu__link menu__link--bg d-inline-block ps-4">Каталог</a>
-								<ul class="position-absolute flex-column">
-									<li class="p-2 col-4">
-										<a href="products-page.html">Гибкий кирпич на сетке</a>
-									</li>
-									<li class="p-2 col-4">
-										<a href="#">Гибкий кирпич на сетке</a>
-									</li>
-									<li class="p-2 col-4">
-										<a href="#">Гибкий кирпич на сетке</a>
-									</li>
-									<li class="p-2 col-4">
-										<a href="#">Гибкий кирпич на сетке</a>
-									</li>
-								</ul>
-							</li>
-							<li class="menu__item d-flex justify-content-center">
-								<a href="about-page.html" class="menu__link d-inline-block">О нас</a>
-							</li>
-							<li class="menu__item d-flex justify-content-center">
-								<a href="products-info-page.html" class="menu__link d-inline-block">О продукте</a>
-							</li>
-							<li class="menu__item d-flex justify-content-center">
-								<a href="constructor-page.html" class="menu__link d-inline-block">Конструктор</a>
-							</li>
-							<li class="menu__item d-flex justify-content-center">
-								<a href="montage-page.html" class="menu__link d-inline-block">Монтаж</a>
-							</li>
-							<li class="menu__item d-flex justify-content-center">
-								<a href="delivery-page.html" class="menu__link d-inline-block">Доставка и оплата</a>
-							</li>
-							<li class="menu__item d-flex justify-content-center">
-								<a href="partners-page.html" class="menu__link d-inline-block">Партнерам</a>
-							</li>
-							<li class="menu__item d-flex justify-content-center">
-								<a href="article-page.html" class="menu__link d-inline-block">Статьи</a>
-							</li>
-							<li class="menu__item d-flex justify-content-center">
-								<a href="contacts-page.html" class="menu__link d-inline-block">Контакты</a>
-							</li>
-						</ul>
-					</nav>
+					<? $APPLICATION->IncludeComponent(
+						"bitrix:menu",
+						"top-menu",
+						array(
+							"COMPONENT_TEMPLATE" => "top-menu",
+							"ROOT_MENU_TYPE" => "top",
+							"MENU_CACHE_TYPE" => "N",
+							"MENU_CACHE_TIME" => "3600",
+							"MENU_CACHE_USE_GROUPS" => "Y",
+							"MENU_CACHE_GET_VARS" => array(),
+							"MAX_LEVEL" => "2",
+							"CHILD_MENU_TYPE" => "left",
+							"USE_EXT" => "Y",
+							"DELAY" => "N",
+							"ALLOW_MULTI_SELECT" => "N"
+						),
+						false
+					); ?>
+
 				</div>
 			</div>
 		</header>

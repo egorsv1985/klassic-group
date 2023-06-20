@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
+<? if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 /** @var array $arParams */
 /** @var array $arResult */
 /** @global CMain $APPLICATION */
@@ -11,85 +11,202 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
+// print_r($arResult);
 ?>
-<div class="news-detail">
-	<?if($arParams["DISPLAY_PICTURE"]!="N" && is_array($arResult["DETAIL_PICTURE"])):?>
-		<img
-			class="detail_picture"
-			border="0"
-			src="<?=$arResult["DETAIL_PICTURE"]["SRC"]?>"
-			width="<?=$arResult["DETAIL_PICTURE"]["WIDTH"]?>"
-			height="<?=$arResult["DETAIL_PICTURE"]["HEIGHT"]?>"
-			alt="<?=$arResult["DETAIL_PICTURE"]["ALT"]?>"
-			title="<?=$arResult["DETAIL_PICTURE"]["TITLE"]?>"
-			/>
-	<?endif?>
-	<?if($arParams["DISPLAY_DATE"]!="N" && $arResult["DISPLAY_ACTIVE_FROM"]):?>
-		<span class="news-date-time"><?=$arResult["DISPLAY_ACTIVE_FROM"]?></span>
-	<?endif;?>
-	<?if($arParams["DISPLAY_NAME"]!="N" && $arResult["NAME"]):?>
-		<h3><?=$arResult["NAME"]?></h3>
-	<?endif;?>
-	<?if($arParams["DISPLAY_PREVIEW_TEXT"]!="N" && ($arResult["FIELDS"]["PREVIEW_TEXT"] ?? '')):?>
-		<p><?=$arResult["FIELDS"]["PREVIEW_TEXT"];unset($arResult["FIELDS"]["PREVIEW_TEXT"]);?></p>
-	<?endif;?>
-	<?if($arResult["NAV_RESULT"]):?>
-		<?if($arParams["DISPLAY_TOP_PAGER"]):?><?=$arResult["NAV_STRING"]?><br /><?endif;?>
-		<?echo $arResult["NAV_TEXT"];?>
-		<?if($arParams["DISPLAY_BOTTOM_PAGER"]):?><br /><?=$arResult["NAV_STRING"]?><?endif;?>
-	<?elseif($arResult["DETAIL_TEXT"] <> ''):?>
-		<?echo $arResult["DETAIL_TEXT"];?>
-	<?else:?>
-		<?echo $arResult["PREVIEW_TEXT"];?>
-	<?endif?>
-	<div style="clear:both"></div>
-	<br />
-	<?foreach($arResult["FIELDS"] as $code=>$value):
-		if ('PREVIEW_PICTURE' == $code || 'DETAIL_PICTURE' == $code)
-		{
-			?><?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?
-			if (!empty($value) && is_array($value))
-			{
-				?><img border="0" src="<?=$value["SRC"]?>" width="<?=$value["WIDTH"]?>" height="<?=$value["HEIGHT"]?>"><?
-			}
-		}
-		else
-		{
-			?><?=GetMessage("IBLOCK_FIELD_".$code)?>:&nbsp;<?=$value;?><?
-		}
-		?><br />
-	<?endforeach;
-	foreach($arResult["DISPLAY_PROPERTIES"] as $pid=>$arProperty):?>
-
-		<?=$arProperty["NAME"]?>:&nbsp;
-		<?if(is_array($arProperty["DISPLAY_VALUE"])):?>
-			<?=implode("&nbsp;/&nbsp;", $arProperty["DISPLAY_VALUE"]);?>
-		<?else:?>
-			<?=$arProperty["DISPLAY_VALUE"];?>
-		<?endif?>
-		<br />
-	<?endforeach;
-	if(array_key_exists("USE_SHARE", $arParams) && $arParams["USE_SHARE"] == "Y")
-	{
-		?>
-		<div class="news-detail-share">
-			<noindex>
-			<?
-			$APPLICATION->IncludeComponent("bitrix:main.share", "", array(
-					"HANDLERS" => $arParams["SHARE_HANDLERS"],
-					"PAGE_URL" => $arResult["~DETAIL_PAGE_URL"],
-					"PAGE_TITLE" => $arResult["~NAME"],
-					"SHORTEN_URL_LOGIN" => $arParams["SHARE_SHORTEN_URL_LOGIN"],
-					"SHORTEN_URL_KEY" => $arParams["SHARE_SHORTEN_URL_KEY"],
-					"HIDE" => $arParams["SHARE_HIDE"],
-				),
-				$component,
-				array("HIDE_ICONS" => "Y")
-			);
-			?>
-			</noindex>
+<?= $arItem["DETAIL_TEXT"] ?>
+<section class="connections pb-5">
+	<div class="container">
+		<div class="row gy-3 mb-5">
+			<div class="col-12 col-md-7">
+				<div class="fs-48 fw-700 ff-roboto mb-4">
+					<h2>Достоинства и недостатки гибкого кирпича Brickbel</h2>
+				</div>
+				<div class="fs-16 lh-12">
+					<p>
+						С другой стороны укрепление и развитие структуры влечет за собой
+						процесс внедрения и модернизации систем массового участия.
+						Значимость этих проблем настолько очевидна, что постоянный
+						количественный рост и сфера нашей активности обеспечивает широкому
+						кругу (специалистов) участие в формировании дальнейших направлений
+						развития. Разнообразный и богатый опыт дальнейшее развитие различных
+						форм деятельности позволяет выполнять важные задания по разработке
+						систем массового участия.
+					</p>
+				</div>
+				<div class="fs-16 lh-12">
+					<p>
+						С другой стороны укрепление и развитие структуры влечет за собой
+						процесс внедрения и модернизации систем массового участия.
+						Значимость этих проблем настолько очевидна, что постоянный
+						количественный рост и сфера нашей активности обеспечивает широкому
+						кругу (специалистов) участие в формировании дальнейших направлений
+						развития. Разнообразный и богатый опыт дальнейшее развитие различных
+						форм деятельности позволяет выполнять важные задания по разработке
+						систем массового участия.
+					</p>
+				</div>
+			</div>
+			<div class="col-12 col-md-5">
+				<div class="d-block rounded-2">
+					<picture>
+						<source srcset="img/connections.webp" type="image/webp"><img src="img/connections.png" alt="Достоинства и недостатки гибкого кирпича Brickbel" class="w-100 d-block rounded-2">
+					</picture>
+				</div>
+			</div>
+			<div class="fs-16 lh-12">
+				<p>
+					С другой стороны укрепление и развитие структуры влечет за собой
+					процесс внедрения и модернизации систем массового участия. Значимость
+					этих проблем настолько очевидна, что постоянный количественный рост и
+					сфера нашей активности обеспечивает широкому кругу (специалистов)
+					участие в формировании дальнейших направлений развития. Разнообразный
+					и богатый опыт дальнейшее развитие различных форм деятельности
+					позволяет выполнять важные задания по разработке систем массового
+					участия.
+				</p>
+			</div>
+			<div class="fs-16 lh-12">
+				<p>
+					С другой стороны укрепление и развитие структуры влечет за собой
+					процесс внедрения и модернизации систем массового участия. Значимость
+					этих проблем настолько очевидна, что постоянный количественный рост и
+					сфера нашей активности обеспечивает широкому кругу (специалистов)
+					участие в формировании дальнейших направлений развития. Разнообразный
+					и богатый опыт дальнейшее развитие различных форм деятельности
+					позволяет выполнять важные задания по разработке систем массового
+					участия.
+				</p>
+			</div>
 		</div>
-		<?
-	}
-	?>
-</div>
+		<div class="fs-40 fw-700 ff-roboto mb-4">
+			<h2>Достоинства</h2>
+		</div>
+		<div class="fs-16 lh-12">
+			<p>
+				С другой стороны укрепление и развитие структуры влечет за собой процесс
+				внедрения и модернизации систем массового участия. Значимость этих
+				проблем настолько очевидна, что постоянный количественный рост и сфера
+				нашей активности обеспечивает широкому кругу (специалистов) участие в
+				формировании дальнейших направлений развития. Разнообразный и богатый
+				опыт дальнейшее развитие различных форм деятельности позволяет выполнять
+				важные задания по разработке систем массового участия.
+			</p>
+		</div>
+		<div class="fs-16 lh-12">
+			<p>
+				С другой стороны укрепление и развитие структуры влечет за собой процесс
+				внедрения и модернизации систем массового участия. Значимость этих
+				проблем настолько очевидна, что постоянный количественный рост и сфера
+				нашей активности обеспечивает широкому кругу (специалистов) участие в
+				формировании дальнейших направлений развития. Разнообразный и богатый
+				опыт дальнейшее развитие различных форм деятельности позволяет выполнять
+				важные задания по разработке систем массового участия.
+			</p>
+		</div>
+		<div class="row overflow-hidden">
+			<div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex flex-column position-relative pt-5 pb-3">
+				<div class="col-8 fs-20 fw-600 ff-roboto">
+					<h3>Простой и легкий монтаж</h3>
+				</div>
+				<div class="d-flex flex-column gap-2 fs-16 pe-4 lh-11">
+					<p>
+						Минимум затрат, минимум отходов. Клейте на стену модуль на сетке,
+						которой содержит 72 плитки гибкого кирпича.
+					</p>
+					В любом месте сетки вы можете вырезать плитку и вставить плитку
+					другого цвета.
+				</div>
+			</div>
+			<div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex flex-column position-relative pt-5 pb-3">
+				<div class="col-8 fs-20 fw-600 ff-roboto">
+					<h3>Кирпич гибкий и эластичный</h3>
+				</div>
+				<div class="d-flex flex-column gap-2 fs-16 pe-4 lh-11">
+					<p>
+						Можно легко гнуть и резать обычным ножом. Состоит из натуральных
+						материалов на основе водно-акриловой дисперсии и мраморной
+						(гранитной или кварцевой) крошки.
+					</p>
+				</div>
+			</div>
+			<div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex flex-column position-relative pt-5 pb-3">
+				<div class="col-8 fs-20 fw-600 ff-roboto">
+					<h3>Очень похож на натуральный клинкер</h3>
+				</div>
+				<div class="d-flex flex-column gap-2 fs-16 pe-4 lh-11">
+					<p>
+						Более 20 разных цветов. Возможно изготовление индивидуальных цветов
+						по спецзаказу!
+					</p>
+					<p>
+						Представьте себе самый красивый и стильный кирпичный дом. У Вас
+						будет лучше!
+					</p>
+				</div>
+			</div>
+			<div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex flex-column position-relative pt-5 pb-3">
+				<div class="col-8 fs-20 fw-600 ff-roboto">
+					<h3>Весит 3,2 кг/м2</h3>
+				</div>
+				<div class="d-flex flex-column gap-2 fs-16 pe-4 lh-11">
+					<p>
+						Подходит для наружных и для внутренних работ. Подходит для
+						реставрационных работ, где необходим минимальный вес отделочных
+						материалов.
+					</p>
+					Применяется для отделки утепленных стен, пеноблок или стен каркасных
+					домов из OSB панелей.
+				</div>
+			</div>
+			<div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex flex-column position-relative pt-5 pb-3">
+				<div class="col-8 fs-20 fw-600 ff-roboto">
+					<h3>Защитит стены от трещин</h3>
+				</div>
+				<div class="d-flex flex-column gap-2 fs-16 pe-4 lh-11">
+					<p>
+						Идеально подходит для отделки утепленных домов. В отличие от обычной
+						плитки, он не растрескивается и не отваливается в случае усадки стен
+						или перепадов температуры.
+					</p>
+					<p>
+						Выбирайте эластичный Гибкий Кирпич Brickbel, чтобы не было трещин.
+					</p>
+				</div>
+			</div>
+			<div class="advantages__item col-12 col-sm-6 col-lg-4 d-flex flex-column position-relative pt-5 pb-3">
+				<div class="col-8 fs-20 fw-600 ff-roboto">
+					<h3>Срок эксплуатации более 35 лет</h3>
+				</div>
+				<div class="d-flex flex-column gap-2 fs-16 pe-4 lh-11">
+					<p>Гибкий кирпич имеет высокую атмосферостойкость, влагостойкость.</p>
+					<p>
+						Материал можно мыть под давлением до 2х бар. Устойчив к средствам
+						бытовой химии.
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="fs-16 lh-12">
+			<p>
+				С другой стороны укрепление и развитие структуры влечет за собой процесс
+				внедрения и модернизации систем массового участия. Значимость этих
+				проблем настолько очевидна, что постоянный количественный рост и сфера
+				нашей активности обеспечивает широкому кругу (специалистов) участие в
+				формировании дальнейших направлений развития. Разнообразный и богатый
+				опыт дальнейшее развитие различных форм деятельности позволяет выполнять
+				важные задания по разработке систем массового участия.
+			</p>
+		</div>
+		<div class="fs-16 lh-12">
+			<p>
+				С другой стороны укрепление и развитие структуры влечет за собой процесс
+				внедрения и модернизации систем массового участия. Значимость этих
+				проблем настолько очевидна, что постоянный количественный рост и сфера
+				нашей активности обеспечивает широкому кругу (специалистов) участие в
+				формировании дальнейших направлений развития. Разнообразный и богатый
+				опыт дальнейшее развитие различных форм деятельности позволяет выполнять
+				важные задания по разработке систем массового участия.
+			</p>
+		</div>
+	</div>
+</section>

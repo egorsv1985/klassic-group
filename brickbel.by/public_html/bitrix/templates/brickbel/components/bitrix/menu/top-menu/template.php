@@ -1,49 +1,38 @@
-<?if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?php if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) exit("Access Denied"); ?>
 
-<?if (!empty($arResult)):?>
+<?php if (!empty($arResult)) : ?>
 
-<div class="menu-sitemap-tree">
-<ul>
-<?
-$previousLevel = 0;
-foreach($arResult as $arItem):
-?>
-	<?if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel):?>
-		<?=str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"]));?>
-	<?endif?>
+	<nav class="header__menu menu py-3 col-12 position-relative">
+		<ul class="menu__list d-flex flex-column flex-lg-row h-100 justify-content-center align-items-center justify-content-lg-between text-nowrap ps-0 mb-0 gap-3">
+			<?php $previousLevel = 0;
+			foreach ($arResult as $arItem) : ?>
+				<?php if ($previousLevel && $arItem["DEPTH_LEVEL"] < $previousLevel) : ?>
+					<?= str_repeat("</ul></li>", ($previousLevel - $arItem["DEPTH_LEVEL"])); ?>
+				<?php endif ?>
+				<?php if ($arItem["IS_PARENT"]) : ?>
+					<li class="py-1 py-lg-0<?php if ($arItem["CHILD_SELECTED"] !== true) : ?> parent<?php endif ?>">
+						<a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+						<ul class="position-absolute flex-column">
 
-	<?if ($arItem["IS_PARENT"]):?>
-		<li class="menu__item d-flex justify-content-center menu__parent position-relative flex-column">
-		<a href="catalog-page.html" class="menu__link menu__link--bg d-inline-block ps-4">Каталог</a>
+						<?php else : ?>
 
-				<div class="folder" onClick="OpenMenuNode(this)"></div>
-				<div class="item-text"><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></div>
+							<?php if ($arItem["PERMISSION"] > "D") : ?>
+								<li class="">
+									<a href="<?= $arItem["LINK"] ?>"><?= $arItem["TEXT"] ?></a>
+								</li>
+							<?php endif ?>
 
-				
-				<ul class="position-absolute flex-column">
+						<?php endif ?>
 
-	<?else:?>
+						<?php $previousLevel = $arItem["DEPTH_LEVEL"]; ?>
 
-		<?if ($arItem["PERMISSION"] > "D"):?>
-				<li>
-					<div class="page"></div>
-					<div class="item-text"><a href="<?=$arItem["LINK"]?>"><?=$arItem["TEXT"]?></a></div>
-				</li>
-				<li class="menu__item d-flex justify-content-center">
-							<a href="about-page.html" class="menu__link d-inline-block">О нас</a>
-						</li>
-		<?endif?>
+					<?php endforeach ?>
 
-	<?endif?>
+					<?php if ($previousLevel > 1) : //close last item tags
+					?>
+						<?= str_repeat("</ul></li>", ($previousLevel - 1)); ?>
+					<?php endif ?>
 
-	<?$previousLevel = $arItem["DEPTH_LEVEL"];?>
-
-<?endforeach?>
-
-<?if ($previousLevel > 1)://close last item tags?>
-	<?=str_repeat("</ul></li>", ($previousLevel-1) );?>
-<?endif?>
-
-</ul>
-</div>
-<?endif?>
+						</ul>
+	</nav>
+<?php endif ?>
