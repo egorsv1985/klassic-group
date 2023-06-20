@@ -13,7 +13,15 @@
 $this->setFrameMode(true);
 // print_r($arResult);
 ?>
-
+<?
+$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+?>
+<? if (CModule::IncludeModule("millcom.phpthumb")) {
+	$arItem["DETAIL_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["DETAIL_PICTURE"]["SRC"], 1);
+	$arItem["DETAIL_PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arItem["DETAIL_PICTURE"]["SRC"], 2);
+}
+?>
 <section class="products-items pb-5">
 	<div class="container">
 
@@ -21,7 +29,7 @@ $this->setFrameMode(true);
 			<div class="col-12 col-md-4">
 				<div class="rounded">
 					<picture>
-						<source srcset="<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>" type="image/webp"><img src="<?= $arResult["DETAIL_PICTURE"]["SRC"] ?>" alt="<?= $arItem["DETAIL_PICTURE"]["ALT"] ?>" title="<?= $arItem["DETAIL_PICTURE"]["TITLE"] ?>" class="w-100" />
+						<source srcset="<?= $arResult["DETAIL_PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arResult["DETAIL_PICTURE"]["PNG"] ?>" alt="<?= $arItem["DETAIL_PICTURE"]["ALT"] ?>" title="<?= $arItem["DETAIL_PICTURE"]["TITLE"] ?>" class="w-100" />
 					</picture>
 				</div>
 			</div>
@@ -124,7 +132,7 @@ $this->setFrameMode(true);
 										</div>
 									</div>
 								<? endif; ?>
-								<? if (!empty($arResult["PROPERTIES"]["MOROZOSTOYKOST"]["VALUE"])): ?>
+								<? if (!empty($arResult["PROPERTIES"]["MOROZOSTOYKOST"]["VALUE"])) : ?>
 									<div class="col-12 col-sm-6 col-lg-4">
 										<div class="fs-15 text-dark mb-1">
 											<p class="m-0">Морозостойкость</p>
@@ -134,7 +142,7 @@ $this->setFrameMode(true);
 										</div>
 									</div>
 								<? endif; ?>
-								<? if (!empty($arResult["PROPERTIES"]["KOLICHESTVO_PLITOK_NA_SETKE"]["VALUE"])): ?>
+								<? if (!empty($arResult["PROPERTIES"]["KOLICHESTVO_PLITOK_NA_SETKE"]["VALUE"])) : ?>
 									<div class="col-12 col-sm-6 col-lg-4">
 										<div class="fs-15 text-dark mb-1">
 											<p class="m-0">Кол-во плиток на сетке</p>
