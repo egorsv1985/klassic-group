@@ -2,7 +2,7 @@
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetPageProperty("TITLE", "Конструктор");
 $APPLICATION->SetTitle("Конструктор");
-?><?$APPLICATION->IncludeComponent(
+$APPLICATION->IncludeComponent(
 	"bitrix:news.list", 
 	"konctructor", 
 	array(

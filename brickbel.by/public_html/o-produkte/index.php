@@ -1,7 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("О продукте");
-$APPLICATION->IncludeFile("about-product.php");
+$APPLICATION->IncludeFile("include/about-product.php");
 $APPLICATION->IncludeComponent(
 	"bitrix:news.list",
 	"advantages-product",

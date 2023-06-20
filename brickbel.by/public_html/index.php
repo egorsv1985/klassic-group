@@ -162,7 +162,7 @@ $APPLICATION->IncludeComponent(
 	),
 	false
 );
-$APPLICATION->IncludeFile("constructor.php");
+$APPLICATION->IncludeFile("include/constructor.php");
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog.section.list",
 	"catalog",

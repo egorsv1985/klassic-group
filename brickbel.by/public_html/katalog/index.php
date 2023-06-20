@@ -2,48 +2,27 @@
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
 
-?><?$APPLICATION->IncludeComponent("bitrix:news", "catalog", Array(
-	"ADD_ELEMENT_CHAIN" => "N",	// Включать название элемента в цепочку навигации
-		"ADD_SECTIONS_CHAIN" => "Y",	// Включать раздел в цепочку навигации
-		"AJAX_MODE" => "N",	// Включить режим AJAX
-		"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
-		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
-		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
-		"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
-		"BROWSER_TITLE" => "-",	// Установить заголовок окна браузера из свойства
-		"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
-		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
-		"CACHE_TIME" => "7200",	// Время кеширования (сек.)
-		"CACHE_TYPE" => "A",	// Тип кеширования
-		"CHECK_DATES" => "Y",	// Показывать только активные на данный момент элементы
-		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
-		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком
-		"DETAIL_DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
-		"DETAIL_FIELD_CODE" => array(	// Поля
-			0 => "",
-			1 => "",
-		),
-		"DETAIL_PAGER_SHOW_ALL" => "Y",	// Показывать ссылку "Все"
-		"DETAIL_PAGER_TEMPLATE" => "",	// Название шаблона
-		"DETAIL_PAGER_TITLE" => "Страница",	// Название категорий
-		"DETAIL_PROPERTY_CODE" => array(	// Свойства
-			0 => "",
-			1 => "",
-		),
-		"DETAIL_SET_CANONICAL_URL" => "N",	// Устанавливать канонический URL
-		"DISPLAY_BOTTOM_PAGER" => "Y",	// Выводить под списком
-		"DISPLAY_DATE" => "Y",	// Выводить дату элемента
-		"DISPLAY_NAME" => "Y",	// Выводить название элемента
-		"DISPLAY_PICTURE" => "Y",	// Выводить изображение для анонса
-		"DISPLAY_PREVIEW_TEXT" => "Y",	// Выводить текст анонса
-		"DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
-		"FILE_404" => "",	// Страница для показа (по умолчанию /404.php)
-		"HIDE_LINK_WHEN_NO_DETAIL" => "N",	// Скрывать ссылку, если нет детального описания
-		"IBLOCK_ID" => "3",	// Инфоблок
-		"IBLOCK_TYPE" => "CONTENT",	// Тип инфоблока
-		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",	// Включать инфоблок в цепочку навигации
-		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",	// Формат показа даты
-		"LIST_FIELD_CODE" => array(	// Поля
+$APPLICATION->IncludeComponent(
+	"bitrix:news", 
+	"catalog", 
+	array(
+		"ADD_ELEMENT_CHAIN" => "Y",
+		"ADD_SECTIONS_CHAIN" => "Y",
+		"AJAX_MODE" => "N",
+		"AJAX_OPTION_ADDITIONAL" => "",
+		"AJAX_OPTION_HISTORY" => "N",
+		"AJAX_OPTION_JUMP" => "N",
+		"AJAX_OPTION_STYLE" => "Y",
+		"BROWSER_TITLE" => "-",
+		"CACHE_FILTER" => "N",
+		"CACHE_GROUPS" => "Y",
+		"CACHE_TIME" => "7200",
+		"CACHE_TYPE" => "A",
+		"CHECK_DATES" => "Y",
+		"DETAIL_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"DETAIL_DISPLAY_BOTTOM_PAGER" => "Y",
+		"DETAIL_DISPLAY_TOP_PAGER" => "N",
+		"DETAIL_FIELD_CODE" => array(
 			0 => "ID",
 			1 => "CODE",
 			2 => "XML_ID",
@@ -73,46 +52,110 @@ $APPLICATION->SetTitle("Каталог");
 			26 => "USER_NAME",
 			27 => "",
 		),
-		"LIST_PROPERTY_CODE" => array(	// Свойства
+		"DETAIL_PAGER_SHOW_ALL" => "Y",
+		"DETAIL_PAGER_TEMPLATE" => "",
+		"DETAIL_PAGER_TITLE" => "Страница",
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "VES_UPAKOVKI",
+			1 => "KOLICHESTVO_V_UPAKOVKE",
+			2 => "KOLICHESTVO_PLITOK_NA_SETKE",
+			3 => "MOROZOSTOYKOST",
+			4 => "OBEM_UPAKOVKI",
+			5 => "POLEZNAYA_PLOSHCHAD_MODULYA",
+			6 => "RAZMER_KIRPICHA",
+			7 => "RAZMER_MODULYA",
+			8 => "RAZMER_RASSHVORKI",
+			9 => "SOSTAV",
+			10 => "TEMPERATURA_EKSPLOATATSII",
+			11 => "TOLSHCHINA",
+			12 => "PRICE_2",
+			13 => "PRICE_1",
+			14 => "",
+		),
+		"DETAIL_SET_CANONICAL_URL" => "N",
+		"DISPLAY_BOTTOM_PAGER" => "Y",
+		"DISPLAY_DATE" => "Y",
+		"DISPLAY_NAME" => "Y",
+		"DISPLAY_PICTURE" => "Y",
+		"DISPLAY_PREVIEW_TEXT" => "Y",
+		"DISPLAY_TOP_PAGER" => "N",
+		"FILE_404" => "",
+		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
+		"IBLOCK_ID" => "3",
+		"IBLOCK_TYPE" => "CONTENT",
+		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
+		"LIST_ACTIVE_DATE_FORMAT" => "d.m.Y",
+		"LIST_FIELD_CODE" => array(
+			0 => "ID",
+			1 => "CODE",
+			2 => "XML_ID",
+			3 => "NAME",
+			4 => "TAGS",
+			5 => "SORT",
+			6 => "PREVIEW_TEXT",
+			7 => "PREVIEW_PICTURE",
+			8 => "DETAIL_TEXT",
+			9 => "DETAIL_PICTURE",
+			10 => "DATE_ACTIVE_FROM",
+			11 => "ACTIVE_FROM",
+			12 => "DATE_ACTIVE_TO",
+			13 => "ACTIVE_TO",
+			14 => "SHOW_COUNTER",
+			15 => "SHOW_COUNTER_START",
+			16 => "IBLOCK_TYPE_ID",
+			17 => "IBLOCK_ID",
+			18 => "IBLOCK_CODE",
+			19 => "IBLOCK_NAME",
+			20 => "IBLOCK_EXTERNAL_ID",
+			21 => "DATE_CREATE",
+			22 => "CREATED_BY",
+			23 => "CREATED_USER_NAME",
+			24 => "TIMESTAMP_X",
+			25 => "MODIFIED_BY",
+			26 => "USER_NAME",
+			27 => "",
+		),
+		"LIST_PROPERTY_CODE" => array(
 			0 => "PRICE_2",
 			1 => "PRICE_1",
 			2 => "",
 		),
 		"MESSAGE_404" => "",
-		"META_DESCRIPTION" => "-",	// Установить описание страницы из свойства
-		"META_KEYWORDS" => "-",	// Установить ключевые слова страницы из свойства
-		"NEWS_COUNT" => "20",	// Количество новостей на странице
-		"PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
-		"PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
-		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
-		"PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
-		"PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
-		"PAGER_TEMPLATE" => ".default",	// Шаблон постраничной навигации
-		"PAGER_TITLE" => "Новости",	// Название категорий
-		"PREVIEW_TRUNCATE_LEN" => "",	// Максимальная длина анонса для вывода (только для типа текст)
-		"SEF_FOLDER" => "/katalog/",	// Каталог ЧПУ (относительно корня сайта)
-		"SEF_MODE" => "Y",	// Включить поддержку ЧПУ
+		"META_DESCRIPTION" => "-",
+		"META_KEYWORDS" => "-",
+		"NEWS_COUNT" => "8",
+		"PAGER_BASE_LINK_ENABLE" => "N",
+		"PAGER_DESC_NUMBERING" => "N",
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
+		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALWAYS" => "N",
+		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TITLE" => "Новости",
+		"PREVIEW_TRUNCATE_LEN" => "",
+		"SEF_FOLDER" => "/katalog/",
+		"SEF_MODE" => "Y",
+		"SET_LAST_MODIFIED" => "N",
+		"SET_STATUS_404" => "Y",
+		"SET_TITLE" => "Y",
+		"SHOW_404" => "Y",
+		"SORT_BY1" => "SORT",
+		"SORT_BY2" => "SORT",
+		"SORT_ORDER1" => "ASC",
+		"SORT_ORDER2" => "ASC",
+		"STRICT_SECTION_CHECK" => "N",
+		"USE_CATEGORIES" => "N",
+		"USE_FILTER" => "N",
+		"USE_PERMISSIONS" => "N",
+		"USE_RATING" => "N",
+		"USE_RSS" => "N",
+		"USE_SEARCH" => "N",
+		"USE_SHARE" => "N",
+		"COMPONENT_TEMPLATE" => "catalog",
 		"SEF_URL_TEMPLATES" => array(
-			"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 			"news" => "",
 			"section" => "#SECTION_CODE#/",
-		),
-		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
-		"SET_STATUS_404" => "Y",	// Устанавливать статус 404
-		"SET_TITLE" => "Y",	// Устанавливать заголовок страницы
-		"SHOW_404" => "Y",	// Показ специальной страницы
-		"SORT_BY1" => "SORT",	// Поле для первой сортировки новостей
-		"SORT_BY2" => "SORT",	// Поле для второй сортировки новостей
-		"SORT_ORDER1" => "ASC",	// Направление для первой сортировки новостей
-		"SORT_ORDER2" => "ASC",	// Направление для второй сортировки новостей
-		"STRICT_SECTION_CHECK" => "N",	// Строгая проверка раздела
-		"USE_CATEGORIES" => "N",	// Выводить материалы по теме
-		"USE_FILTER" => "N",	// Показывать фильтр
-		"USE_PERMISSIONS" => "N",	// Использовать дополнительное ограничение доступа
-		"USE_RATING" => "N",	// Разрешить голосование
-		"USE_RSS" => "N",	// Разрешить RSS
-		"USE_SEARCH" => "N",	// Разрешить поиск
-		"USE_SHARE" => "N",	// Отображать панель соц. закладок
+			"detail" => "#SECTION_CODE#/#ELEMENT_CODE#/",
+		)
 	),
 	false
 );?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
