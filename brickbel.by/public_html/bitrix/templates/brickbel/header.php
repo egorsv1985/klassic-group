@@ -30,12 +30,12 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 
 <head>
 	<? $APPLICATION->ShowHead(); ?>
 	<title><? $APPLICATION->ShowTitle(); ?></title>
-	<meta charset="UTF-8" />
+	<meta charset="UTF-8" >
 	<meta name="format-detection" content="telephone=no">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/svg+xml" href="<?= SITE_TEMPLATE_PATH; ?>/favicon/favicon.svg">
@@ -69,7 +69,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 							</a>
 						</div>
 						<div class="col-md-2 ms-2 d-none d-md-block">
-							<a href="#" class="d-block fs-15"> г. Минск, ул.<br />Карвата 63 </a>
+							<a href="#" class="d-block fs-15"> г. Минск, ул.<br>Карвата 63 </a>
 						</div>
 						<div class="col-lg-2 d-none d-lg-block">
 							<span class="fs-15 d-block">Пн.-Чт.: 9:00-17:45</span>
@@ -133,7 +133,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 							</button>
 						</div>
 						<div class="col-1">
-							<button type="button" class="header__burger burger button d-lg-none d-block">
+							<button type="button" class="header__burger burger button d-lg-none d-block" title="открытие меню">
 								<span class="burger__inner position-relative w-100 h-100 d-flex justify-content-center align-items-center">
 									<span></span>
 								</span>

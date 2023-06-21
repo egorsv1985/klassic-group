@@ -4,13 +4,13 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 ?>
 <section class="contacts pt-5 border-bottom">
 	<div class="container">
-		<div class="row justify-content-end mb-5 overflow-hidden">
+		<div class="row justify-content-end overflow-hidden">
 			<div class="title position-relative col-6 col-md-3 fs-16 text-center text-uppercase border border-secondary py-2 rounded-2">
 				<h3>КОНТАКТЫ</h3>
 			</div>
 		</div>
 		<?if (PAGE == 'MAIN'):?>
-			<div class="map mb-4">
+			<div class="map my-5">
 				<? $APPLICATION->IncludeComponent(
 					"bitrix:map.yandex.view",
 					"map",
@@ -117,7 +117,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 					</div>
 				</div>
 			</div>
-			<div class="col-1 d-none d-lg-block border-end"></div>
+			<div class="col-1 d-none d-lg-block border-end contacts__border position-relative"></div>
 			<div class="col-1 d-none d-lg-block"></div>
 			<div class="col-12 col-md-5 col-lg-4 mt-md-5 mb-3 pt-3">
 				<span class="d-block fs-16 text-nowrap text-dark mb-3">Телефоны</span>

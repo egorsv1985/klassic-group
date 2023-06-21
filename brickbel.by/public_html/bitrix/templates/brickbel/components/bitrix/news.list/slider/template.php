@@ -25,15 +25,25 @@ $this->setFrameMode(true);
 		<div class="swiper-wrapper">
 
 			<? foreach ($arResult["ITEMS"] as $arItem) :
-			 if (CModule::IncludeModule("millcom.phpthumb")) {
-				$arItem["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 13);
-				$arItem["PREVIEW_PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 14);
-			}
+				if (CModule::IncludeModule("millcom.phpthumb")) {
+					$arItem["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 13);
+					$arItem["PREVIEW_PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 14);
+				}
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 				//print_r($arItem);
 			?>
-				<div class="swiper-slide" style="background: url('<?= $arItem["PREVIEW_PICTURE"]["PNG"] ?>') center / cover no-repeat">
+				<div class="swiper-slide" style="background-image: url('<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+					<style>
+						@supports (background-image: -webkit-image-set(url())) {
+							.swiper-slide {
+								background-image: -webkit-image-set(url('<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>') 1x, url('<?= $arItem["PREVIEW_PICTURE"]["WEBP_2X"] ?>') 2x);
+								background-image: image-set(url('<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>') 1x, url('<?= $arItem["PREVIEW_PICTURE"]["WEBP_2X"] ?>') 2x);
+							}
+						}
+					</style>
+
+
 					<div class="container">
 						<div class="d-flex flex-column">
 							<div class="col-12 col-lg-7 h1 fs-64 fw-700 text-white mb-3 ff-roboto">
@@ -49,8 +59,8 @@ $this->setFrameMode(true);
 						</div>
 					</div>
 				</div>
-				
-		<? endforeach; ?>
+
+			<? endforeach; ?>
 
 		</div>
 		<div class="container">
@@ -58,4 +68,3 @@ $this->setFrameMode(true);
 		</div>
 	</div>
 </section>
-
