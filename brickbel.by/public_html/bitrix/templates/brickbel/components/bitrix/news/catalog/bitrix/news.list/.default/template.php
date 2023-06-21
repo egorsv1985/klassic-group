@@ -13,9 +13,11 @@
 $this->setFrameMode(true);
 // print_r($arResult);
 ?>
+
+
 <section class="products pb-5">
 	<div class="container">
-		<div class="row gx-4 gy-5 mb-3">
+		<div class="row gx-4 gy-3 mb-4">
 			<? foreach ($arResult["ITEMS"] as $arItem) :
 				if (CModule::IncludeModule("millcom.phpthumb")) {
 					$arItem["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 1);
@@ -23,12 +25,12 @@ $this->setFrameMode(true);
 				}
 
 			?>
-			<?
+				<?
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 				?>
 				<div class="col-12 col-sm-6 col-md-3 pb-4">
-					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="products__link d-block position-relative rounded-2" title="<?=$arItem["PREVIEW_PICTURE"]["TITLE"]?>
+					<a href="<?= $arItem["DETAIL_PAGE_URL"] ?>" class="d-block" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>">
 						<div class="row">
 							<div class="col-12">
 								<div class="mb-4">

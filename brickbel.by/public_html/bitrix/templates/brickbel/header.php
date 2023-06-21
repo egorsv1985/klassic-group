@@ -53,7 +53,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 				<div class="container">
 					<div class="row align-items-center flex-nowrap">
 						<div class="col-3 col-md-2">
-							<a href="index.html" class="d-flex align-items-center pt-1">
+							<a href="/" class="d-flex align-items-center pt-1">
 								<picture>
 									<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/logo.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.png" alt="logo" class="mw-100">
 								</picture>

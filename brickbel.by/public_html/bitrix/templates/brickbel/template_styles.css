@@ -574,14 +574,6 @@ p {
 Снипет (HTML): cnt
 */
 
-[class*="__container"] {
-  max-width: 72.75rem;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  margin: 0 auto;
-  padding: 0 0.9375rem;
-}
-
 .title h3 {
   letter-spacing: 0.1em;
   margin: 0;
@@ -800,25 +792,6 @@ body.popup-show::after {
 
 .lock .popup__content {
   visibility: visible;
-}
-
-[class*="-ibg"] {
-  position: relative;
-}
-
-[class*="-ibg"] img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  -o-object-fit: cover;
-  object-fit: cover;
-}
-
-[class*="-ibg_contain"] img {
-  -o-object-fit: contain;
-  object-fit: contain;
 }
 
 body {
@@ -1093,60 +1066,65 @@ swiper-slide {
   padding: 0.5rem 0 1rem;
 }
 
-.menu__list.open ul a {
+ul.open ul a {
   background: none;
 }
 
-.menu__item + .menu__item {
+.menu li {
   position: relative;
 }
-
-.menu__item + .menu__item::after {
+.menu li:hover::before {
+  background-color: #de0814;
+  width: 100%;
+}
+.menu li::before {
   content: "";
   display: block;
-  background-color: var(--text-second-color);
-  width: 1px;
-  height: 25px;
+  height: 1px;
+  width: 0;
+  background-color: #de0814;
   position: absolute;
-  left: -45px;
-  top: -5px;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.5s ease-in-out;
 }
-
-.menu__link--bg {
+.menu ul li:first-child {
   background: url("img/icons/burger.svg") center left/auto no-repeat;
+  padding-left: 1.5rem;
 }
 
-.menu__parent ul {
-  display: none;
-  top: 35px;
-  left: 0;
-  padding: 0;
-  color: #fff;
-  background-color: #250707;
-}
 .menu ul ul {
   position: absolute;
-  top: 100%;
   opacity: 0;
   transform: scale(0%);
   transform-origin: 50% 0%;
-  transition: all 0.5s ease;
-  left: 0;
-  width: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   flex-wrap: wrap;
-  display: none;
+  gap: 1rem;
   top: 35px;
   left: 0;
-  padding: 0;
+  padding: 0.5rem;
   color: #fff;
   background-color: #250707;
 }
 .menu ul li:hover ul {
-  top: 100%;
+  top: 35px;
   opacity: 1;
   transform: scale(100%);
   transition: all 0.05s ease;
+}
+.menu ul ul li:first-child {
+  padding-left: 0;
 }
 
 .promo .swiper-slide {
@@ -1615,15 +1593,23 @@ swiper-slide {
     font-size: 2.5rem;
   }
 
-  .menu__item + .menu__item::after {
+  li + li::after {
     display: none;
   }
 
-  .menu__parent ul {
+  .menu ul ul {
     left: 100px;
     top: -10px;
   }
-
+  .parent {
+    position: relative;
+  }
+  .menu ul li:hover ul {
+    top: 0;
+  }
+  .menu ul li:first-child {
+    padding: 0;
+  }
   .header__bottom {
     position: relative;
     display: none;
@@ -1644,5 +1630,3 @@ swiper-slide {
 .webp .video__box-img {
   background-image: url(img/video.webp);
 }
-
-
