@@ -3116,6 +3116,17 @@
         prevEl: ".documents .swiper-button-prev",
       },
     });
+    var modalId = document.getElementById("callback");
+
+    modalId.addEventListener("show.bs.modal", function (event) {
+      // Button that triggered the modal
+      let button = event.relatedTarget;
+      // Extract info from data-bs-* attributes
+      let recipient = button.getAttribute("data-bs-whatever");
+
+      // Use above variables to manipulate the DOM
+    });
+    document.querySelectorAll('[data-toggle="lightbox"]').forEach(el => el.addEventListener('click', Lightbox.initialize));
   }),
     $(document).ready(function () {
       $(".menu__parent>a").click(function () {

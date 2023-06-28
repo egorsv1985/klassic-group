@@ -12,7 +12,7 @@
 					</div>
 
 					<div class="col-8 col-sm-4">
-						<a class="btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient w-100" href="#" role="button" title="Конструктор">Конструктор</a>
+						<a class="btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient w-100" href="/konstruktor/" role="button" title="Конструктор">Конструктор</a>
 					</div>
 				</div>
 			</div>

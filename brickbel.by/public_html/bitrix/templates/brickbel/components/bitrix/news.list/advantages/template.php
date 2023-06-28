@@ -29,9 +29,7 @@ CFile::GetPath($arResult['PICTURE']);
 
 			<div class="d-none d-md-block col-md-1 col-lg-2"></div>
 			<div class="d-none d-md-block col-md-3 col-lg-4">
-			<picture>
-					<source srcset="<? echo CFile::GetPath($arResult['PICTURE']) ?>" type="image/webp"><img src="<? echo CFile::GetPath($arResult['PICTURE']) ?>" alt="О компании" class="w-100 rounded-2">
-				</picture>
+			
 				<picture>
 					<source srcset="<? echo CFile::GetPath($arResult['PICTURE']) ?>" type="image/webp"><img src="<? echo CFile::GetPath($arResult['PICTURE']) ?>" alt="кирпичи" class="w-100" />
 				</picture>

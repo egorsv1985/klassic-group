@@ -9,7 +9,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				<h3>КОНТАКТЫ</h3>
 			</div>
 		</div>
-		<?if (PAGE == 'MAIN'):?>
+		<? if (PAGE == 'MAIN') : ?>
 			<div class="map my-5">
 				<? $APPLICATION->IncludeComponent(
 					"bitrix:map.yandex.view",
@@ -48,49 +48,53 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 					</p>
 				</div>
 				<? $APPLICATION->IncludeComponent(
-					"bitrix:iblock.element.add.form",
-					"form-contacts",
-					array(
-						"COMPONENT_TEMPLATE" => "form-contacts",
-						"STATUS_NEW" => "N",
-						"LIST_URL" => "",
-						"USE_CAPTCHA" => "N",
-						"USER_MESSAGE_EDIT" => "",
-						"USER_MESSAGE_ADD" => "Мы с вами скоро свяжемся",
-						"DEFAULT_INPUT_SIZE" => "30",
-						"RESIZE_IMAGES" => "N",
-						"IBLOCK_TYPE" => "SYSTEM",
-						"IBLOCK_ID" => "8",
-						"PROPERTY_CODES" => array(
-							0 => "5",
-							1 => "NAME",
-						),
-						"PROPERTY_CODES_REQUIRED" => array(
-							0 => "5",
-							1 => "NAME",
-						),
-						"GROUPS" => array(),
-						"STATUS" => "ANY",
-						"ELEMENT_ASSOC" => "CREATED_BY",
-						"MAX_USER_ENTRIES" => "100000",
-						"MAX_LEVELS" => "100000",
-						"LEVEL_LAST" => "Y",
-						"MAX_FILE_SIZE" => "0",
-						"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
-						"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
-						"SEF_MODE" => "N",
-						"CUSTOM_TITLE_NAME" => "",
-						"CUSTOM_TITLE_TAGS" => "",
-						"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
-						"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
-						"CUSTOM_TITLE_IBLOCK_SECTION" => "",
-						"CUSTOM_TITLE_PREVIEW_TEXT" => "",
-						"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
-						"CUSTOM_TITLE_DETAIL_TEXT" => "",
-						"CUSTOM_TITLE_DETAIL_PICTURE" => ""
-					),
-					false
-				); ?>
+	"bitrix:iblock.element.add.form", 
+	"form-contacts", 
+	array(
+		"COMPONENT_TEMPLATE" => "form-contacts",
+		"STATUS_NEW" => "N",
+		"LIST_URL" => "",
+		"USE_CAPTCHA" => "N",
+		"USER_MESSAGE_EDIT" => "",
+		"USER_MESSAGE_ADD" => "Мы с вами скоро свяжемся",
+		"DEFAULT_INPUT_SIZE" => "30",
+		"RESIZE_IMAGES" => "N",
+		"IBLOCK_TYPE" => "SYSTEM",
+		"IBLOCK_ID" => "8",
+		"PROPERTY_CODES" => array(
+			0 => "5",
+			1 => "NAME",
+		),
+		"PROPERTY_CODES_REQUIRED" => array(
+			0 => "5",
+			1 => "NAME",
+		),
+		"GROUPS" => array(
+			0 => "1",
+			1 => "2",
+			2 => "3",
+		),
+		"STATUS" => "ANY",
+		"ELEMENT_ASSOC" => "CREATED_BY",
+		"MAX_USER_ENTRIES" => "100000",
+		"MAX_LEVELS" => "100000",
+		"LEVEL_LAST" => "Y",
+		"MAX_FILE_SIZE" => "0",
+		"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+		"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+		"SEF_MODE" => "N",
+		"CUSTOM_TITLE_NAME" => "Имя",
+		"CUSTOM_TITLE_TAGS" => "",
+		"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+		"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+		"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+		"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+		"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+		"CUSTOM_TITLE_DETAIL_TEXT" => "",
+		"CUSTOM_TITLE_DETAIL_PICTURE" => ""
+	),
+	false
+); ?>
 				<div class="fs-16 fw-500 mt-4">
 					<p>Или свяжитесь с нами:</p>
 				</div>
@@ -202,41 +206,41 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			<div class="col-12 col-sm-6">
 				<div class="d-flex align-items-center gap-2 flex-wrap">
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/visa.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/visa.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/visa.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/visa.png" alt="visa" width="46" height="15">
 					</picture>
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/visa-secure.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/visa-secure.png" alt="">
-					</picture>
-
-					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/master.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/master.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/visa-secure.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/visa-secure.png" alt="visa-secure" width="46" height="15">
 					</picture>
 
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/master-ID.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/master-ID.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/master.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/master.png" alt="master" width="46" height="15">
 					</picture>
 
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/belkart.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/belkart.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/master-ID.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/master-ID.png" alt="master-ID" width="46" height="15">
 					</picture>
 
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/belkart-internet.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/belkart-internet.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/belkart.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/belkart.png" alt="belkart" width="46" height="15">
+					</picture>
+
+					<picture>
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/belkart-internet.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/belkart-internet.png" alt="belkart-internet" width="46" height="15">
 					</picture>
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/bepaid.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/bepaid.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/bepaid.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/bepaid.png" alt="bepaid" width="46" height="15">
 					</picture>
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/gpay.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/gpay.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/gpay.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/gpay.png" alt="gpay" width="46" height="15">
 					</picture>
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/mtb.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/mtb.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/mtb.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/mtb.png" alt="mtb" width="46" height="15">
 					</picture>
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/mir.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/mir.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/mir.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/mir.png" alt="mir" width="46" height="15">
 					</picture>
 					<picture>
-						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/mir-accept.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH; ?>/img/mir-accept.png" alt="">
+						<source srcset="<?= SITE_TEMPLATE_PATH; ?>/img/mir-accept.webp" type="image/webp"><img class="w-100 h-100" src="<?= SITE_TEMPLATE_PATH; ?>/img/mir-accept.png" alt="mir-accept" width="46" height="15">
 					</picture>
 				</div>
 			</div>
@@ -244,7 +248,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				<div class="col-12 col-sm-6">
 					<ul class="d-flex gap-2 ps-0 m-0">
 						<li class="">
-							<a href="#" class="d-block">
+							<a href="#" class="d-block"  title="Teleramm">
 								<svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<g clip-path="url(#clip0_34_87)">
 										<path d="M13.5 28C20.9558 28 27 21.732 27 14C27 6.26801 20.9558 0 13.5 0C6.04416 0 0 6.26801 0 14C0 21.732 6.04416 28 13.5 28Z" fill="#039BE5" />
@@ -259,7 +263,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 							</a>
 						</li>
 						<li class="">
-							<a href="#" class="d-block">
+							<a href="#" class="d-block" title="Viber">
 								<svg width="27" height="28" viewBox="0 0 27 28" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<g clip-path="url(#clip0_34_90)">
 										<path d="M27 14.5V13.5C27 6.04416 20.9558 0 13.5 0C6.04416 0 0 6.04416 0 13.5V14.5C0 21.9558 6.04416 28 13.5 28C20.9558 28 27 21.9558 27 14.5Z" fill="#7D3DAF" />
@@ -298,40 +302,60 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 				</button>
 			</div>
 			<div class="modal-body">
-				<form action="#" class="form">
-					<div class="row gy-3">
-						<div class="form-group position-relative">
-							<input type="text" class="form-control form__input bg-light rounded-2 border border-secondary text-secondary p-3 h-100" name="name-modal" id="name-modal" placeholder="" required />
-							<label for="name-modal" class="form-label form__label fs-16 text-secondary position-absolute top-50">Имя</label>
-						</div>
-						<div class="form-group position-relative">
-							<input type="text" class="form-control form__input bg-light rounded-2 border border-secondary text-secondary p-3 h-100" name="tel-modal" id="tel-modal" placeholder="" required />
-							<label for="tel-modal" class="form-label form__label fs-16 text-secondary position-absolute top-50">Телефон</label>
-						</div>
+				<? $APPLICATION->IncludeComponent(
+	"bitrix:iblock.element.add.form", 
+	"form-modal", 
+	array(
+		"COMPONENT_TEMPLATE" => "form-modal",
+		"STATUS_NEW" => "N",
+		"LIST_URL" => "",
+		"USE_CAPTCHA" => "N",
+		"USER_MESSAGE_EDIT" => "",
+		"USER_MESSAGE_ADD" => "Мы с вами скоро свяжемся",
+		"DEFAULT_INPUT_SIZE" => "30",
+		"RESIZE_IMAGES" => "N",
+		"IBLOCK_TYPE" => "SYSTEM",
+		"IBLOCK_ID" => "8",
+		"PROPERTY_CODES" => array(
+			0 => "5",
+			1 => "NAME",
+		),
+		"PROPERTY_CODES_REQUIRED" => array(
+			0 => "5",
+			1 => "NAME",
+		),
+		"GROUPS" => array(
+			0 => "2",
+		),
+		"STATUS" => "ANY",
+		"ELEMENT_ASSOC" => "CREATED_BY",
+		"MAX_USER_ENTRIES" => "100000",
+		"MAX_LEVELS" => "100000",
+		"LEVEL_LAST" => "Y",
+		"MAX_FILE_SIZE" => "0",
+		"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
+		"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
+		"SEF_MODE" => "N",
+		"CUSTOM_TITLE_NAME" => "Имя",
+		"CUSTOM_TITLE_TAGS" => "",
+		"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
+		"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
+		"CUSTOM_TITLE_IBLOCK_SECTION" => "",
+		"CUSTOM_TITLE_PREVIEW_TEXT" => "",
+		"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
+		"CUSTOM_TITLE_DETAIL_TEXT" => "",
+		"CUSTOM_TITLE_DETAIL_PICTURE" => ""
+	),
+	false
+); ?>
 
-						<div class="">
-							<button type="submit" class="btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient w-100 border-0">
-								Отправить
-							</button>
-						</div>
-					</div>
-				</form>
 			</div>
 		</div>
 	</div>
 </div>
 
 <script>
-	var modalId = document.getElementById("callback");
 
-	modalId.addEventListener("show.bs.modal", function(event) {
-		// Button that triggered the modal
-		let button = event.relatedTarget;
-		// Extract info from data-bs-* attributes
-		let recipient = button.getAttribute("data-bs-whatever");
-
-		// Use above variables to manipulate the DOM
-	});
 </script>
 
 

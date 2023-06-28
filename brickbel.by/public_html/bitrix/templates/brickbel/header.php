@@ -21,6 +21,10 @@ $asset->addJs('https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.
 $asset->addCss('https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.css');
 $asset->addJs('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.js');
 
+$asset->addJs('https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js');
+
+
+
 // <link rel="stylesheet" href="css/style.css?_v=20230614112846">
 
 $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
@@ -42,11 +46,12 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 	<link rel="icon" type="image/png" href="<?= SITE_TEMPLATE_PATH; ?>/favicon/favicon.png">
 </head>
 
-<body<?= ($USER->IsAdmin() ? ' class="admin"' : '') ?>>
+</body>
+<body <? if ($PAGE == 'FENCES') : ?> style="background-color: #c1eb5f;"<? endif; ?> <?= ($USER->IsAdmin() ? ' class="admin"' : '') ?>>
 	<div id="panel">
 		<? $APPLICATION->ShowPanel(); ?>
 	</div>
-
+	
 	<div class="wrapper">
 		<header class="header bg-white">
 			<div class="border-bottom py-2">
@@ -55,7 +60,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 						<div class="col-3 col-md-2">
 							<a href="/" class="d-flex align-items-center pt-1">
 								<picture>
-									<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/logo.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.png" alt="logo" class="mw-100">
+									<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/logo.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/logo.png" alt="logo" class="mw-100" width="165" height="41">
 								</picture>
 							</a>
 						</div>

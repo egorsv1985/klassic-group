@@ -17,7 +17,7 @@ $this->setFrameMode(true);
 	<div class="container position-relative">
 		<div class="row justify-content-end mb-4 overflow-hidden">
 			<div class="title position-relative col-6 col-md-3 fs-16 text-center text-uppercase border border-secondary py-2 rounded-2">
-				<h3 class="mb-0">НАШИ РАБОТЫ</h3>
+				<h3 class="mb-0">НАШИ ЗАБОРЫ</h3>
 			</div>
 		</div>
 		<div class="swiper worksSwiper mb-3">
