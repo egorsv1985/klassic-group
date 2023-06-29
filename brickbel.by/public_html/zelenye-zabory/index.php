@@ -3,8 +3,7 @@ define("PAGE", "FENCES");
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Зеленые заборы");
 
-?>
-<section class="montage pb-5">
+?><section class="montage pb-5">
 	<div class="container">
 		<div class="row gy-4">
 			<div class="col-12 col-md-6 col-lg-4">
@@ -43,7 +42,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 			</div>
 			<div class="d-none d-lg-block col-lg-4">
 				<div class="d-block">
-					<picture>
+				<picture>
 						<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/classic-grass-france.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/classic-grass-france.png" alt="Монтаж" class="w-100 d-block">
 					</picture>
 				</div>
@@ -76,7 +75,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 		<table class="table table-striped table-hover border border-secondary rounded-3">
 			<thead class="border-0 table-secondary">
 				<tr>
-					<th class="text-center text-uppercase fw-700" colspan="4">ТЕХНИЧЕСКИЕ ДАННЫЕ</th>
+					<th colspan="4" class="text-center text-uppercase fw-700">ТЕХНИЧЕСКИЕ ДАННЫЕ</th>
 
 				</tr>
 			</thead>
@@ -89,26 +88,26 @@ $APPLICATION->SetTitle("Зеленые заборы");
 				</tr>
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Вес</td>
-					<td class="py-4 text-center" colspan="3">2,700 г/м2</td>
+					<td colspan="3" class="py-4 text-center">2,700 г/м2</td>
 				</tr>
 				<tr class="border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Оцинкованная проволока</td>
-					<td class="py-4 text-center" colspan="3">1,60 х 2 : 3,20 мм горячеоцинкованный двухкратнозакрученный 1,40 х 2 : 2,80 мм горячеоцинкованный двухкратнозакрученный</td>
+					<td colspan="3" class="py-4 text-center">1,60 х 2 : 3,20 мм горячеоцинкованный двухкратнозакрученный 1,40 х 2 : 2,80 мм горячеоцинкованный двухкратнозакрученный</td>
 				</tr>
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Синтетическая трава</td>
-					<td class="py-4 text-center border border-primary" colspan="3">Уф устойчивая ПВХ трава</td>
+					<td colspan="3" class="py-4 text-center border border-primary">Уф устойчивая ПВХ трава</td>
 				</tr>
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Огнестойкость</td>
-					<td class="py-4 text-center border border-primary" colspan="3">B2 класс огнезащитная добавка</td>
+					<td colspan="3" class="py-4 text-center border border-primary">B2 класс огнезащитная добавка</td>
 				</tr>
 			</tbody>
 		</table>
 		<table class="table table-striped table-hover border border-secondary rounded-3">
 			<thead class="border-0 table-secondary">
 				<tr>
-					<th class="text-center text-uppercase fw-700" colspan="4">Метод установки</th>
+					<th colspan="4" class="text-center text-uppercase fw-700">Метод установки</th>
 
 				</tr>
 			</thead>
@@ -135,7 +134,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 		<table class="table table-striped table-hover border border-secondary rounded-3">
 			<thead class="border-0 table-secondary">
 				<tr>
-					<th class="text-center text-uppercase fw-700" colspan="4">Цвета</th>
+					<th colspan="4" class="text-center text-uppercase fw-700">Цвета</th>
 
 				</tr>
 			</thead>
@@ -156,7 +155,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 		<table class="table table-striped table-hover border border-secondary rounded-3">
 			<thead class="border-0 table-secondary">
 				<tr>
-					<th class="text-center text-uppercase fw-700" colspan="4">Преимущество</th>
+					<th colspan="4" class="text-center text-uppercase fw-700">Преимущество</th>
 
 				</tr>
 			</thead>
@@ -180,7 +179,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 		<table class="table table-striped table-hover border border-secondary rounded-3">
 			<thead class="border-0 table-secondary">
 				<tr>
-					<th class="text-center text-uppercase fw-700" colspan="4">Упаковка Продукта</th>
+					<th colspan="4" class="text-center text-uppercase fw-700">Упаковка Продукта</th>
 
 				</tr>
 			</thead>
@@ -192,7 +191,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Панель Classic grass
 						fance</td>
-					<td class="py-4 text-center" colspan="3">может загружаться в различных видах без повреждений панелей</td>
+					<td colspan="3" class="py-4 text-center">может загружаться в различных видах без повреждений панелей</td>
 				</tr>
 
 
@@ -202,7 +201,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 		<table class="table table-striped table-hover border border-secondary rounded-3">
 			<thead class="border-0 table-secondary">
 				<tr>
-					<th class="text-center text-uppercase fw-700" colspan="4">Условия Хранения</th>
+					<th colspan="4" class="text-center text-uppercase fw-700">Условия Хранения</th>
 
 				</tr>
 			</thead>
@@ -213,7 +212,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 				</tr>
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Другие Материалы</td>
-					<td class="py-4 text-center" colspan="3">от 0 до +30 градусами</td>
+					<td colspan="3" class="py-4 text-center">от 0 до +30 градусами</td>
 				</tr>
 
 			</tbody>
@@ -221,7 +220,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 		<table class="table table-striped table-hover border border-secondary rounded-3">
 			<thead class="border-0 table-secondary">
 				<tr>
-					<th class="text-center text-uppercase fw-700" colspan="4">Производство и Установка</th>
+					<th colspan="4" class="text-center text-uppercase fw-700">Производство и Установка</th>
 
 				</tr>
 			</thead>
@@ -249,7 +248,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 		<table class="table table-striped table-hover border border-secondary rounded-3">
 			<thead class="border-0 table-secondary">
 				<tr>
-					<th class="text-center text-uppercase fw-700" colspan="4">Срок Гарантии</th>
+					<th colspan="4" class="text-center text-uppercase fw-700">Срок Гарантии</th>
 
 				</tr>
 			</thead>
@@ -280,11 +279,10 @@ $APPLICATION->SetTitle("Зеленые заборы");
 
 
 
-<?
-$APPLICATION->IncludeComponent(
-	"bitrix:catalog.section.list", 
-	"fences", 
-	array(
+<?$APPLICATION->IncludeComponent(
+	"bitrix:catalog.section.list",
+	"fences",
+	Array(
 		"ADDITIONAL_COUNT_ELEMENTS_FILTER" => "additionalCountFilter",
 		"ADD_SECTIONS_CHAIN" => "Y",
 		"CACHE_FILTER" => "N",
@@ -299,85 +297,10 @@ $APPLICATION->IncludeComponent(
 		"IBLOCK_ID" => "21",
 		"IBLOCK_TYPE" => "CONTENT",
 		"SECTION_CODE" => "",
-		"SECTION_FIELDS" => array(
-			0 => "",
-			1 => "ID",
-			2 => "CODE",
-			3 => "XML_ID",
-			4 => "NAME",
-			5 => "SORT",
-			6 => "DESCRIPTION",
-			7 => "PICTURE",
-			8 => "DETAIL_PICTURE",
-			9 => "IBLOCK_TYPE_ID",
-			10 => "IBLOCK_ID",
-			11 => "IBLOCK_CODE",
-			12 => "IBLOCK_EXTERNAL_ID",
-			13 => "DATE_CREATE",
-			14 => "CREATED_BY",
-			15 => "TIMESTAMP_X",
-			16 => "MODIFIED_BY",
-			17 => "",
-		),
+		"SECTION_FIELDS" => array(0=>"",1=>"ID",2=>"CODE",3=>"XML_ID",4=>"NAME",5=>"SORT",6=>"DESCRIPTION",7=>"PICTURE",8=>"DETAIL_PICTURE",9=>"IBLOCK_TYPE_ID",10=>"IBLOCK_ID",11=>"IBLOCK_CODE",12=>"IBLOCK_EXTERNAL_ID",13=>"DATE_CREATE",14=>"CREATED_BY",15=>"TIMESTAMP_X",16=>"MODIFIED_BY",17=>"",),
 		"SECTION_ID" => $_REQUEST["SECTION_ID"],
 		"SECTION_URL" => "",
-		"SECTION_USER_FIELDS" => array(
-			0 => "",
-			1 => "",
-		),
+		"SECTION_USER_FIELDS" => array(0=>"",1=>"",),
 		"TOP_DEPTH" => "2"
-	),
-	false
-);
-
-$APPLICATION->IncludeComponent(
-	"bitrix:iblock.element.add.form", 
-	"form-main", 
-	array(
-		"COMPONENT_TEMPLATE" => "form-main",
-		"STATUS_NEW" => "N",
-		"LIST_URL" => "",
-		"USE_CAPTCHA" => "N",
-		"USER_MESSAGE_EDIT" => "",
-		"USER_MESSAGE_ADD" => "Спасибо, Ваша заявка успешно сохранена",
-		"DEFAULT_INPUT_SIZE" => "30",
-		"RESIZE_IMAGES" => "N",
-		"IBLOCK_TYPE" => "SYSTEM",
-		"IBLOCK_ID" => "4",
-		"PROPERTY_CODES" => array(
-			0 => "3",
-			1 => "4",
-			2 => "NAME",
-		),
-		"PROPERTY_CODES_REQUIRED" => array(
-			0 => "3",
-			1 => "4",
-			2 => "NAME",
-		),
-		"GROUPS" => array(
-			0 => "1",
-			1 => "2",
-			2 => "3",
-		),
-		"STATUS" => "ANY",
-		"ELEMENT_ASSOC" => "CREATED_BY",
-		"MAX_USER_ENTRIES" => "100000",
-		"MAX_LEVELS" => "100000",
-		"LEVEL_LAST" => "Y",
-		"MAX_FILE_SIZE" => "0",
-		"PREVIEW_TEXT_USE_HTML_EDITOR" => "N",
-		"DETAIL_TEXT_USE_HTML_EDITOR" => "N",
-		"SEF_MODE" => "N",
-		"CUSTOM_TITLE_NAME" => "",
-		"CUSTOM_TITLE_TAGS" => "",
-		"CUSTOM_TITLE_DATE_ACTIVE_FROM" => "",
-		"CUSTOM_TITLE_DATE_ACTIVE_TO" => "",
-		"CUSTOM_TITLE_IBLOCK_SECTION" => "",
-		"CUSTOM_TITLE_PREVIEW_TEXT" => "",
-		"CUSTOM_TITLE_PREVIEW_PICTURE" => "",
-		"CUSTOM_TITLE_DETAIL_TEXT" => "",
-		"CUSTOM_TITLE_DETAIL_PICTURE" => ""
-	),
-	false
-);
-?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>
+	)
+);?><? require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php"); ?>

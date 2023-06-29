@@ -47,7 +47,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 </head>
 
 </body>
-<body <? if (PAGE == 'FENCES') : ?> style="background-color: #c1eb5f;"<? endif; ?> <?= ($USER->IsAdmin() ? ' class="admin"' : '') ?>>
+<body <? if (PAGE == 'FENCES') : ?> style="background-color: #e0edc1;"<? endif; ?> <?= ($USER->IsAdmin() ? ' class="admin"' : '') ?>>
 	<div id="panel">
 		<? $APPLICATION->ShowPanel(); ?>
 	</div>
