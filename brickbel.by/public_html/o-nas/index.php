@@ -199,8 +199,8 @@ $APPLICATION->IncludeComponent(
 	false
 );
 $APPLICATION->IncludeComponent(
-	"bitrix:iblock.element.add.form",
-	"form-main",
+	"bitrix:iblock.element.add.form", 
+	"form-main", 
 	array(
 		"COMPONENT_TEMPLATE" => "form-main",
 		"STATUS_NEW" => "N",
@@ -222,7 +222,9 @@ $APPLICATION->IncludeComponent(
 			1 => "4",
 			2 => "NAME",
 		),
-		"GROUPS" => array(),
+		"GROUPS" => array(
+			0 => "2",
+		),
 		"STATUS" => "ANY",
 		"ELEMENT_ASSOC" => "CREATED_BY",
 		"MAX_USER_ENTRIES" => "100000",

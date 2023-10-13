@@ -69,12 +69,16 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 							<a href="tel:+375445455897" class="d-block fs-15 text-nowrap">
 								+375(44) 545 58 97
 							</a>
-							<a href="tel:++375445455910" class="d-block fs-15 text-nowrap">
+							<a href="tel:+375445455910" class="d-block fs-15 text-nowrap">
 								+375(44) 545 59 10
 							</a>
+							<a href="tel:7671 " class="d-block fs-15 text-nowrap"><span>A1 и МТС </span>
+							7671 
+							</a>
+							<span class="d-block fs-10">звонок платный</span>
 						</div>
 						<div class="col-md-2 ms-2 d-none d-md-block">
-							<a href="#" class="d-block fs-15"> г. Минск, ул.<br>Карвата 63 </a>
+							<a href="https://yandex.by/maps/-/CXeAyiT" target="_blank" class="d-block fs-15"> г. Минск, ул.<br>Карвата 63 </a>
 						</div>
 						<div class="col-lg-2 d-none d-lg-block">
 							<span class="fs-15 d-block">Пн.-Чт.: 9:00-17:45</span>

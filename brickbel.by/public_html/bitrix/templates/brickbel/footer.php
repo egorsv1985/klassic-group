@@ -70,9 +70,7 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 			1 => "NAME",
 		),
 		"GROUPS" => array(
-			0 => "1",
-			1 => "2",
-			2 => "3",
+			0 => "2",
 		),
 		"STATUS" => "ANY",
 		"ELEMENT_ASSOC" => "CREATED_BY",

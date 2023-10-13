@@ -622,6 +622,10 @@ p {
   font-weight: 900;
 }
 
+.fs-10 {
+  font-size: 0.5rem;
+  line-height: 136%;
+}
 .fs-14 {
   font-size: 0.875rem;
   line-height: 136%;
