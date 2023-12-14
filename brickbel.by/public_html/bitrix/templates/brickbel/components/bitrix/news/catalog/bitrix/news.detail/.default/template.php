@@ -25,7 +25,6 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 ?>
 <section class="products-items pb-5">
 	<div class="container">
-
 		<div class="row">
 			<div class="col-12 col-md-4">
 				<div class="rounded">
