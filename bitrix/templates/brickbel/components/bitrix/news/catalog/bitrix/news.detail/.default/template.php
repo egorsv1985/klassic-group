@@ -41,32 +41,52 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 					<h2><?= $arResult["NAME"] ?></h2>
 				</div>
 				<div class="row justify-content-between">
-					<div class="col-12 col-sm-6 col-lg-5 col-xl-4">
+					<div class="col-12 col-sm-6  ">
 						<div class="fs-15 text-info mb-2">
 							<p class="m-0">Единица измерения</p>
 						</div>
 						<!-- Nav tabs -->
 						<ul class="col-12 gap-4 mb-4 nav nav-tabs" id="myTab" role="tablist">
-							<li class="nav-item col-4" role="presentation">
-								<button class="nav-link py-3 lh-13 w-100" id="persquaremeter-tab" data-bs-toggle="tab" data-bs-target="#persquaremeter" type="button" role="tab" aria-controls="persquaremeter" aria-selected="false">
-									м2
-								</button>
-							</li>
-							<li class="nav-item col-4" role="presentation">
-								<button class="nav-link py-3 lh-13 w-100 active" id="perpiece-tab" data-bs-toggle="tab" data-bs-target="#perpiece" type="button" role="tab" aria-controls="perpiece" aria-selected="true">
-									1 шт
-								</button>
-							</li>
+							<? if (!empty($arResult["PROPERTIES"]["PRICE_1"]["VALUE"])) : ?>
+								<li class="nav-item col-4" role="presentation">
+									<button class="nav-link py-3 lh-13 w-100 active" id="persquaremeter-tab" data-bs-toggle="tab" data-bs-target="#persquaremeter" type="button" role="tab" aria-controls="persquaremeter" aria-selected="false">
+										м2
+									</button>
+								</li>
+							<? endif; ?>
+
+							<? if (!empty($arResult["PROPERTIES"]["PRICE_2"]["VALUE"])) : ?>
+								<li class="nav-item col-4" role="presentation">
+									<button class="nav-link py-3 lh-13 w-100 " id="perpiece-tab" data-bs-toggle="tab" data-bs-target="#perpiece" type="button" role="tab" aria-controls="perpiece" aria-selected="true">
+										1 шт
+									</button>
+								</li>
+							<? endif; ?>
+							<? if (!empty($arResult["PROPERTIES"]["PRICE_3"]["VALUE"])) : ?>
+								<li class="nav-item col-4" role="presentation">
+									<button class="nav-link py-3 lh-13 w-100" id="persquaremeter-tab" data-bs-toggle="tab" data-bs-target="#persquaremeter" type="button" role="tab" aria-controls="persquaremeter" aria-selected="false">
+										рулон
+									</button>
+								</li>
+							<? endif; ?>
 						</ul>
 
 						<!-- Tab panes -->
 						<div class="tab-content mb-2">
+
+
 							<div class="tab-pane " id="perpiece" role="tabpanel" aria-labelledby="perpiece-tab">
 								<span class="fs-40 fw-700 ff-roboto"><? echo $arResult["PROPERTIES"]["PRICE_1"]["VALUE"] ?></span>
 							</div>
+
 							<div class="tab-pane active" id="persquaremeter" role="tabpanel" aria-labelledby="persquaremeter-tab">
 								<span class="fs-40 fw-700 ff-roboto"><? echo $arResult["PROPERTIES"]["PRICE_2"]["VALUE"] ?></span>
 							</div>
+
+							<div class="tab-pane active" id="persquaremeter" role="tabpanel" aria-labelledby="persquaremeter-tab">
+								<span class="fs-40 fw-700 ff-roboto"><? echo $arResult["PROPERTIES"]["PRICE_3"]["VALUE"] ?></span>
+							</div>
+
 						</div>
 					</div>
 					<div class="col-12 col-sm-6 col-lg-5 d-flex align-items-end pe-0">
@@ -96,11 +116,15 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 						<div class="col-10 offset-1 offset-sm-2 pe-5">
 							<div class="fs-16">
 								<p>
-
-									<? echo $arResult["PREVIEW_TEXT"] ?>
-									Гибкий кирпич имеет высокую атмосферостойкость,
-									влагостойкость. Материал можно мыть под давлением до 2х бар.
-									Устойчив к средствам бытовой химии.
+									<?
+									if (!empty($arResult["PREVIEW_TEXT"])) {
+										echo  $arResult["PREVIEW_TEXT"];
+									} else {
+									?>
+										Гибкий кирпич имеет высокую атмосферостойкость, влагостойкость. Материал можно мыть под давлением до 2х бар. Устойчив к средствам бытовой химии.
+									<?
+									}
+									?>
 								</p>
 							</div>
 						</div>
@@ -237,6 +261,96 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 										</div>
 										<div class="fs-16 lh-11">
 											<p class="m-0"><? echo $arResult["PROPERTIES"]["KOLICHESTVO_V_UPAKOVKE"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["VYSOTA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Высота</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["VYSOTA"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["RAZMER_RULONA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Размер рулона</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["RAZMER_RULONA"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["DIAMETR_RULONA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Диаметр рулона</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["DIAMETR_RULONA"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["VES"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Вес</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["VES"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["OCINKOVANNAY_PROVOLOKA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Оцинкованная проволока</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["OCINKOVANNAY_PROVOLOKA"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["SINTETICHESKAY_TRAVA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Синтетическая трава</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["SINTETICHESKAY_TRAVA"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["OGNESTOYKOST"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Огнестойкость</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["OGNESTOYKOST"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["RULON"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Рулон</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["RULON"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["PANEL"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Панель</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["PANEL"]["VALUE"] ?></p>
 										</div>
 									</div>
 								<? endif; ?>
