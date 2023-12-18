@@ -11,33 +11,20 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-<<<<<<< HEAD
 print_r($arSection['ID']);
-=======
-// print_r($arResult);
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 ?>
 
 
 <section class="products pb-5">
 	<div class="container">
-		<div class="row gx-4 gy-3 mb-4">
+		<div class="row gx-4 gy-3 mb-4 justify-content-center">
 
-<<<<<<< HEAD
 			<? $counter = 1;
 			foreach ($arResult["ITEMS"] as $arItem) :
-=======
-			<? $counter= 1;
-				 foreach ($arResult["ITEMS"] as $arItem) :
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 				if (CModule::IncludeModule("millcom.phpthumb")) {
 					$arItem["PREVIEW_PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 1);
 					$arItem["PREVIEW_PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 2);
 					$arItem["PREVIEW_PICTURE"]["BOX"] = CMillcomPhpThumb::generateImg($arItem["PREVIEW_PICTURE"]["SRC"], 25);
-<<<<<<< HEAD
-=======
-
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 				}
 
 			?>
@@ -46,7 +33,6 @@ print_r($arSection['ID']);
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 				?>
 				<div class="col-12 col-sm-6 col-md-3 pb-4">
-<<<<<<< HEAD
 
 					<div class="row">
 						<div class="col-12">
@@ -65,26 +51,6 @@ print_r($arSection['ID']);
 
 				</div>
 				<? $counter++; ?>
-=======
-					
-						<div class="row">
-							<div class="col-12">
-								<div class="mb-4">
-									 <a href="<?= $arItem["PREVIEW_PICTURE"]["BOX"] ?>" class="fancy" data-fancybox="gallery-<?= $counter ?>">
-										<picture>
-											<source srcset="<?= $arItem["PREVIEW_PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="<?= $arItem["PREVIEW_PICTURE"]["ALT"] ?>" title="<?= $arItem["PREVIEW_PICTURE"]["TITLE"] ?>" class="w-100 h-100 rounded">
-										</picture>
-									</a>
-								</div>
-								<span class="fs-20 fw-700 ff-roboto lh-11 d-block mb-3"><? echo $arItem["PROPERTIES"]["PRICE_2"]["VALUE"] ?>/м2</span>
-								<span class="fs-18 ff-roboto lh-11 d-block mb-4"><?= $arItem["NAME"] ?></span>
-								<a class="btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient w-100" href="<?= $arItem["DETAIL_PAGE_URL"] ?>" role="button" title="Подробнее">Подробнее</a>
-							</div>
-						</div>
-					
-				</div>
-			<? $counter++; ?>
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 			<? endforeach; ?>
 		</div>
 		<? if ($arParams["DISPLAY_BOTTOM_PAGER"]) : ?>
