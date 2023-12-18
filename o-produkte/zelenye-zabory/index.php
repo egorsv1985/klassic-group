@@ -81,7 +81,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 			<tbody class="fs-14">
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Размер</td>
-					<td class="py-4 text-center border border-primary">Высота: 100 см, 120 см, 150 см, 200 см</td>
+					<td class="py-4 text-center border border-primary">Высота: 150 см, 170 см, 200 см</td>
 					<td class="py-4 text-center border border-primary">Размер рулона: 10 м</td>
 					<td class="py-4 text-center border border-primary">Диаметр рулона: 40 см</td>
 				</tr>

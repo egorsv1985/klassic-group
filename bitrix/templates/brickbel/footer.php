@@ -137,9 +137,9 @@ if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true)
 						<a href="tel:+375293729823" class="d-block fs-16 text-nowrap">
 							+375(29) 372 98 23
 						</a>
-						<a href="tel:+375296410363" class="d-block fs-16 text-nowrap">
+						<!-- <a href="tel:+375296410363" class="d-block fs-16 text-nowrap">
 							+375(29) 641 03 63
-						</a>
+						</a> -->
 					</div>
 					<div class="col-6">
 						<span class="d-block text-info fs-15 mb-2">Колл-центр</span>
