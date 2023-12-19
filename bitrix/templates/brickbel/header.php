@@ -86,11 +86,10 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 					<div class="row align-items-center flex-nowrap">
 						<div class="col-3 col-md-2">
 							<picture>
-
 								<a href="/" class="d-flex align-items-center pt-1">
 									<picture>
-										<source srcset="<?= PAGE === "FENCES" ? SITE_TEMPLATE_PATH . '/img/logo-fences.webp' : SITE_TEMPLATE_PATH . '/img/logo.webp' ?>" type="image/webp">
-										<img src="<?= PAGE === "FENCES" ? SITE_TEMPLATE_PATH . '/img/logo-fences.png' : SITE_TEMPLATE_PATH . '/img/logo.png' ?>" alt="logo" title="logo" class="mw-100 h-auto" width="500" height="500">
+										<source srcset="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo-main.webp' : (strpos($APPLICATION->GetCurPage(), 'zelenye-zabory') ?				SITE_TEMPLATE_PATH . '/img/logo-fences.webp' : SITE_TEMPLATE_PATH . '/img/logo.webp') ?>" type="image/webp">
+										<img src="<?= PAGE === "MAIN" ? SITE_TEMPLATE_PATH . '/img/logo-main.png' : (strpos($APPLICATION->GetCurPage(), 'zelenye-zabory') ?				SITE_TEMPLATE_PATH . '/img/logo-fences.png' : SITE_TEMPLATE_PATH . '/img/logo.png') ?>" alt="logo" title="logo" class="mw-100 h-auto" width="500" height="500">
 									</picture>
 								</a>
 						</div>

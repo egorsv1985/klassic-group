@@ -49,40 +49,27 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 						<ul class="col-12 gap-4 mb-4 nav nav-tabs" id="myTab" role="tablist">
 							<? if (!empty($arResult["PROPERTIES"]["PRICE_1"]["VALUE"])) : ?>
 								<li class="nav-item col-4" role="presentation">
-<<<<<<< HEAD
-									<button class="nav-link py-3 lh-13 w-100 active" id="price-1-tab" data-bs-toggle="tab" data-bs-target="#price-1" type="button" role="tab" aria-controls="price-1" aria-selected="false">
-=======
-									<button class="nav-link py-3 lh-13 w-100 active" id="persquaremeter-tab" data-bs-toggle="tab" data-bs-target="#persquaremeter" type="button" role="tab" aria-controls="persquaremeter" aria-selected="false">
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
-										м2
+									<button class="nav-link py-3 lh-13 w-100" id="price-1-tab" data-bs-toggle="tab" data-bs-target="#price-1" type="button" role="tab" aria-controls="price-1" aria-selected="false">
+										1 шт
 									</button>
 								</li>
 							<? endif; ?>
 
 							<? if (!empty($arResult["PROPERTIES"]["PRICE_2"]["VALUE"])) : ?>
 								<li class="nav-item col-4" role="presentation">
-<<<<<<< HEAD
-									<button class="nav-link py-3 lh-13 w-100 " id="price-2-tab" data-bs-toggle="tab" data-bs-target="#price-2" type="button" role="tab" aria-controls="price-2" aria-selected="true">
-=======
-									<button class="nav-link py-3 lh-13 w-100 " id="perpiece-tab" data-bs-toggle="tab" data-bs-target="#perpiece" type="button" role="tab" aria-controls="perpiece" aria-selected="true">
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
-										1 шт
+									<button class="nav-link py-3 lh-13 w-100 active" id="price-2-tab" data-bs-toggle="tab" data-bs-target="#price-2" type="button" role="tab" aria-controls="price-2" aria-selected="true">
+										м2
 									</button>
 								</li>
 							<? endif; ?>
 							<? if (!empty($arResult["PROPERTIES"]["PRICE_3"]["VALUE"])) : ?>
 								<li class="nav-item col-4" role="presentation">
-<<<<<<< HEAD
 									<button class="nav-link py-3 lh-13 w-100" id="price-3-tab" data-bs-toggle="tab" data-bs-target="#price-3" type="button" role="tab" aria-controls="price-3" aria-selected="false">
-=======
-									<button class="nav-link py-3 lh-13 w-100" id="persquaremeter-tab" data-bs-toggle="tab" data-bs-target="#persquaremeter" type="button" role="tab" aria-controls="persquaremeter" aria-selected="false">
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 										рулон
 									</button>
 								</li>
 							<? endif; ?>
 						</ul>
-<<<<<<< HEAD
 						<!-- Tab panes -->
 						<div class="tab-content mb-2">
 							<div class="tab-pane " id="price-1" role="tabpanel" aria-labelledby="price-1-tab">
@@ -94,34 +81,11 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 							<div class="tab-pane" id="price-3" role="tabpanel" aria-labelledby="price-3-tab">
 								<span class="fs-40 fw-700 ff-roboto"><? echo $arResult["PROPERTIES"]["PRICE_3"]["VALUE"] ?></span>
 							</div>
-=======
-
-						<!-- Tab panes -->
-						<div class="tab-content mb-2">
-
-
-							<div class="tab-pane " id="perpiece" role="tabpanel" aria-labelledby="perpiece-tab">
-								<span class="fs-40 fw-700 ff-roboto"><? echo $arResult["PROPERTIES"]["PRICE_1"]["VALUE"] ?></span>
-							</div>
-
-							<div class="tab-pane active" id="persquaremeter" role="tabpanel" aria-labelledby="persquaremeter-tab">
-								<span class="fs-40 fw-700 ff-roboto"><? echo $arResult["PROPERTIES"]["PRICE_2"]["VALUE"] ?></span>
-							</div>
-
-							<div class="tab-pane active" id="persquaremeter" role="tabpanel" aria-labelledby="persquaremeter-tab">
-								<span class="fs-40 fw-700 ff-roboto"><? echo $arResult["PROPERTIES"]["PRICE_3"]["VALUE"] ?></span>
-							</div>
-
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 						</div>
 					</div>
 					<div class="col-12 col-sm-6 col-lg-5 d-flex align-items-end pe-0">
 						<!-- Button trigger modal -->
-<<<<<<< HEAD
 						<button type="button" class="btn fs-20 fw-500 px-3 py-3 btn-primary <?= (strpos($APPLICATION->GetCurPage(), 'zelenye-zabory')  !== false) ? ' btn--green' : '' ?> bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#callback">
-=======
-						<button type="button" class="btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#callback">
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 							Оставить заявку
 						</button>
 					</div>
@@ -401,19 +365,12 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 					<div class="accordion-body d-flex pt-0">
 						<div class="col-10 offset-1 offset-sm-2 pe-5">
 							<div class="fs-16">
-<<<<<<< HEAD
 								<strong>Курьерская</strong>
 								<p> Осуществляем доставку по г.Минску и Минской области. Также курьерская доставка по РБ, РФ и СНГ.
 									Стоимость доставки разными компаниями может отличаться в зависимости от региона. Точнее рассчитать стоимость доставки вам помогут наши менеджеры, после оформления заказа. Для этого оставьте заявку.</p>
 								<strong>Самовывоз</strong>
 								<p>После оплаты товара, если продукция имеется на складе, вы можете забрать ее со склада по адресу: г. Минск, г. Минск, ул. Карвата, д. 63, или напрямую с завода по адресу: Минская обл, г. Молодечно, ул.Великий гостинец 31 А.
 
-=======
-								<p>
-									Гибкий кирпич имеет высокую атмосферостойкость,
-									влагостойкость. Материал можно мыть под давлением до 2х бар.
-									Устойчив к средствам бытовой химии.
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 								</p>
 							</div>
 						</div>
@@ -431,7 +388,6 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 					<div class="accordion-body d-flex pt-0">
 						<div class="col-10 offset-1 offset-sm-2 pe-5">
 							<div class="fs-16">
-<<<<<<< HEAD
 								<strong>Адрес производства</strong>
 								<p>
 									Минская обл., г. Молодечно, ул. Великий гостинец 31А
@@ -447,13 +403,6 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 								</p>
 								<strong>Магазин в Минске</strong>
 								<p> 220138, г.Минск, ул. Карвата 63 </p>
-=======
-								<p>
-									Гибкий кирпич имеет высокую атмосферостойкость,
-									влагостойкость. Материал можно мыть под давлением до 2х бар.
-									Устойчив к средствам бытовой химии.
-								</p>
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3
 							</div>
 						</div>
 					</div>
@@ -461,7 +410,6 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
 </section>
 <? if (!empty($arResult["PROPERTIES"]["KARTINKI"]["VALUE"])) : ?>
 	<section class="kartinki">
@@ -480,6 +428,3 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 		</div>
 	</section>
 <? endif; ?>
-=======
-</section>
->>>>>>> 1c729afdacafe0b565578c27a372e8c9908cdcb3

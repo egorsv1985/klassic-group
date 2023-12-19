@@ -1,0 +1,93 @@
+<section class="promo position-relative pb-5" id="promo">
+	<div class="swiper promoSwiper">
+		<div class="swiper-control position-absolute d-flex w-100 top-50">
+			<div class="container position-relative">
+				<div class="swiper-button-prev rounded-circle border-white border"></div>
+
+				<div class="swiper-button-next rounded-circle border-white border"></div>
+			</div>
+		</div>
+
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" style="background: url('img/main.png') center / cover no-repeat">
+				<div class="container">
+					<div class="d-flex flex-column">
+						<div class="col-12 col-lg-7 h1 fs-64 fw-700 text-white mb-3 ff-roboto">
+							Рассрочка 0% от производителя
+						</div>
+						<div class="col-12 col-lg-4 fs-20 text-white mb-4">
+							<h2>Новый отделочный материал для интерьера и фосадов</h2>
+						</div>
+						<!-- Button trigger modal -->
+						<button type="button" class="col-12 col-md-6 col-lg-3 btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient" data-bs-toggle="modal" data-bs-target="#callback">
+							Оставить заявку
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide" style="background: url('img/main.png') center / cover no-repeat">
+				<div class="container">
+					<div class="d-flex flex-column">
+						<div class="col-12 col-lg-7 h1 fs-64 fw-700 text-white mb-3 ff-roboto">
+							Рассрочка 0% от производителя
+						</div>
+						<div class="col-12 col-lg-4 fs-20 text-white mb-4">
+							<h2>Новый отделочный материал для интерьера и фосадов</h2>
+						</div>
+
+						<!-- Button trigger modal -->
+						<button type="button" class="col-12 col-md-6 col-lg-3 btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient" data-bs-toggle="modal" data-bs-target="#callback">
+							Оставить заявку
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="swiper-slide" style="background: url('img/main.png') center / cover no-repeat">
+				<div class="container">
+					<div class="d-flex flex-column">
+						<div class="col-12 col-lg-7 h1 fs-64 fw-700 text-white mb-3 ff-roboto">
+							Рассрочка 0% от производителя
+						</div>
+						<div class="col-12 col-lg-4 fs-20 text-white mb-4">
+							<h2>Новый отделочный материал для интерьера и фосадов</h2>
+						</div>
+
+						<!-- Button trigger modal -->
+						<button type="button" class="col-12 col-md-6 col-lg-3 btn fs-20 fw-500 px-3 py-3 btn-primary bg-gradient" data-bs-toggle="modal" data-bs-target="#callback">
+							Оставить заявку
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="swiper-pagination position-relative d-flex align-items-center gap-4"></div>
+		</div>
+	</div>
+</section>
+
+<script>
+	// Создаем новый Swiper объект для элемента ".promoSwiper"
+	var promoSwiper = new Swiper(".promoSwiper", {
+		// Задаем количество слайдов, которые будут показываться одновременно
+		slidesPerView: 1,
+		loop: true,
+		// Включаем курсор в виде "руки" при наведении на слайды
+		grabCursor: true,
+		// Включаем использование клавиатуры для навигации по слайдам
+		keyboard: {
+			enabled: true,
+		},
+
+		// Включаем кнопки "вперед" и "назад" для навигации по слайдам
+		navigation: {
+			nextEl: ".promo .swiper-button-next",
+			prevEl: ".promo .swiper-button-prev",
+		},
+		// Включаем пагинацию и настраиваем внешний вид номеров слайдов
+		pagination: {
+			el: ".promo .swiper-pagination",
+			clickable: true,
+		},
+	});
+</script>
