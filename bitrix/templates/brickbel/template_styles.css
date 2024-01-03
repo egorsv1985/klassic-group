@@ -597,7 +597,9 @@ p {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
 }
-
+.wrapper > main.padding {
+  padding-top: 236px;
+}
 .wrapper > * {
   min-width: 0;
 }

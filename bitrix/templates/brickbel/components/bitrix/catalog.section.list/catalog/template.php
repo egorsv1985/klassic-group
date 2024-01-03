@@ -80,35 +80,35 @@ $this->setFrameMode(true);
 					$arSection["PICTURE"]["WEBP"] = CMillcomPhpThumb::generateImg($arSection["PICTURE"]["SRC"], 3);
 					$arSection["PICTURE"]["PNG"] = CMillcomPhpThumb::generateImg($arSection["PICTURE"]["SRC"], 4);
 				}
-				
-			
+
+
 			?>
 				<div class="col-12 col-md-6 mt-4" id="<?= $this->GetEditAreaId($arSection['ID']); ?>">
 					<a href="<?= $arSection["SECTION_PAGE_URL"] ?>" class="catalog__link d-block position-relative rounded-2 h-100" style="
 			  background: url('<?= $arSection["PICTURE"]["WEBP"] ?>');background-position: center; background-size: cover; background-repeat: no-repeat;">
-					<style>
-						@supports (background-image: -webkit-image-set(url())) {
-							.swiper-slide {
-								background-image: -webkit-image-set(url('<?= $arSection["PREVIEW_PICTURE"]["WEBP"] ?>') 1x, url('<?= $arSection["PREVIEW_PICTURE"]["WEBP_2X"] ?>') 2x);
-								background-image: image-set(url('<?= $arSection["PREVIEW_PICTURE"]["WEBP"] ?>') 1x, url('<?= $arSection["PREVIEW_PICTURE"]["WEBP_2X"] ?>') 2x);
+						<style>
+							@supports (background-image: -webkit-image-set(url())) {
+								.swiper-slide {
+									background-image: -webkit-image-set(url('<?= $arSection["PREVIEW_PICTURE"]["WEBP"] ?>') 1x, url('<?= $arSection["PREVIEW_PICTURE"]["WEBP_2X"] ?>') 2x);
+									background-image: image-set(url('<?= $arSection["PREVIEW_PICTURE"]["WEBP"] ?>') 1x, url('<?= $arSection["PREVIEW_PICTURE"]["WEBP_2X"] ?>') 2x);
+								}
 							}
-						}
-					</style>
-						
-								<picture>
-									<source srcset="<?= $arSection["PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arSection["PICTURE"]["PNG"] ?>" alt="<?= $arSection["PICTURE"]["ALT"] ?>" title="<?= $arSection["PICTURE"]["TITLE"] ?>" class="w-100 h-100 opacity-0" width="546" height="546">
-								</picture>
-								<span class="position-absolute fs-20 fw-600 ff-roboto text-white col-8 start-0 bottom-0 pb-4 ps-4"><?= $arSection["NAME"] ?></span>
-								<span class="catalog__arrow position-absolute end-0 bottom-0 mb-4 me-4 rounded-circle bg-white d-flex justify-content-center align-items-center">
-									<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/arrow-catalog.svg" alt="стрелка" width="9" height="16">
-								</span>
-						
+						</style>
+
+						<picture>
+							<source srcset="<?= $arSection["PICTURE"]["WEBP"] ?>" type="image/webp"><img src="<?= $arSection["PICTURE"]["PNG"] ?>" alt="<?= $arSection["PICTURE"]["ALT"] ?>" title="<?= $arSection["PICTURE"]["TITLE"] ?>" class="w-100 h-100 opacity-0" width="546" height="546">
+						</picture>
+						<span class="position-absolute fs-20 fw-600 ff-roboto text-white col-8 start-0 bottom-0 pb-4 ps-4"><?= $arSection["NAME"] ?></span>
+						<span class="catalog__arrow position-absolute end-0 bottom-0 mb-4 me-4 rounded-circle bg-white d-flex justify-content-center align-items-center">
+							<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/arrow-catalog.svg" alt="стрелка" width="9" height="16">
+						</span>
+
 					</a>
 				</div>
 
 			<? endforeach; ?>
 
-			
+
 		</div>
 	</div>
 </section>

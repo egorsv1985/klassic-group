@@ -2,7 +2,7 @@
 $aMenuLinks = array(
 	array(
 		"Гибкий кирпич на сетке",
-		SITE_DIR . "o-produkte/",
+		SITE_DIR . "o-produkte/kirpichi/",
 		array(),
 		array(),
 		""

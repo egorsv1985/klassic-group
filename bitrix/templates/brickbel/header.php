@@ -203,7 +203,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 				</div>
 			</div>
 		</header>
-		<main>
+		<main class="<?= (strpos($APPLICATION->GetCurPage(), 'zelenye-zabory')  !== false) ? ' padding' : '' ?>">
 			<div class="container py-4">
 				<? if (PAGE == 'TEXT' || PAGE == 'FENCES') : ?>
 					<? $APPLICATION->IncludeComponent(
