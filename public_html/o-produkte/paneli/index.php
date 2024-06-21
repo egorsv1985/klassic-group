@@ -3,7 +3,8 @@ define("PAGE", "FENCES");
 require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Зеленые заборы");
 
-?><section class="montage pb-5">
+?>
+<section class="montage pb-5">
 	<div class="container">
 		<div class="row gy-4">
 			<div class="col-12 col-md-6 col-lg-4">
@@ -81,7 +82,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 			<tbody class="fs-14">
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Размер</td>
-					<td class="py-4 text-center border border-primary">Высота: 100 см, 120 см, 150 см, 200 см</td>
+					<td class="py-4 text-center border border-primary">Высота: 150 см, 170 см, 200 см</td>
 					<td class="py-4 text-center border border-primary">Размер рулона: 10 м</td>
 					<td class="py-4 text-center border border-primary">Диаметр рулона: 40 см</td>
 				</tr>
@@ -91,7 +92,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 				</tr>
 				<tr class="border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Оцинкованная проволока</td>
-					<td colspan="3" class="py-4 text-center">1,60 х 2 : 3,20 мм горячеоцинкованный двухкратнозакрученный 1,40 х 2 : 2,80 мм горячеоцинкованный двухкратнозакрученный</td>
+					<td colspan="3" class="py-4 text-center">1,60 х 2 : 3,20 мм горячеоцинкованный двухкратнозакрученный</td>
 				</tr>
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Синтетическая трава</td>
@@ -114,7 +115,7 @@ $APPLICATION->SetTitle("Зеленые заборы");
 				<tr class=" border border-primary">
 					<td class="py-4 ps-4 fw-700 text-center border border-primary">Рулон Калифорнийское полотно</td>
 					<td class="py-4 text-center border border-primary">Изготовленная в рулонах Калифорнийское полотно перед собой закрепляется с углов ограждения, фиксируется специальными соединительными проводами
-						интервалом в 50 см.</td>
+						интервалом в 47 см.</td>
 
 				</tr>
 				<tr class=" border border-primary">

@@ -85,7 +85,7 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 					</div>
 					<div class="col-12 col-sm-6 col-lg-5 d-flex align-items-end pe-0">
 						<!-- Button trigger modal -->
-						<button type="button" class="btn fs-20 fw-500 px-3 py-3 btn-primary <?= (strpos($APPLICATION->GetCurPage(), 'zelenye-zabory')  !== false) ? ' btn--green' : '' ?> bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#callback">
+						<button type="button" class="btn fs-20 fw-500 px-3 py-3 btn-primary <?= (strpos($APPLICATION->GetCurPage(), 'zelenye-zabory')  !== false) ? ' btn--green' : '' ?> <?= (strpos($APPLICATION->GetCurPage(), 'paneli')  !== false) ? ' btn--gray' : '' ?> bg-gradient w-100" data-bs-toggle="modal" data-bs-target="#callback">
 							Оставить заявку
 						</button>
 					</div>
@@ -345,6 +345,26 @@ $this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayB
 										</div>
 										<div class="fs-16 lh-11">
 											<p class="m-0"><? echo $arResult["PROPERTIES"]["PANEL"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["DLINA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Длина</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["DLINA"]["VALUE"] ?></p>
+										</div>
+									</div>
+								<? endif; ?>
+								<? if (!empty($arResult["PROPERTIES"]["SHIRINA"]["VALUE"])) : ?>
+									<div class="col-12 col-sm-6 col-lg-4">
+										<div class="fs-15 text-dark mb-1">
+											<p class="m-0">Ширина</p>
+										</div>
+										<div class="fs-16 lh-11">
+											<p class="m-0"><? echo $arResult["PROPERTIES"]["SHIRINA"]["VALUE"] ?></p>
 										</div>
 									</div>
 								<? endif; ?>

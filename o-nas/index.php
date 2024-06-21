@@ -199,8 +199,8 @@ $APPLICATION->IncludeComponent(
 	false
 );
 $APPLICATION->IncludeComponent(
-	"bitrix:iblock.element.add.form", 
-	"form-main", 
+	"bitrix:iblock.element.add.form",
+	"form-main",
 	array(
 		"COMPONENT_TEMPLATE" => "form-main",
 		"STATUS_NEW" => "N",

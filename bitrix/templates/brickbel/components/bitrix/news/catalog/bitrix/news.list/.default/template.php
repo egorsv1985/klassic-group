@@ -11,7 +11,6 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-print_r($arSection['ID']);
 ?>
 
 
@@ -43,9 +42,13 @@ print_r($arSection['ID']);
 									</picture>
 								</a>
 							</div>
-							<span class="fs-20 fw-700 ff-roboto lh-11 d-block mb-3"><? echo $arItem["PROPERTIES"]["PRICE_2"]["VALUE"] ?>/м2</span>
+							<? if ($arItem["PROPERTIES"]["PRICE_2"]["VALUE"]) : ?>
+								<span class="fs-20 fw-700 ff-roboto lh-11 d-block mb-3"><?= $arItem["PROPERTIES"]["PRICE_2"]["VALUE"] ?>/м<sup>2</sup></span>
+							<? else : ?>
+								<span class="fs-20 fw-700 ff-roboto lh-11 d-block mb-3">По запросу</span>
+							<? endif; ?>
 							<span class="fs-18 ff-roboto lh-11 d-block mb-4"><?= $arItem["NAME"] ?></span>
-							<a class="btn fs-20 fw-500 px-3 py-3 btn-primary <?= (strpos($APPLICATION->GetCurPage(), 'zelenye-zabory')  !== false) ? ' btn--green' : '' ?> bg-gradient w-100" href="<?= $arItem["DETAIL_PAGE_URL"] ?>" role="button" title="Подробнее">Подробнее</a>
+							<a class="btn fs-20 fw-500 px-3 py-3 btn-primary <?= (strpos($APPLICATION->GetCurPage(), 'zelenye-zabory')  !== false) ? ' btn--green' : '' ?> <?= (strpos($APPLICATION->GetCurPage(), 'interernye-akusticheskie-paneli')  !== false) ? ' btn--gray' : '' ?> bg-gradient w-100" href="<?= $arItem["DETAIL_PAGE_URL"] ?>" role="button" title="Подробнее">Подробнее</a>
 						</div>
 					</div>
 

@@ -215,7 +215,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 						<div class="col">
 							<h1 class="fs-48 fw-700 ff-roboto"><? $APPLICATION->ShowTitle(true); ?></h1>
 						</div>
-						<? if (PAGE != 'FENCES' && strpos($APPLICATION->GetCurPage(), 'zelenye-zabory') == false) : ?>
+						<? if (PAGE != 'FENCES' && strpos($APPLICATION->GetCurPage(), 'zelenye-zabory') == false && PAGE != 'PANELI' && strpos($APPLICATION->GetCurPage(), 'interernye-akusticheskie-paneli') == false): ?>
 							<div class="col-4 offset-3">
 								<div class="fs-18 lh-11">
 									<p>
@@ -225,6 +225,7 @@ $asset->addJs(SITE_TEMPLATE_PATH . '/script.js');
 								</div>
 							</div>
 						<? endif; ?>
+						
 					</div>
 				<? endif; ?>
 			</div>

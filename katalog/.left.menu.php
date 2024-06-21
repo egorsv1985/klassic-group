@@ -13,5 +13,12 @@ $aMenuLinks = array(
 		array(),
 		array(),
 		""
+	),
+	array(
+		"Интерьерные акустические панели",
+		SITE_DIR . "katalog/interernye-akusticheskie-paneli/",
+		array(),
+		array(),
+		""
 	)
 );

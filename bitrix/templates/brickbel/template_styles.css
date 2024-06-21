@@ -285,6 +285,13 @@
 .btn--green:hover {
   border: 1px solid #428b47;
 }
+.btn--gray {
+  background: #a0856d !important ;
+  border: 1px SOLID #a0856d;
+}
+.btn--gray:hover {
+  border: 1px solid #cfa29b;
+}
 .nav-tabs {
   --bs-nav-tabs-border-width: 1px;
   --bs-nav-tabs-border-color: #d6d6d6;

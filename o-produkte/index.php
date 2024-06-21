@@ -43,6 +43,20 @@ $APPLICATION->SetTitle("О продукте");
 
 				</a>
 			</div>
+			<div class="col-12 col-md-6 mt-4">
+				<a href="/o-produkte/paneli/" class="catalog__link d-block position-relative rounded-2 h-100" style="
+			  background: url('<?= SITE_TEMPLATE_PATH ?>/img/panel1.webp');background-position: center; background-size: cover; background-repeat: no-repeat;">
+
+
+					<picture>
+						<source srcset="<?= SITE_TEMPLATE_PATH ?>/img/panel1.webp" type="image/webp"><img src="<?= SITE_TEMPLATE_PATH ?>/img/panel1.png" alt="Калифорнийское полотно" title="Калифорнийское полотно" class="w-100 h-100 opacity-0" width="546" height="546">
+					</picture>
+					<span class="position-absolute fs-20 fw-600 ff-roboto text-white col-8 start-0 bottom-0 pb-4 ps-4">Интерьерные акустические панели</span>
+					<span class="catalog__arrow position-absolute end-0 bottom-0 mb-4 me-4 rounded-circle bg-white d-flex justify-content-center align-items-center">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/img/icons/arrow-catalog.svg" alt="стрелка" width="9" height="16">
+					</span>
+				</a>
+			</div>
 
 
 		</div>
