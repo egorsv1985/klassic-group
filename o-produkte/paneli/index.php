@@ -4,8 +4,8 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Интерьерные акустические панели");
 ?>
 <? $APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"advantages",
+	"bitrix:news.list", 
+	"advantages-panel", 
 	array(
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"ADD_SECTIONS_CHAIN" => "N",
@@ -19,7 +19,7 @@ $APPLICATION->SetTitle("Интерьерные акустические пане
 		"CACHE_TIME" => "7200",
 		"CACHE_TYPE" => "A",
 		"CHECK_DATES" => "Y",
-		"COMPONENT_TEMPLATE" => "advantages",
+		"COMPONENT_TEMPLATE" => "advantages-panel",
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"DISPLAY_DATE" => "Y",
@@ -34,7 +34,7 @@ $APPLICATION->SetTitle("Интерьерные акустические пане
 		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "2",
+		"IBLOCK_ID" => "24",
 		"IBLOCK_TYPE" => "SYSTEM",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "Y",
